@@ -67,4 +67,4 @@ const colors = {
   },
 } as IColors;
 
-export default { colors };
+export default colors;
