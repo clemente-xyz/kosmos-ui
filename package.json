@@ -1,6 +1,6 @@
 {
   "name": "kosmos-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A cool React components UI library",
   "main": "lib/index.js",
   "types": "lib",
@@ -9,7 +9,12 @@
   },
   "author": "Clemente Serrano",
   "license": "ISC",
+  "peerDependencies": {
+    "react": ">=16.0.0"
+  },
   "devDependencies": {
+    "@types/react": "^16.9.35",
+    "react": "^16.13.1",
     "typescript": "^3.9.2"
   }
 }
