@@ -1,6 +1,6 @@
 {
   "name": "kosmos-ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A cool React components UI library",
   "main": "lib/index.js",
   "types": "lib",
@@ -14,7 +14,11 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.35",
+    "@types/styled-components": "^5.1.0",
     "react": "^16.13.1",
     "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "styled-components": "^5.1.0"
   }
 }
