@@ -1,0 +1,15 @@
+{
+  "name": "kosmos-ui",
+  "version": "1.0.0",
+  "description": "A cool React components UI library",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "author": "Clemente Serrano",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  }
+}
