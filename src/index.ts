@@ -1,7 +1,10 @@
-// Context
-import ThemeContextProvider from "./context/Theme";
-
 // Components
 import TextInput from "./components/TextInput";
 
-export { ThemeContextProvider, TextInput };
+// Context
+import ThemeContextProvider from "./context/Theme";
+
+// Theme
+import theme from "./theme";
+
+export { ThemeContextProvider, TextInput, theme };
