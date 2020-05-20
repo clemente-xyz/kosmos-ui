@@ -1,6 +1,6 @@
 import React from "react";
 
-import colors from "../../colors";
+import theme from "../../theme";
 
 import { IProps } from "./types";
 import { MainContainer, Input, Highlight, Bar, Label } from "./styles";
@@ -35,8 +35,8 @@ function TextInput({
         onChange={onChange}
         style={inputStyle}
         type={type || "text"}
-        baseColor={baseColor || colors.gray.default}
-        highlightColor={highlightColor || colors.black.default}
+        baseColor={baseColor || theme.colorsPalette.gray.default}
+        highlightColor={highlightColor || theme.colorsPalette.black.default}
         required
         onCopy={onCopy}
         onCut={onCut}
@@ -48,14 +48,21 @@ function TextInput({
 
       <Highlight />
 
-      <Bar highlightColor={highlightColor || colors.black.default} />
+      <Bar
+        highlightColor={highlightColor || theme.colorsPalette.black.default}
+      />
 
-      <Label htmlFor={id} baseColor={baseColor || colors.gray.default}>
+      <Label
+        htmlFor={id}
+        baseColor={baseColor || theme.colorsPalette.gray.default}
+      >
         {label}
       </Label>
 
       {error && (
-        <p style={{ color: colors.red.default, marginTop: 15 }}>{error}</p>
+        <p style={{ color: theme.colorsPalette.red.default, marginTop: 15 }}>
+          {error}
+        </p>
       )}
     </MainContainer>
   );

@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import theme from "../../theme";
+
 function inputHighlighter(highlightColor: string) {
   return keyframes`
   from { background: ${highlightColor}; }
@@ -64,7 +66,7 @@ const Highlight = styled.span`
 `;
 
 const Input = styled.input<{ baseColor: string; highlightColor: string }>`
-  font-size: ${({ theme }) => theme.fontSizes.regular};
+  font-size: ${theme.fontSizes.regular};
   padding: 10px 0;
   display: block;
   width: 100%;

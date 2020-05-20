@@ -1,6 +1,6 @@
 import { IColors } from "./types";
 
-const colors = {
+const colorsPalette = {
   blue: {
     default: "hsl(216, 100%, 50%)",
     light: "hsl(216, 100%, 65%)",
@@ -67,4 +67,4 @@ const colors = {
   },
 } as IColors;
 
-export default colors;
+export { colorsPalette };

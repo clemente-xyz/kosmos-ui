@@ -1,4 +1,7 @@
-import colors from "./colors";
+// Context
+import ThemeContextProvider from "./context/Theme";
+
+// Components
 import TextInput from "./components/TextInput";
 
-export { colors, TextInput };
+export { ThemeContextProvider, TextInput };
