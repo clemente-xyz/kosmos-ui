@@ -6,6 +6,7 @@
 
 A cool [React](https://reactjs.org/) components library written in TypeScript.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2dd93f4aee114299ae895d22f79eeb35)](https://app.codacy.com/manual/ClementeSerrano/kosmos-ui?utm_source=github.com&utm_medium=referral&utm_content=ClementeSerrano/kosmos-ui&utm_campaign=Badge_Grade_Dashboard)
 [![npm package](https://img.shields.io/npm/v/kosmos-ui)](https://www.npmjs.com/package/kosmos-ui)
 [![npm downloads](https://img.shields.io/npm/dm/kosmos-ui)](https://www.npmjs.com/package/kosmos-ui)
 [![Contributors](https://img.shields.io/github/contributors/ClementeSerrano/kosmos-ui)](https://github.com/ClementeSerrano/kosmos-ui)
