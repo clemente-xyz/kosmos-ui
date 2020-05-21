@@ -1,54 +1,48 @@
-import React from "react";
+import React, { CSSProperties, FocusEvent } from "react";
 
-import theme from "../../theme";
+import { validateDateFormat } from "../../../../utils/helpers";
+import theme from "../../../../theme";
 
-import { IProps } from "./types";
-import {
-  MainContainer,
-  Input,
-  Highlight,
-  Bar,
-  Label,
-  ErrorParagraph,
-} from "./styles";
+import { MainContainer, Input, Highlight, Bar, Label } from "./styles";
 
-function TextInput({
+type IProps = {
+  placeholder?: string;
+  label?: string;
+  value?: string;
+  onChange?: (event: any) => void;
+  id?: string;
+  name?: string;
+  inputStyle?: CSSProperties;
+  baseColor?: string;
+  highlightColor?: string;
+  autoComplete?: string;
+  onBlur?: (event: FocusEvent<any>) => void;
+};
+
+function DatePickerInput({
   placeholder,
-  type,
   label,
   value,
   onChange,
   id,
   name,
-  mainContainerStyle,
-  inputStyle,
   baseColor,
   highlightColor,
   onBlur,
-  onCopy,
-  onCut,
-  onDrag,
-  onDrop,
   autoComplete,
-  error,
 }: IProps) {
   return (
-    <MainContainer style={mainContainerStyle}>
+    <MainContainer>
       <Input
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
-        onChange={onChange}
-        style={inputStyle}
-        type={type || "text"}
+        onChange={validateDateFormat(value) ? onChange : () => {}}
+        type="text"
         baseColor={baseColor || theme.colorsPalette.gray.default}
         highlightColor={highlightColor || theme.colorsPalette.black.default}
         required
-        onCopy={onCopy}
-        onCut={onCut}
-        onDrag={onDrag}
-        onDrop={onDrop}
         autoComplete={autoComplete}
         onBlur={onBlur}
       />
@@ -65,10 +59,8 @@ function TextInput({
       >
         {label}
       </Label>
-
-      {error && <ErrorParagraph>{error}</ErrorParagraph>}
     </MainContainer>
   );
 }
 
-export default TextInput;
+export default DatePickerInput;

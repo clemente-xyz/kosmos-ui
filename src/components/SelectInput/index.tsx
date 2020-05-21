@@ -1,20 +1,29 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import theme from "../../theme";
 
-import { IProps } from "./types";
-import {
-  MainContainer,
-  Input,
-  Highlight,
-  Bar,
-  Label,
-  ErrorParagraph,
-} from "./styles";
+import { MainContainer, Select, Highlight, Bar, Label } from "./styles";
 
-function TextInput({
+type IProps = {
+  placeholder?: string;
+  label?: string;
+  value?: string | number;
+  onChange?: (event: any) => void;
+  id?: string;
+  name?: string;
+  mainContainerStyle?: CSSProperties;
+  inputStyle?: CSSProperties;
+  baseColor?: string;
+  highlightColor?: string;
+  onCopy?: () => boolean;
+  onCut?: () => boolean;
+  onDrag?: () => boolean;
+  onDrop?: () => boolean;
+  autoComplete?: string;
+};
+
+function SelectInput({
   placeholder,
-  type,
   label,
   value,
   onChange,
@@ -24,24 +33,21 @@ function TextInput({
   inputStyle,
   baseColor,
   highlightColor,
-  onBlur,
   onCopy,
   onCut,
   onDrag,
   onDrop,
   autoComplete,
-  error,
 }: IProps) {
   return (
     <MainContainer style={mainContainerStyle}>
-      <Input
+      <Select
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
         style={inputStyle}
-        type={type || "text"}
         baseColor={baseColor || theme.colorsPalette.gray.default}
         highlightColor={highlightColor || theme.colorsPalette.black.default}
         required
@@ -50,25 +56,16 @@ function TextInput({
         onDrag={onDrag}
         onDrop={onDrop}
         autoComplete={autoComplete}
-        onBlur={onBlur}
       />
-
       <Highlight />
-
       <Bar
         highlightColor={highlightColor || theme.colorsPalette.black.default}
       />
-
-      <Label
-        htmlFor={id}
-        baseColor={baseColor || theme.colorsPalette.gray.default}
-      >
+      <Label baseColor={baseColor || theme.colorsPalette.gray.default}>
         {label}
       </Label>
-
-      {error && <ErrorParagraph>{error}</ErrorParagraph>}
     </MainContainer>
   );
 }
 
-export default TextInput;
+export default SelectInput;

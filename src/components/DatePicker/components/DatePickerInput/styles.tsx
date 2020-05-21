@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-import theme from "../../theme";
-
 function inputHighlighter(highlightColor: string) {
   return keyframes`
   from { background: ${highlightColor}; }
@@ -12,20 +10,21 @@ function inputHighlighter(highlightColor: string) {
 const MainContainer = styled.div`
   position: relative;
   width: 100%;
+  margin-right: 10px;
 
-  &:not(:first-child) {
-    margin-left: 15px;
+  &:last-child {
+    margin-right: 0;
   }
 `;
 
 const Label = styled.label<{ baseColor: string }>`
-  font-size: ${theme.fontSizes.regular};
   color: ${({ baseColor }) => baseColor};
+  font-size: 18px;
+  font-weight: normal;
   position: absolute;
   pointer-events: none;
   top: 10px;
   transition: 0.2s ease all;
-
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 `;
@@ -68,7 +67,7 @@ const Highlight = styled.span`
 `;
 
 const Input = styled.input<{ baseColor: string; highlightColor: string }>`
-  font-size: ${theme.fontSizes.regular};
+  font-size: 18px;
   padding: 10px 0;
   display: block;
   width: 100%;
@@ -76,8 +75,6 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   border-bottom: 1px solid ${({ baseColor }) => baseColor};
   background-color: transparent;
   color: ${({ baseColor }) => baseColor};
-  overflow: hidden;
-  text-overflow: ellipsis;
 
   &:focus {
     outline: none;
@@ -85,6 +82,7 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
 
   &:focus ~ ${Label}, &:valid ~ ${Label} {
     top: -15px;
+    font-size: 14px;
     color: ${({ highlightColor }) => highlightColor};
   }
 
@@ -100,13 +98,6 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   }
 `;
 
-const ErrorParagraph = styled.p`
-  font-size: ${theme.fontSizes.regular};
-  margin: 0;
-  color: ${theme.colorsPalette.red.default};
-  margin-top: 15px;
-`;
-
-export { MainContainer, Input, Highlight, Bar, Label, ErrorParagraph };
+export { MainContainer, Input, Highlight, Bar, Label };
 
 // https://codepen.io/chrisoncode/pen/IdGKH

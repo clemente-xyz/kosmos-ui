@@ -10,6 +10,8 @@ import { IProps } from "./types";
 import {
   Backdrop,
   Card,
+  Header,
+  Paragraph,
   ContentContainer,
   CloseIconContainer,
   ButtonsContainer,
@@ -48,11 +50,11 @@ function Dialog({
                 />
               </CloseIconContainer>
 
-              {typeof header === "string" ? <h4>{header}</h4> : header}
+              {typeof header === "string" ? <Header>{header}</Header> : header}
 
               {typeof content === "string" ? (
                 <ContentContainer>
-                  <p>{content}</p>
+                  <Paragraph>{content}</Paragraph>
                 </ContentContainer>
               ) : (
                 content

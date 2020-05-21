@@ -37,6 +37,17 @@ const Card = styled(animated.article)`
   max-height: 75vh;
 `;
 
+const Header = styled.h1`
+  font-size: ${theme.fontSizes.regularLarge};
+  font-weight: ${theme.fontWeights.regular};
+`;
+
+const Paragraph = styled.p`
+  font-size: ${theme.fontSizes.regular};
+  margin: 0;
+  color: ${theme.colorsPalette.gray.default};
+`;
+
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -74,6 +85,8 @@ const CloseIconContainer = styled.div`
 export {
   Backdrop,
   Card,
+  Header,
+  Paragraph,
   ContentContainer,
   ButtonsContainer,
   CloseIconContainer,

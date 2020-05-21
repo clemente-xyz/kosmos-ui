@@ -115,6 +115,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@datepicker-react/hooks@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@datepicker-react/hooks/-/hooks-2.3.1.tgz#b33f28aa9dc8628b5c273846544c38693452bd8a"
+  integrity sha512-9GIGWV0jwt2sDicK/e7Wdymv52n6Hj7srTjC+TMGO6eHRyIa29nrpbrepUVTITF9nwPLCjHll6cNfCKVD0Fghw==
+  dependencies:
+    date-fns "^2.8.1"
+
 "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
@@ -248,6 +255,11 @@ csstype@^2.2.0:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.10.tgz#e63af50e66d7c266edb6b32909cfd0aabe03928b"
   integrity sha512-D34BqZU4cIlMCY93rZHbrq9pjTAQJ3U8S8rfBqjwHxkGPThWFjzZDQpgMJY0QViLxth6ZKYiwFBo14RdN44U/w==
+
+date-fns@^2.8.1:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
+  integrity sha512-1zD+68jhFgDIM0rF05rcwYO8cExdNqxjq4xP1QKM60Q45mnO6zaMWB4tOzrIr4M4GSLntsKeE4c9Bdl2jhL/yw==
 
 debug@^4.1.0:
   version "4.1.1"

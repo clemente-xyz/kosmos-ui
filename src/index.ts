@@ -1,7 +1,14 @@
 // Components
 import Button from "./components/Button";
+import Card from "./components/Card";
+import Chip from "./components/Chip";
+import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
 import Loader from "./components/Loader";
+import SelectInput from "./components/SelectInput";
+import Stepper from "./components/Stepper";
+import Switch from "./components/Switch";
+import Tabs from "./components/Tabs";
 import TextInput from "./components/TextInput";
 
 // Icons
@@ -26,8 +33,15 @@ import theme from "./theme";
 export {
   // Components
   Button,
+  Card,
+  Chip,
+  DatePicker,
   Dialog,
   Loader,
+  SelectInput,
+  Stepper,
+  Switch,
+  Tabs,
   TextInput,
   // Icons
   CalendarIcon,
