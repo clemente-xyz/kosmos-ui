@@ -2,8 +2,6 @@
   <a href="" rel="noopener" target="_blank"><img width="150" src="https://res.cloudinary.com/clementeserrano/image/upload/v1590085699/kosmos/kosmos-ui-logo_zsw3zm.png" alt="Kosmos UI logo"></a></p>
 </p>
 
-<h1 align="center">Kosmos UI</h1>
-
 <div align="center">
 
 A cool [React](https://reactjs.org/) components library written in TypeScript.
