@@ -19,11 +19,13 @@ const MainContainer = styled.div`
 `;
 
 const Label = styled.label<{ baseColor: string }>`
+  font-size: ${theme.fontSizes.regular};
   color: ${({ baseColor }) => baseColor};
   position: absolute;
   pointer-events: none;
   top: 10px;
   transition: 0.2s ease all;
+
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 `;
