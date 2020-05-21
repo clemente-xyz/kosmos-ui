@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { CSSProperties } from "styled-components";
 import {
   Editor,
   EditorState,
@@ -8,7 +9,6 @@ import {
 } from "draft-js";
 import { draftToMarkdown } from "markdown-draft-js";
 import "draft-js/dist/Draft.css";
-import "./styles.css";
 
 import theme from "../../theme";
 import InlineStyleControls from "./components/InlineStyleControls";
@@ -58,12 +58,19 @@ function ContentEditor({
   const contentState = editorState.getCurrentContent();
   const rawObject = convertToRaw(contentState);
   const markdownString = draftToMarkdown(rawObject);
-
-  let className = "RichEditor-editor";
+  let richEditorContainerStyles = {
+    borderTop: "1px solid #ddd",
+    cursor: "text",
+    fontSize: 16,
+    marginTop: 10,
+  } as CSSProperties;
 
   if (!contentState.hasText()) {
     if (contentState.getBlockMap().first().getType() !== "unstyled") {
-      className += " RichEditor-hidePlaceholder";
+      richEditorContainerStyles = {
+        ...richEditorContainerStyles,
+        display: "none",
+      };
     }
   }
 
@@ -80,7 +87,7 @@ function ContentEditor({
           onToggle={toggleInlineStyle}
         />
 
-        <div className={className} onClick={focusContentEditor}>
+        <div style={richEditorContainerStyles} onClick={focusContentEditor}>
           <Editor
             ref={contentEditorRef}
             editorState={editorState}
