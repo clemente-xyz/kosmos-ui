@@ -1,6 +1,6 @@
 {
   "name": "kosmos-ui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A cool React components UI library",
   "main": "lib/index.js",
   "types": "lib",
