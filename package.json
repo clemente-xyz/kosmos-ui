@@ -19,6 +19,7 @@
     "typescript": "^3.9.2"
   },
   "dependencies": {
+    "polished": "^3.6.3",
     "styled-components": "^5.1.0"
   }
 }
