@@ -16,11 +16,12 @@ const MainContainer = styled.div`
   }
 `;
 
-const UpperCaseParagraph = styled.p`
+const Header = styled.h1`
   text-transform: uppercase;
   color: ${theme.colorsPalette.gray.light};
-  font-weight: 700;
+  font-size: ${theme.fontSizes.small};
+  font-weight: ${theme.fontWeights.bold};
   margin: 0;
 `;
 
-export { MainContainer, UpperCaseParagraph };
+export { MainContainer, Header };

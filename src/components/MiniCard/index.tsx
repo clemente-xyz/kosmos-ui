@@ -1,11 +1,11 @@
 import React, { ReactNode } from "react";
 
-import { MainContainer, UpperCaseParagraph } from "./styles";
+import { MainContainer, Header } from "./styles";
 
 function MiniCard({ title, children }: { title: string; children: ReactNode }) {
   return (
     <MainContainer>
-      <UpperCaseParagraph>{title}</UpperCaseParagraph>
+      <Header>{title}</Header>
 
       {children}
     </MainContainer>
