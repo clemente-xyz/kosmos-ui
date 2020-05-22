@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { CSSProperties } from "styled-components";
 import {
   Editor,
   EditorState,
@@ -16,7 +15,7 @@ import BlockStyleControls from "./components/BlockStyleControls";
 
 import { IProps } from "./types";
 import { styleMap } from "./constants";
-import { MainContainer } from "./styles";
+import { MainContainer, RichEditorContainer } from "./styles";
 
 function getBlockStyle(block: any) {
   switch (block.getType()) {
@@ -58,19 +57,12 @@ function ContentEditor({
   const contentState = editorState.getCurrentContent();
   const rawObject = convertToRaw(contentState);
   const markdownString = draftToMarkdown(rawObject);
-  let richEditorContainerStyles = {
-    borderTop: "1px solid #ddd",
-    cursor: "text",
-    fontSize: 16,
-    marginTop: 10,
-  } as CSSProperties;
+
+  let className = "";
 
   if (!contentState.hasText()) {
     if (contentState.getBlockMap().first().getType() !== "unstyled") {
-      richEditorContainerStyles = {
-        ...richEditorContainerStyles,
-        display: "none",
-      };
+      className += "RichEditor-hidePlaceholder";
     }
   }
 
@@ -87,7 +79,7 @@ function ContentEditor({
           onToggle={toggleInlineStyle}
         />
 
-        <div style={richEditorContainerStyles} onClick={focusContentEditor}>
+        <RichEditorContainer className={className} onClick={focusContentEditor}>
           <Editor
             ref={contentEditorRef}
             editorState={editorState}
@@ -99,10 +91,11 @@ function ContentEditor({
             //@ts-ignore
             blockStyleFn={getBlockStyle}
             customStyleMap={styleMap}
-            placeholder={placeholder || "Escribe aquí tu contenido..."}
+            // TODO: Solve display:none styles issue before re-enabling this prop
+            // placeholder={placeholder || "Escribe aquí tu contenido..."}
             blockRenderMap={DefaultDraftBlockRenderMap}
           />
-        </div>
+        </RichEditorContainer>
       </MainContainer>
 
       {error && (
