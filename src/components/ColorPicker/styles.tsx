@@ -8,7 +8,7 @@ const MainContainer = styled.section`
   align-items: center;
   width: 100%;
   height: 30px;
-  background-color: ${theme.colorsPalette.gray.lighter};
+  background-color: ${theme.colorsPalette.gray.superLight};
   border-radius: 5px;
   padding: 5px;
   position: relative;
