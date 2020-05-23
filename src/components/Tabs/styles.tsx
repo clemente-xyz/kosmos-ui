@@ -15,6 +15,7 @@ const TabContainer = styled.button<{ isActive: boolean }>`
   background: none;
   color: inherit;
   font: inherit;
+  font-size: ${theme.fontSizes.regular};
   cursor: pointer;
   outline: inherit;
   margin-right: 25px;
