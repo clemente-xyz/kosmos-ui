@@ -6,6 +6,7 @@ import ColorPicker from "./components/ColorPicker";
 import ContentEditor from "./components/ContentEditor";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
+import GalaxyBackground from "./components/GalaxyBackground";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
 import LoadingSection from "./components/LoadingSection";
@@ -50,6 +51,7 @@ export {
   ContentEditor,
   DatePicker,
   Dialog,
+  GalaxyBackground,
   ImagePicker,
   Loader,
   LoadingSection,
