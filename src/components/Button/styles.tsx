@@ -16,7 +16,6 @@ const MainContainer = styled.button.attrs((props: any) => ({
   display: flex;
   justify-content: center;
   padding: ${({ padding }) => padding};
-  height: 40px;
   min-width: 120px;
   max-width: 180px;
   font-size: ${({ fontSize }) => fontSize};

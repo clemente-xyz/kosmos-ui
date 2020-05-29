@@ -52,7 +52,7 @@ function getButtonStyles({
         fontColorOnHover: buttonsTheme[type].fontColor,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
-        padding: size === "small" ? "5px 15px" : "10px 25px",
+        padding: size === "small" ? "5px 15px" : "12px 25px",
       };
 
     case "secondary":
