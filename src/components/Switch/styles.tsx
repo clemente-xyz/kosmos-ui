@@ -34,8 +34,6 @@ const Input = styled.input.attrs({ type: "checkbox" })<{ baseColor?: string }>`
   opacity: 0;
   z-index: 1;
   border-radius: 15px;
-  width: 42px;
-  height: 26px;
 
   &:checked + ${Label} {
     background: ${({ baseColor }) =>
