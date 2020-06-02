@@ -15,29 +15,38 @@ import { ImageContainer, MainContainer, Paragraph } from "./styles";
 function ImagePicker({
   setUploadImage,
   prevImage,
+  options,
   style,
   name,
   id,
-  error,
+  errorMessage,
+  onDropRejected,
 }: IProps) {
-  const [selectedImage, seSelectedImage] = useState<
+  const [selectedImage, setSelectedImage] = useState<
     { file: File; preview: string } | undefined
   >(undefined);
 
   const onDrop = useCallback(
     ([file]) => {
-      seSelectedImage(
-        (Object as any).assign(file, {
-          preview: URL.createObjectURL(file),
-        })
-      );
-      setUploadImage(file);
+      if (file) {
+        setUploadImage(file);
+
+        setSelectedImage(
+          (Object as any).assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        );
+      }
     },
     [setUploadImage]
   );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
+    onDropRejected(event) {
+      onDropRejected && onDropRejected(event);
+    },
+    ...options,
     accept: "image/*",
     multiple: false,
   });
@@ -71,9 +80,9 @@ function ImagePicker({
         )}
       </MainContainer>
 
-      {error && (
+      {errorMessage && (
         <p style={{ color: theme.colorsPalette.red.default, marginLeft: 10 }}>
-          {error}
+          {errorMessage}
         </p>
       )}
     </>

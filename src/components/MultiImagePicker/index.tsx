@@ -14,8 +14,9 @@ import {
   CloseIconContainer,
 } from "./styles";
 
-function ImagePicker({ images = [], setImages }: IProps) {
+function MultiImagePicker({ images = [], setImages, options, style }: IProps) {
   const { getRootProps, getInputProps } = useDropzone({
+    ...options,
     accept: "image/*",
     onDrop(acceptedFiles) {
       setImages([
@@ -81,7 +82,7 @@ function ImagePicker({ images = [], setImages }: IProps) {
   );
 
   return (
-    <section>
+    <section style={style}>
       <div
         {...getRootProps({ className: "dropzone" })}
         style={{ width: "fit-content" }}
@@ -102,4 +103,4 @@ function ImagePicker({ images = [], setImages }: IProps) {
   );
 }
 
-export default ImagePicker;
+export default MultiImagePicker;
