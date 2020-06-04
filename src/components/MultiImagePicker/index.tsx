@@ -14,7 +14,14 @@ import {
   CloseIconContainer,
 } from "./styles";
 
-function MultiImagePicker({ images = [], setImages, options, style }: IProps) {
+function MultiImagePicker({
+  images = [],
+  setImages,
+  options,
+  style,
+  errorMessage,
+  onDropRejected,
+}: IProps) {
   const { getRootProps, getInputProps } = useDropzone({
     ...options,
     accept: "image/*",
@@ -27,6 +34,9 @@ function MultiImagePicker({ images = [], setImages, options, style }: IProps) {
           })
         ),
       ]);
+    },
+    onDropRejected(event) {
+      onDropRejected && onDropRejected(event);
     },
   });
 
@@ -99,6 +109,12 @@ function MultiImagePicker({ images = [], setImages, options, style }: IProps) {
       </div>
 
       <ThumbsContainer>{thumbs}</ThumbsContainer>
+
+      {errorMessage && (
+        <p style={{ color: theme.colorsPalette.red.default, marginLeft: 10 }}>
+          {errorMessage}
+        </p>
+      )}
     </section>
   );
 }
