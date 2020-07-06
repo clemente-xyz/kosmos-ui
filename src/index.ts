@@ -34,6 +34,7 @@ import InstagramIcon from "./icons/Instagram";
 import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
 import ProfileIcon from "./icons/Profile";
+import ProfilesIcon from "./icons/Profiles";
 import QuasarIcon from "./icons/Quasar";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import SuccessIcon from "./icons/Success";
@@ -77,6 +78,7 @@ export {
   PenIcon,
   PhotosIcon,
   ProfileIcon,
+  ProfilesIcon,
   QuasarIcon,
   ShoppingBagIcon,
   SuccessIcon,
