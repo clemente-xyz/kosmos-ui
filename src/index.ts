@@ -27,6 +27,7 @@ import { useOutsideContainer } from "./hooks";
 import CalendarIcon from "./icons/Calendar";
 import CarretIcon from "./icons/Carret";
 import CloseIcon from "./icons/Close";
+import DeliveryIcon from "./icons/Delivery";
 import ErrorIcon from "./icons/Error";
 import FacebookIcon from "./icons/Facebook";
 import HamburgerIcon from "./icons/Hamburger";
@@ -71,6 +72,7 @@ export {
   CalendarIcon,
   CarretIcon,
   CloseIcon,
+  DeliveryIcon,
   ErrorIcon,
   FacebookIcon,
   HamburgerIcon,

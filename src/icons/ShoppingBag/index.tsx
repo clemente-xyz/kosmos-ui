@@ -2,9 +2,9 @@ import React from "react";
 
 import { IconProps } from "../types";
 
-function ShoppingBagIcon({ height, color }: IconProps) {
+function ShoppingBagIcon({ height, color = "currentColor", style }: IconProps) {
   return (
-    <svg height={height} viewBox="0 0 20 20">
+    <svg height={height} style={style} viewBox="0 0 20 20">
       <g fill="none" fillRule="evenodd">
         <g transform="translate(3 2)">
           <path
