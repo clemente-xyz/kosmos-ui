@@ -32,6 +32,7 @@ import ErrorIcon from "./icons/Error";
 import FacebookIcon from "./icons/Facebook";
 import HamburgerIcon from "./icons/Hamburger";
 import InstagramIcon from "./icons/Instagram";
+import LineChartIcon from "./icons/LineChart";
 import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
 import ProfileIcon from "./icons/Profile";
@@ -77,6 +78,7 @@ export {
   FacebookIcon,
   HamburgerIcon,
   InstagramIcon,
+  LineChartIcon,
   PenIcon,
   PhotosIcon,
   ProfileIcon,
