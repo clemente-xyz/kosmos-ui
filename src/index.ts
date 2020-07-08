@@ -40,6 +40,7 @@ import ProfilesIcon from "./icons/Profiles";
 import QuasarIcon from "./icons/Quasar";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import SuccessIcon from "./icons/Success";
+import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TrashIcon from "./icons/Trash";
 
 // Theme
@@ -86,6 +87,7 @@ export {
   QuasarIcon,
   ShoppingBagIcon,
   SuccessIcon,
+  ThemeAndContentIcon,
   TrashIcon,
   // Theme
   theme,
