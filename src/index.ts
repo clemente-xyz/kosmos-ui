@@ -27,16 +27,20 @@ import { useOutsideContainer } from "./hooks";
 import CalendarIcon from "./icons/Calendar";
 import CarretIcon from "./icons/Carret";
 import CloseIcon from "./icons/Close";
+import DeliveryIcon from "./icons/Delivery";
 import ErrorIcon from "./icons/Error";
 import FacebookIcon from "./icons/Facebook";
 import HamburgerIcon from "./icons/Hamburger";
 import InstagramIcon from "./icons/Instagram";
+import LineChartIcon from "./icons/LineChart";
 import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
 import ProfileIcon from "./icons/Profile";
+import ProfilesIcon from "./icons/Profiles";
 import QuasarIcon from "./icons/Quasar";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import SuccessIcon from "./icons/Success";
+import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TrashIcon from "./icons/Trash";
 
 // Theme
@@ -70,16 +74,20 @@ export {
   CalendarIcon,
   CarretIcon,
   CloseIcon,
+  DeliveryIcon,
   ErrorIcon,
   FacebookIcon,
   HamburgerIcon,
   InstagramIcon,
+  LineChartIcon,
   PenIcon,
   PhotosIcon,
   ProfileIcon,
+  ProfilesIcon,
   QuasarIcon,
   ShoppingBagIcon,
   SuccessIcon,
+  ThemeAndContentIcon,
   TrashIcon,
   // Theme
   theme,
