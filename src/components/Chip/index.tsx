@@ -12,7 +12,7 @@ function Chip({
   className?: string;
 }) {
   return (
-    <MainContainer className={className} style={style}>
+    <MainContainer style={style} className={className}>
       {children}
     </MainContainer>
   );
