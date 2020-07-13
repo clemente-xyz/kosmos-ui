@@ -5,11 +5,17 @@ import { MainContainer } from "./styles";
 function Chip({
   children,
   style,
+  className,
 }: {
   children: ReactNode;
   style?: CSSProperties;
+  className?: string;
 }) {
-  return <MainContainer style={style}>{children}</MainContainer>;
+  return (
+    <MainContainer style={style} className={className}>
+      {children}
+    </MainContainer>
+  );
 }
 
 export default Chip;

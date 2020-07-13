@@ -23,6 +23,7 @@ function Button({
   style,
   disabled,
   loading,
+  className,
 }: IProps) {
   const {
     backgroundColor,
@@ -42,6 +43,7 @@ function Button({
   return (
     <MainContainer
       style={style}
+      className={className}
       onClick={onClick}
       backgroundColor={backgroundColor as string}
       fontColor={fontColor as string}

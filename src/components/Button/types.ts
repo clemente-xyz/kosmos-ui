@@ -7,6 +7,7 @@ export type IProps = {
   format?: IButtonFormat;
   size?: IButtonSize;
   style?: React.CSSProperties;
+  className?: string;
   disabled?: boolean;
   loading?: boolean;
 };
