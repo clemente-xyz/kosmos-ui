@@ -19,6 +19,7 @@ import Stepper from "./components/Stepper";
 import Switch from "./components/Switch";
 import Tabs from "./components/Tabs";
 import TextInput from "./components/TextInput";
+import Viewpager from "./components/Viewpager";
 
 // Hooks
 import { useOutsideContainer } from "./hooks";
@@ -71,6 +72,7 @@ export {
   Switch,
   Tabs,
   TextInput,
+  Viewpager,
   // Hooks
   useOutsideContainer,
   // Icons
