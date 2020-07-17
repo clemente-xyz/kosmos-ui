@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 import CarretIcon from "../../icons/Carret";
 
+import { IProps } from "./types";
 import { MainContainer, Slide, Button } from "./styles";
 
-function Slider({ slides }: { slides: string[] }) {
+function Slider({ slides, style, className }: IProps) {
   const [xCoordinate, setXCoordinate] = useState(0);
 
   return (
-    <MainContainer>
+    <MainContainer style={style} className={className}>
       {slides.map((slide, index) => {
         return (
           <Slide
