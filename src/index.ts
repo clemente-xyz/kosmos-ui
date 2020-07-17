@@ -19,6 +19,7 @@ import Stepper from "./components/Stepper";
 import Switch from "./components/Switch";
 import Tabs from "./components/Tabs";
 import TextInput from "./components/TextInput";
+import Slider from "./components/Slider";
 
 // Hooks
 import { useOutsideContainer } from "./hooks";
@@ -67,6 +68,7 @@ export {
   OptionsMenu,
   SectionedDialog,
   SelectInput,
+  Slider,
   Stepper,
   Switch,
   Tabs,
