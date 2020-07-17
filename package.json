@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@types/draft-js": "^0.10.40",
-    "@types/lodash-es": "^4.17.3",
     "@types/markdown-draft-js": "^2.2.1",
     "@types/react": "^16.9.35",
     "@types/react-color": "^3.0.1",
@@ -28,12 +27,10 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.3.1",
     "draft-js": "^0.11.5",
-    "lodash-es": "^4.17.15",
     "markdown-draft-js": "^2.2.0",
     "polished": "^3.6.3",
     "react-color": "^2.18.1",
     "react-dropzone": "^11.0.1",
-    "react-use-gesture": "^7.0.15",
     "styled-components": "^5.1.0"
   }
 }
