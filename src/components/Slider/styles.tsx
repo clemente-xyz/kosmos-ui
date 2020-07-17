@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import theme from "../../theme";
+
 const MainContainer = styled.div`
   position: relative;
   display: flex;
@@ -19,12 +21,12 @@ const Button = styled.button<{ direction: "left" | "right" }>`
   position: absolute;
   border: none;
   outline: none;
-  color: ${({ theme }) => theme.colorsPalette.white.default};
+  color: ${theme.colorsPalette.white.default};
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
   padding: 8px;
-  background: ${({ theme }) => theme.colorsPalette.black.default};
+  background: ${theme.colorsPalette.black.default};
   opacity: 0.3;
   display: flex;
   align-items: center;
