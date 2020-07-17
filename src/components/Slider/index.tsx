@@ -29,7 +29,7 @@ function Slider({ slides }: { slides: string[] }) {
         }
         direction="left"
       >
-        <CarretIcon direction="left" />
+        <CarretIcon direction="left" height="16px" />
       </Button>
 
       <Button
@@ -40,7 +40,7 @@ function Slider({ slides }: { slides: string[] }) {
         }
         direction="right"
       >
-        <CarretIcon />
+        <CarretIcon height="16px" />
       </Button>
     </MainContainer>
   );
