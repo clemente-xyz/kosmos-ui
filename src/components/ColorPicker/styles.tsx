@@ -7,10 +7,9 @@ const MainContainer = styled.section`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 30px;
+  height: 32px;
   background-color: ${theme.colorsPalette.gray.superLight};
   border-radius: 5px;
-  padding: 5px;
   position: relative;
 `;
 
@@ -27,12 +26,12 @@ const CurrentColorContainer = styled.div<{ color: string }>`
 const PickerButton = styled.button`
   display: flex;
   justify-content: center;
-  margin-right: 10px;
+  margin-right: 8px;
   border: none;
   background-color: ${theme.colorsPalette.gray.default};
   border-radius: 50%;
-  height: 23px;
-  width: 23px;
+  height: 24px;
+  width: 24px;
   color: ${theme.colorsPalette.white.default};
   transition: 0.3s background-color;
 
