@@ -22,7 +22,7 @@ function Slider({ slides, style, className }: IProps) {
         );
       })}
 
-      {slides.length > 0 && (
+      {slides.length > 1 && (
         <>
           <Button
             onClick={() =>
