@@ -22,27 +22,35 @@ function Slider({ slides, style, className }: IProps) {
         );
       })}
 
-      <Button
-        onClick={() =>
-          setXCoordinate(
-            xCoordinate >= 0 ? (slides.length - 1) * -100 : xCoordinate + 100
-          )
-        }
-        direction="left"
-      >
-        <CarretIcon direction="left" height="16px" />
-      </Button>
+      {slides.length > 1 && (
+        <>
+          <Button
+            onClick={() =>
+              setXCoordinate(
+                xCoordinate >= 0
+                  ? (slides.length - 1) * -100
+                  : xCoordinate + 100
+              )
+            }
+            direction="left"
+          >
+            <CarretIcon direction="left" height="16px" />
+          </Button>
 
-      <Button
-        onClick={() =>
-          setXCoordinate(
-            xCoordinate <= (slides.length - 1) * -100 ? 0 : xCoordinate - 100
-          )
-        }
-        direction="right"
-      >
-        <CarretIcon height="16px" />
-      </Button>
+          <Button
+            onClick={() =>
+              setXCoordinate(
+                xCoordinate <= (slides.length - 1) * -100
+                  ? 0
+                  : xCoordinate - 100
+              )
+            }
+            direction="right"
+          >
+            <CarretIcon height="16px" />
+          </Button>
+        </>
+      )}
     </MainContainer>
   );
 }
