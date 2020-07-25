@@ -3,10 +3,11 @@ import {
   Editor,
   EditorState,
   convertToRaw,
+  convertFromRaw,
   RichUtils,
   DefaultDraftBlockRenderMap,
 } from "draft-js";
-import { draftToMarkdown } from "markdown-draft-js";
+import { draftToMarkdown, markdownToDraft } from "markdown-draft-js";
 import "draft-js/dist/Draft.css";
 
 import theme from "../../theme";
@@ -17,27 +18,43 @@ import { IProps } from "./types";
 import { styleMap } from "./constants";
 import { MainContainer, RichEditorContainer } from "./styles";
 
-function getBlockStyle(block: any) {
-  switch (block.getType()) {
-    case "blockquote":
-      return "RichEditor-blockquote";
-
-    default:
-      return null;
-  }
-}
-
+/**
+ * Renders a rich content editor. Transform automatically all typed
+ * content into a plain markdown string in order to be easy to save
+ * on a db.
+ * @param prevContent Previous content (if there is) in plain markdown
+ * string format.
+ * @param onChange Handler triggered on every content state change.
+ * Allows you to manage externally the content you are editing.
+ * @param error An error message to display if there is.
+ * @param style Extra styles to add to the component main container.
+ */
 function ContentEditor({
-  placeholder,
+  prevContent,
   onChange: externalOnChange,
-  style,
   error,
-}: IProps) {
+  style,
+}: IProps): JSX.Element {
   const contentEditorRef = useRef<Editor>(null);
 
+  const prevRawContent = markdownToDraft(prevContent || "");
+  const prevContentState = convertFromRaw(prevRawContent);
+
   const [editorState, setEditorState] = useState<EditorState>(
-    EditorState.createEmpty()
+    prevContent
+      ? EditorState.createWithContent(prevContentState)
+      : EditorState.createEmpty()
   );
+
+  function getBlockStyle(block: any) {
+    switch (block.getType()) {
+      case "blockquote":
+        return "RichEditor-blockquote";
+
+      default:
+        return null;
+    }
+  }
 
   function focusContentEditor() {
     contentEditorRef &&
@@ -92,7 +109,6 @@ function ContentEditor({
             blockStyleFn={getBlockStyle}
             customStyleMap={styleMap}
             // TODO: Solve display:none styles issue before re-enabling this prop
-            // placeholder={placeholder || "Escribe aquí tu contenido..."}
             blockRenderMap={DefaultDraftBlockRenderMap}
           />
         </RichEditorContainer>

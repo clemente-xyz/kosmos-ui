@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import Chip from "./components/Chip";
 import ColorPicker from "./components/ColorPicker";
 import ContentEditor from "./components/ContentEditor";
+import ContentViewer from "./components/ContentViewer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
 import GalaxyBackground from "./components/GalaxyBackground";
@@ -57,6 +58,7 @@ export {
   Chip,
   ColorPicker,
   ContentEditor,
+  ContentViewer,
   DatePicker,
   Dialog,
   GalaxyBackground,
