@@ -1,8 +1,8 @@
 import { CSSProperties } from "react";
 
 export type IProps = {
-  style?: CSSProperties;
-  error?: string;
-  placeholder?: string;
+  prevContent?: string;
   onChange?: (currentValue: string) => void;
+  error?: string;
+  style?: CSSProperties;
 };
