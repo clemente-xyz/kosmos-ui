@@ -1,9 +1,9 @@
 import {
   useEffect,
   useState,
+  useCallback,
   MutableRefObject,
   MouseEvent,
-  ReactNode,
 } from "react";
 
 /**
@@ -46,61 +46,54 @@ function useOutsideContainer(
  * Tabs component.
  * @param content Array of tabs, in which it is specified the tab
  * label and component to render on active mode.
+ * @returns Current tabs status and the tab click handler.
  */
-function useTabs({
-  content,
-}: {
-  content: {
-    label: string;
-    component: ReactNode;
+function useTabs(
+  tabIds: string[]
+): {
+  tabs: {
+    _id: string;
+    isActive: boolean;
   }[];
-}) {
+  handleTabClick: (tabId: string) => void;
+} {
   const [tabs, setTabs] = useState<
     {
       _id: string;
-      component: ReactNode;
-      label: string;
       isActive: boolean;
     }[]
-  >([]);
+  >(getInitialConfigs());
 
-  useEffect(() => {
-    if (content.length > 0) {
-      content.map((item, index) => {
-        if (index === 0) {
-          return setTabs([
-            {
-              _id: `tab-${index}`,
-              component: item.component,
-              label: item.label,
-              isActive: true,
-            },
-          ]);
-        }
+  const handleTabClick = useCallback(
+    (tabId: string) =>
+      setTabs((prevTabs) =>
+        prevTabs.map((tab) => {
+          if (tab._id === tabId) {
+            return { ...tab, isActive: true };
+          }
 
-        return setTabs((prevTabs) => [
-          ...prevTabs,
-          {
-            _id: `tab-${index}`,
-            component: item.component,
-            label: item.label,
-            isActive: false,
-          },
-        ]);
-      });
-    }
-  }, []);
+          return { ...tab, isActive: false };
+        })
+      ),
+    []
+  );
 
-  function handleTabClick(tabId: string) {
-    setTabs((prevTabs) =>
-      prevTabs.map((tab) => {
-        if (tab._id === tabId) {
-          return { ...tab, isActive: true };
-        }
+  function getInitialConfigs() {
+    if (tabIds.length <= 0) return [];
 
-        return { ...tab, isActive: false };
-      })
-    );
+    return tabIds.map((_id, index) => {
+      if (index === 0) {
+        return {
+          _id,
+          isActive: true,
+        };
+      }
+
+      return {
+        _id,
+        isActive: false,
+      };
+    });
   }
 
   return { tabs, handleTabClick };
