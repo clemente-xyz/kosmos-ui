@@ -18,12 +18,12 @@ import SectionedDialog from "./components/SectionedDialog";
 import SelectInput from "./components/SelectInput";
 import Stepper from "./components/Stepper";
 import Switch from "./components/Switch";
-import Tabs from "./components/Tabs";
+import { Tabs, TabsSliderContainer, TabContainer } from "./components/Tabs";
 import TextInput from "./components/TextInput";
 import Slider from "./components/Slider";
 
 // Hooks
-import { useOutsideContainer } from "./hooks";
+import { useOutsideContainer, useTabs } from "./hooks";
 
 // Icons
 import CalendarIcon from "./icons/Calendar";
@@ -74,9 +74,12 @@ export {
   Stepper,
   Switch,
   Tabs,
+  TabsSliderContainer,
+  TabContainer,
   TextInput,
   // Hooks
   useOutsideContainer,
+  useTabs,
   // Icons
   CalendarIcon,
   CardIcon,

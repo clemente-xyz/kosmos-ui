@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { IProps, ITabsProps } from "./types";
-import { SliderContainer, TabContainer } from "./styles";
+import { TabsSliderContainer, TabContainer } from "./styles";
 
 /**
  * Renders a sliding underline menu, passing to parent the active component to render.
@@ -55,7 +55,7 @@ function Tabs({ content }: IProps) {
 
   return (
     <>
-      <SliderContainer>
+      <TabsSliderContainer>
         {tabs.map((tab, index) => {
           return (
             <TabContainer
@@ -67,11 +67,11 @@ function Tabs({ content }: IProps) {
             </TabContainer>
           );
         })}
-      </SliderContainer>
+      </TabsSliderContainer>
 
       {activeComponent && activeComponent.component}
     </>
   );
 }
 
-export default Tabs;
+export { Tabs, TabsSliderContainer, TabContainer };

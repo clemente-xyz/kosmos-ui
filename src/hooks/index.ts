@@ -1,4 +1,10 @@
-import { useEffect, useState, MutableRefObject, MouseEvent } from "react";
+import {
+  useEffect,
+  useState,
+  MutableRefObject,
+  MouseEvent,
+  ReactNode,
+} from "react";
 
 /**
  * Alert clicks outside of the passed ref.
@@ -35,4 +41,63 @@ function useOutsideContainer(
   return clickedOutside;
 }
 
-export { useOutsideContainer };
+function useTabs({
+  content,
+}: {
+  content: {
+    component: ReactNode;
+    label: string;
+  }[];
+}) {
+  const [tabs, setTabs] = useState<
+    {
+      _id: string;
+      component: ReactNode;
+      label: string;
+      isActive: boolean;
+    }[]
+  >([]);
+
+  useEffect(() => {
+    if (content.length > 0) {
+      content.map((item, index) => {
+        if (index === 0) {
+          return setTabs([
+            {
+              _id: `tab-${index}`,
+              component: item.component,
+              label: item.label,
+              isActive: true,
+            },
+          ]);
+        }
+
+        return setTabs((prevTabs) => [
+          ...prevTabs,
+          {
+            _id: `tab-${index}`,
+            component: item.component,
+            label: item.label,
+            isActive: false,
+          },
+        ]);
+      });
+    }
+  }, []);
+
+  function handleTabClick(tabId: string) {
+    setTabs((prevTabs) =>
+      prevTabs.map((tab) => {
+        if (tab._id === tabId) {
+          return { ...tab, isActive: true };
+        }
+
+        return { ...tab, isActive: false };
+      })
+    );
+  }
+
+  return { tabs, handleTabClick };
+}
+
+export { useOutsideContainer, useTabs };
