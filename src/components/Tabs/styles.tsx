@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
-const SliderContainer = styled.section`
+const TabsSliderContainer = styled.section`
   display: flex;
   margin-bottom: 30px;
 `;
@@ -35,4 +35,4 @@ const TabContainer = styled.button<{ isActive: boolean }>`
   }
 `;
 
-export { SliderContainer, TabContainer };
+export { TabsSliderContainer, TabContainer };

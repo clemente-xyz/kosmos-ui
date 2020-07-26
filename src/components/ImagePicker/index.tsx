@@ -4,7 +4,7 @@ import { useDropzone } from "react-dropzone";
 import theme from "../../theme";
 
 import { IProps } from "./types";
-import { ImageContainer, MainContainer, Paragraph } from "./styles";
+import { MainContainer, SelectContainer, Paragraph } from "./styles";
 
 /**
  * Renders an image picker component, which pass to parent the imported img. Renders the picker and also the current selected img.
@@ -73,9 +73,9 @@ function ImagePicker({
           <p>Suelta aquí tu imagen...</p>
         ) : (
           <>
-            <ImageContainer>
+            <SelectContainer>
               <Paragraph>Seleccionar</Paragraph>
-            </ImageContainer>
+            </SelectContainer>
           </>
         )}
       </MainContainer>

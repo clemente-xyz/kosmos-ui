@@ -1,4 +1,10 @@
-import { useEffect, useState, MutableRefObject, MouseEvent } from "react";
+import {
+  useEffect,
+  useState,
+  useCallback,
+  MutableRefObject,
+  MouseEvent,
+} from "react";
 
 /**
  * Alert clicks outside of the passed ref.
@@ -35,4 +41,62 @@ function useOutsideContainer(
   return clickedOutside;
 }
 
-export { useOutsideContainer };
+/**
+ * Provides state logic management and a click handler for creating a
+ * Tabs component.
+ * @param content Array of tabs, in which it is specified the tab
+ * label and component to render on active mode.
+ * @returns Current tabs status and the tab click handler.
+ */
+function useTabs(
+  tabIds: string[]
+): {
+  tabs: {
+    _id: string;
+    isActive: boolean;
+  }[];
+  handleTabClick: (tabId: string) => void;
+} {
+  const [tabs, setTabs] = useState<
+    {
+      _id: string;
+      isActive: boolean;
+    }[]
+  >(getInitialConfigs());
+
+  const handleTabClick = useCallback(
+    (tabId: string) =>
+      setTabs((prevTabs) =>
+        prevTabs.map((tab) => {
+          if (tab._id === tabId) {
+            return { ...tab, isActive: true };
+          }
+
+          return { ...tab, isActive: false };
+        })
+      ),
+    []
+  );
+
+  function getInitialConfigs() {
+    if (tabIds.length <= 0) return [];
+
+    return tabIds.map((_id, index) => {
+      if (index === 0) {
+        return {
+          _id,
+          isActive: true,
+        };
+      }
+
+      return {
+        _id,
+        isActive: false,
+      };
+    });
+  }
+
+  return { tabs, handleTabClick };
+}
+
+export { useOutsideContainer, useTabs };

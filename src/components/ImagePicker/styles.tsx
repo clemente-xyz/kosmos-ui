@@ -11,8 +11,8 @@ const MainContainer = styled.div<{ backgroundImage: string }>`
   align-items: center;
   justify-content: flex-end;
   text-align: center;
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   border: 1px solid ${theme.colorsPalette.gray.lighter};
   border-radius: 8px;
@@ -25,11 +25,10 @@ const Paragraph = styled.p`
   margin-bottom: 20px;
 `;
 
-const ImageContainer = styled.div`
-  position: absolute;
+const SelectContainer = styled.div`
   z-index: 1;
   height: 60px;
-  width: 200px;
+  width: 100%;
   background: linear-gradient(to top, #0000008c, transparent);
   display: flex;
   flex-direction: column;
@@ -37,4 +36,4 @@ const ImageContainer = styled.div`
   border-radius: 8px;
 `;
 
-export { ImageContainer, MainContainer, Paragraph };
+export { MainContainer, SelectContainer, Paragraph };
