@@ -41,12 +41,18 @@ function useOutsideContainer(
   return clickedOutside;
 }
 
+/**
+ * Provides state logic management and a click handler for creating a
+ * Tabs component.
+ * @param content Array of tabs, in which it is specified the tab
+ * label and component to render on active mode.
+ */
 function useTabs({
   content,
 }: {
   content: {
-    component: ReactNode;
     label: string;
+    component: ReactNode;
   }[];
 }) {
   const [tabs, setTabs] = useState<

@@ -4,8 +4,10 @@ import { IProps, ITabsProps } from "./types";
 import { TabsSliderContainer, TabContainer } from "./styles";
 
 /**
- * Renders a sliding underline menu, passing to parent the active component to render.
- * @param content Array of tabs, in which it is specified the tab label and component to render on active mode.
+ * Renders a sliding underline menu, passing to parent the active
+ * component to render.
+ * @param content Array of tabs, in which it is specified the tab
+ * label and component to render on active mode.
  */
 function Tabs({ content }: IProps) {
   const [tabs, setTabs] = useState<ITabsProps[]>([]);
