@@ -5,6 +5,7 @@ const MainContainer = styled.div`
   color: ${({ theme }) => theme.colorsPalette.gray.default};
   line-height: 25px;
   padding: 15px;
+  z-index: 0;
 `;
 
 export { MainContainer };

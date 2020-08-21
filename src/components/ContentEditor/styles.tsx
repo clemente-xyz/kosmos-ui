@@ -11,6 +11,7 @@ const MainContainer = styled.section`
   border: 1px solid #ddd;
   font-size: 14px;
   padding: 15px;
+  z-index: 0;
 `;
 
 const RichEditorControlsContainer = styled.section`

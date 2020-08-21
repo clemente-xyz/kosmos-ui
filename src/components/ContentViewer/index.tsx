@@ -22,11 +22,9 @@ function ContentViewer({
   const editorState = EditorState.createWithContent(contentState);
 
   return (
-    <>
-      <MainContainer style={style}>
-        <Editor editorState={editorState} readOnly={true} onChange={() => {}} />
-      </MainContainer>
-    </>
+    <MainContainer style={style}>
+      <Editor editorState={editorState} readOnly={true} onChange={() => {}} />
+    </MainContainer>
   );
 }
 
