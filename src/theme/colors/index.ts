@@ -49,7 +49,7 @@ const colorsPalette = {
     light: "hsl(59, 94%, 80%)",
     lighter: "hsl(60, 92%, 90%)",
     dark: "hsl(59, 94%, 50%)",
-    darker: "hsl(59, 94%, 40%)",
+    darker: "hsl(59, 94%, 25%)",
   },
   orange: {
     default: "hsl(40, 100%, 58%)",
