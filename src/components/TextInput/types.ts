@@ -18,5 +18,6 @@ export type IProps = {
   onDrop?: () => boolean;
   autoComplete?: string;
   onBlur?: (event: FocusEvent<any>) => void;
+  readOnly?: boolean;
   error?: string;
 };

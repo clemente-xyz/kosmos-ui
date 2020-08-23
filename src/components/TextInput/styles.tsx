@@ -89,6 +89,12 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
     font-size: ${theme.fontSizes.small};
   }
 
+  &:read-only ~ ${Label} {
+    top: -15px;
+    color: ${({ highlightColor }) => highlightColor};
+    font-size: ${theme.fontSizes.small};
+  }
+
   &:focus ~ ${Bar}::before, &:focus ~ ${Bar}::after {
     width: 50%;
 

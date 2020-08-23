@@ -30,6 +30,7 @@ function TextInput({
   onDrag,
   onDrop,
   autoComplete,
+  readOnly,
   error,
 }: IProps) {
   return (
@@ -50,6 +51,7 @@ function TextInput({
         onDrag={onDrag}
         onDrop={onDrop}
         autoComplete={autoComplete}
+        readOnly={readOnly}
         onBlur={onBlur}
       />
 
