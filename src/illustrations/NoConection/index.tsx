@@ -39,7 +39,7 @@ function NoConectionIllustration({
             <path
               d="M133.440285,12 C126.931394,13.7225775 121.79208,18.8128579 120,25.2931851"
               id="Oval"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               transform="translate(126.720142, 18.646593) scale(-1, 1) translate(-126.720142, -18.646593) "

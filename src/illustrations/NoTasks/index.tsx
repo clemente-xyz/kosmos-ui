@@ -38,7 +38,7 @@ function NoTasksIllustration({
             <path
               d="M106,74.1816406 L106,78.9248047 L106,74.1816406 Z M106,50.1816406 L106,68.5 L106,50.1816406 Z"
               id="line"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -54,21 +54,21 @@ function NoTasksIllustration({
             <path
               d="M93,1.52895478e-14 C90.3333333,4.21354167 89,7.88020833 89,11 C89,16.5561523 93.6538086,19.0444336 93.6538086,25.0629883 C93.6538086,28.1176758 92.1025391,31.1507161 89,34.1621094"
               id="line"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
             ></path>
             <path
               d="M81,11 C80.1274414,16.5126953 84,17.5322148 84,22.4745806 C84,24.9830537 83,27.4915269 81,30"
               id="line"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
             ></path>
             <path
               d="M99.795166,8.47412109 C98.4741211,11.8933105 99.2162854,13.9774011 99.795166,15.2041016 C101.032522,17.8261719 103,20.0895996 103,22.7578125 C103,25.8567708 101.931722,28.8391927 99.795166,31.7050781"
               id="line"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
             ></path>

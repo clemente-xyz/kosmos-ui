@@ -40,7 +40,7 @@ function DoneCheckIllustration({
             <g
               id="bling"
               transform="translate(149.000000, 11.000000)"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2.5"
@@ -61,7 +61,7 @@ function DoneCheckIllustration({
             <g
               id="bling"
               transform="translate(68.000000, 114.000000)"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2.5"
@@ -82,7 +82,7 @@ function DoneCheckIllustration({
             <path
               d="M101.526447,40.4152014 C99.5285363,39.5491455 97.4503157,38.8342909 95.3061064,38.285009 C91.9741415,37.4314599 88.4828321,36.9777222 84.8859164,36.9777222 C83.4114764,36.9777222 81.9547817,37.053965 80.5195338,37.202736 M75.781319,37.9707019 C74.4744022,38.2605598 73.1903559,38.6115095 71.9323067,39.0204134 C71.003155,39.3224157 70.0881841,39.6560308 69.1886538,40.0199947"
               id="Shape"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               fill="#FFFFFF"
               strokeLinecap="round"

@@ -64,24 +64,24 @@ function ErrorIllustration({
             <path
               d="M133.440285,23 C126.931394,24.7225775 121.79208,29.8128579 120,36.2931851"
               id="Oval"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               transform="translate(126.720142, 29.646593) scale(-1, 1) translate(-126.720142, -29.646593) "
             ></path>
             <circle
               id="Oval"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2"
               cx="141"
               cy="3"
               r="3"
             ></circle>
-            <circle id="Oval" fill="#A4C3FE" cx="172" cy="19" r="3"></circle>
+            <circle id="Oval" fill="#a4c8ff" cx="172" cy="19" r="3"></circle>
             <path
               d="M153,18 L157.242641,13.7573593 L153,18 L148.757359,13.7573593 L153,18 Z M153,18 L148.884418,22.1155824 L153,18 L157.115582,22.1155824 L153,18 Z"
               id="Line-5"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -89,12 +89,12 @@ function ErrorIllustration({
             <path
               d="M57.4038059,34.5961941 L60.4038059,31.5961941 L57.4038059,34.5961941 L54.4038059,31.5961941 L57.4038059,34.5961941 Z M57.4038059,34.5961941 L54.4038059,37.5961941 L57.4038059,34.5961941 L60.4038059,37.5961941 L57.4038059,34.5961941 Z"
               id="Line-4"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             ></path>
-            <circle id="Oval" fill="#A4C3FE" cx="68" cy="22" r="3"></circle>
+            <circle id="Oval" fill="#a4c8ff" cx="68" cy="22" r="3"></circle>
           </g>
         </g>
       </g>

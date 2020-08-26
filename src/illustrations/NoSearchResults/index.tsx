@@ -57,7 +57,7 @@ function NoSearchResultsIllustration({
               <path
                 d="M34,15 C32.2773142,15 30.6081757,15.2292632 29.0214315,15.6589426 C20.9428274,17.8465728 15,25.2292755 15,34"
                 id="Oval"
-                stroke="#A4C3FE"
+                stroke="#a4c8ff"
                 strokeLinecap="round"
               ></path>
               <path d="M61,60 L67,66" id="Path-4" stroke="#75A4FE"></path>
@@ -77,7 +77,7 @@ function NoSearchResultsIllustration({
             <path
               d="M133.5,27 L116.324219,27 L133.5,27 Z M140.5,27 L138.278809,27 L140.5,27 Z M127.175781,34.7773438 L119,34.7773438 L127.175781,34.7773438 Z"
               id="Line-8"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -85,7 +85,7 @@ function NoSearchResultsIllustration({
             <path
               d="M32.5,48 L15.3242188,48 L32.5,48 Z M9.5,48 L5.27880859,48 L9.5,48 Z M37.1757812,56.7773438 L29.0000002,56.7773438 L37.1757812,56.7773438 Z"
               id="Line-8"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"

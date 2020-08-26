@@ -61,7 +61,7 @@ function DocumentsIllustration({
             <path
               d="M71.671875,17 L97.671875,17 L71.671875,17 Z M71.671875,29 L114.671875,29 L71.671875,29 Z M71.671875,42 L114.671875,42 L71.671875,42 Z M71.671875,55 L114.671875,55 L71.671875,55 Z M71.671875,68 L97.671875,68 L71.671875,68 Z"
               id="lines"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"

@@ -46,14 +46,14 @@ function MessagesIllustration({
             <path
               d="M72.6621124,30.3111186 C71.7541174,31.8430522 70.967234,33.432891 70.3117686,35.0721208"
               id="Line"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
             ></path>
             <path
               d="M91.0220003,14.0732169 C84.4692863,17.2005389 78.9371076,21.6243741 74.9392765,26.920269"
               id="Line"
-              stroke="#A4C3FE"
+              stroke="#a4c8ff"
               strokeWidth="2.5"
               strokeLinecap="round"
             ></path>
