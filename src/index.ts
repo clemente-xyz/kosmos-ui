@@ -49,7 +49,18 @@ import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TrashIcon from "./icons/Trash";
 
 // Illustrations
+import CreditCardIllustration from "./illustrations/CreditCart";
+import Documentsllustration from "./illustrations/Documents";
+import DoneCheckIllustration from "./illustrations/DoneCheck";
+import EmptyCartIllustration from "./illustrations/EmptyCart";
 import EmptyInboxIllustration from "./illustrations/EmptyInbox";
+import ErrorIllustration from "./illustrations/Error";
+import ImagesIllustration from "./illustrations/Images";
+import LocationIllustration from "./illustrations/Location";
+import MessagesIllustration from "./illustrations/Messages";
+import NoConectionIllustration from "./illustrations/NoConection";
+import NoSearchResultsIllustration from "./illustrations/NoSearchResults";
+import NoTasksIllustration from "./illustrations/NoTasks";
 
 // Theme
 import theme from "./theme";
@@ -106,7 +117,18 @@ export {
   ThemeAndContentIcon,
   TrashIcon,
   // Illustrations
+  CreditCardIllustration,
+  Documentsllustration,
+  DoneCheckIllustration,
+  EmptyCartIllustration,
   EmptyInboxIllustration,
+  ErrorIllustration,
+  ImagesIllustration,
+  LocationIllustration,
+  MessagesIllustration,
+  NoConectionIllustration,
+  NoSearchResultsIllustration,
+  NoTasksIllustration,
   // Theme
   theme,
 };
