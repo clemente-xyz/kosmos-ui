@@ -36,6 +36,7 @@ import EyeIcon from "./icons/Eye";
 import FacebookIcon from "./icons/Facebook";
 import HamburgerIcon from "./icons/Hamburger";
 import InstagramIcon from "./icons/Instagram";
+import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
 import ListIcon from "./icons/List";
 import PenIcon from "./icons/Pen";
@@ -105,6 +106,7 @@ export {
   FacebookIcon,
   HamburgerIcon,
   InstagramIcon,
+  LayersIcon,
   LineChartIcon,
   ListIcon,
   PenIcon,
