@@ -1,13 +1,13 @@
 import React from "react";
 
 import theme from "../../theme";
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function PhotosIcon({
   height = "45px",
   color = theme.colorsPalette.gray.light,
   style,
-}: IconProps) {
+}: IVectorProps) {
   return (
     <svg
       height={height}

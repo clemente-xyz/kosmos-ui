@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function TrashIcon({
   height = "20px",
   color = "currentColor",
-  style
-}: IconProps) {
+  style,
+}: IVectorProps) {
   return (
     <svg
       height={height}

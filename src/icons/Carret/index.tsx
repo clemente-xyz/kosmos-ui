@@ -1,9 +1,9 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 import { IDirections } from "../../types";
 
-type IProps = IconProps & {
+type IProps = IVectorProps & {
   direction?: IDirections;
 };
 

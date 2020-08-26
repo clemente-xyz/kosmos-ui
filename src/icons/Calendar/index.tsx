@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function CalendarIcon({
   height = "20px",
   color = "currentColor",
-  style
-}: IconProps) {
+  style,
+}: IVectorProps) {
   return (
     <svg height={height} viewBox="0 0 512 512" fill={color} style={style}>
       <path

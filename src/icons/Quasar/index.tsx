@@ -1,11 +1,11 @@
 import React from "react";
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function QuasarIcon({
   height = "62px",
   color = "currentColor",
   style,
-}: IconProps) {
+}: IVectorProps) {
   return (
     <svg height={height} style={style} viewBox="0 0 8040 8040">
       <path

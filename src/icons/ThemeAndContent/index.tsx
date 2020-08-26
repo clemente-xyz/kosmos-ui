@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function ThemeAndContentIcon({
   height = "20px",
   color = "currentColor",
   style,
-}: IconProps) {
+}: IVectorProps) {
   return (
     <svg height={height} style={style} viewBox="0 0 518.4 518.4">
       <path

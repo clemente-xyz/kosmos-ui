@@ -48,6 +48,9 @@ import SuccessIcon from "./icons/Success";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TrashIcon from "./icons/Trash";
 
+// Illustrations
+import EmptyInboxIllustration from "./illustrations/EmptyInbox";
+
 // Theme
 import theme from "./theme";
 
@@ -102,6 +105,8 @@ export {
   SuccessIcon,
   ThemeAndContentIcon,
   TrashIcon,
+  // Illustrations
+  EmptyInboxIllustration,
   // Theme
   theme,
 };

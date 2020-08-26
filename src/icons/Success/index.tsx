@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function SuccessIcon({
   height = "52px",
   color = "currentColor",
-  style
-}: IconProps) {
+  style,
+}: IVectorProps) {
   return (
     <svg height={height} style={style} x="0px" y="0px" viewBox="0 0 52 52">
       <g>

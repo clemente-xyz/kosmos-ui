@@ -1,13 +1,13 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function CardIcon({
   height = "20px",
   color = "currentColor",
   style,
   type = "na",
-}: IconProps & {
+}: IVectorProps & {
   type?:
     | "redcompra"
     | "visa"

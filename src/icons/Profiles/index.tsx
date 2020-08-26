@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IVectorProps } from "../../types";
 
 function ProfilesIcon({
   height = "20px",
   color = "currentColor",
   style,
-}: IconProps) {
+}: IVectorProps) {
   return (
     <svg style={style} height={height} viewBox="0 0 100 100">
       <circle fill={color} cx="34.5" cy="40.4" r="13.3" />
