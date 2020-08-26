@@ -23,7 +23,7 @@ function getButtonStyles({
       fontColor: theme.colorsPalette.white.default,
     },
     success: {
-      backgroundColor: theme.colorsPalette.black.default,
+      backgroundColor: theme.colorsPalette.green.default,
       fontColor: theme.colorsPalette.white.default,
     },
   };
@@ -48,7 +48,7 @@ function getButtonStyles({
         backgroundColorOnHover:
           format === "outline"
             ? buttonsTheme[type].backgroundColor
-            : darken(0.9, buttonsTheme[type].fontColor),
+            : theme.colorsPalette.black.dark,
         fontColorOnHover: buttonsTheme[type].fontColor,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
@@ -71,8 +71,8 @@ function getButtonStyles({
         backgroundColorOnHover:
           format === "outline"
             ? theme.colorsPalette.gray.superLight
-            : darken(0.1, theme.colorsPalette.gray.superLight as string),
-        fontColorOnHover: theme.colorsPalette.black.default,
+            : theme.colorsPalette.gray.lighter,
+        fontColorOnHover: theme.colorsPalette.gray.dark,
         fontSize: size === "small" ? "12px" : "15px",
         padding: size === "small" ? "5px 15px" : "10px 25px",
       };
