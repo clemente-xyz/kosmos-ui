@@ -8,6 +8,7 @@ import ContentViewer from "./components/ContentViewer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
 import GalaxyBackground from "./components/GalaxyBackground";
+import IllustratedMessage from "./components/IllustratedMessage";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
 import LoadingSection from "./components/LoadingSection";
@@ -77,6 +78,7 @@ export {
   DatePicker,
   Dialog,
   GalaxyBackground,
+  IllustratedMessage,
   ImagePicker,
   Loader,
   LoadingSection,
