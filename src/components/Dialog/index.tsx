@@ -60,33 +60,37 @@ function Dialog({
                 content
               )}
 
-              <ButtonsContainer>
-                {React.isValidElement(declineAction) ? (
-                  declineAction
-                ) : (
-                  <Button
-                    //@ts-ignore
-                    onClick={declineAction.callback}
-                    //@ts-ignore
-                    text={declineAction.message}
-                    type={confirmAction ? "secondary" : "primary"}
-                    style={{ marginRight: confirmAction ? "15px" : "none" }}
-                  />
-                )}
+              {declineAction &&
+                //@ts-ignore
+                declineAction.message && (
+                  <ButtonsContainer>
+                    {React.isValidElement(declineAction) ? (
+                      declineAction
+                    ) : (
+                      <Button
+                        //@ts-ignore
+                        onClick={declineAction.callback}
+                        //@ts-ignore
+                        text={declineAction.message}
+                        type={confirmAction ? "secondary" : "primary"}
+                        style={{ marginRight: confirmAction ? "15px" : "none" }}
+                      />
+                    )}
 
-                {confirmAction &&
-                  (React.isValidElement(confirmAction) ? (
-                    confirmAction
-                  ) : (
-                    <Button
-                      //@ts-ignore
-                      onClick={confirmAction.callback}
-                      //@ts-ignore
-                      text={confirmAction.message}
-                      type="primary"
-                    />
-                  ))}
-              </ButtonsContainer>
+                    {confirmAction &&
+                      (React.isValidElement(confirmAction) ? (
+                        confirmAction
+                      ) : (
+                        <Button
+                          //@ts-ignore
+                          onClick={confirmAction.callback}
+                          //@ts-ignore
+                          text={confirmAction.message}
+                          type="primary"
+                        />
+                      ))}
+                  </ButtonsContainer>
+                )}
             </Card>
           </Backdrop>
         ) : null;
