@@ -11,6 +11,7 @@ const MainContainer = styled.section`
 const Header = styled.h1`
   font-size: ${theme.fontSizes.regularLarge};
   color: ${theme.colorsPalette.black.default};
+  margin-bottom: 8px;
 `;
 
 const Paragraph = styled.p`
