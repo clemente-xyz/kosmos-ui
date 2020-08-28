@@ -12,6 +12,7 @@ import MessagesIllustration from "../../illustrations/Messages";
 import NoConectionIllustration from "../../illustrations/NoConection";
 import NoSearchResultsIllustration from "../../illustrations/NoSearchResults";
 import NoTasksIllustration from "../../illustrations/NoTasks";
+import UsersIllustration from "../../illustrations/Users";
 
 function getIllustrationToRender(
   illustrationKey:
@@ -26,7 +27,8 @@ function getIllustrationToRender(
     | "messages"
     | "noConection"
     | "noSearchResults"
-    | "noTasks",
+    | "noTasks"
+    | "users",
   illustrationConfigs?: {
     style?: CSSProperties;
     className?: string;
@@ -36,28 +38,42 @@ function getIllustrationToRender(
   switch (illustrationKey) {
     case "creditCard":
       return <CreditCardIllustration {...illustrationConfigs} />;
+
     case "documents":
       return <Documentsllustration {...illustrationConfigs} />;
+
     case "doneCheck":
       return <DoneCheckIllustration {...illustrationConfigs} />;
+
     case "emptyCart":
       return <EmptyCartIllustration {...illustrationConfigs} />;
+
     case "emptyInbox":
       return <EmptyInboxIllustration {...illustrationConfigs} />;
+
     case "error":
       return <ErrorIllustration {...illustrationConfigs} />;
+
     case "images":
       return <ImagesIllustration {...illustrationConfigs} />;
+
     case "location":
       return <LocationIllustration {...illustrationConfigs} />;
+
     case "messages":
       return <MessagesIllustration {...illustrationConfigs} />;
+
     case "noConection":
       return <NoConectionIllustration {...illustrationConfigs} />;
+
     case "noSearchResults":
       return <NoSearchResultsIllustration {...illustrationConfigs} />;
+
     case "noTasks":
       return <NoTasksIllustration {...illustrationConfigs} />;
+
+    case "users":
+      return <UsersIllustration {...illustrationConfigs} />;
 
     default:
       return <div />;

@@ -15,6 +15,7 @@ export type IProps = {
         | "noConection"
         | "noSearchResults"
         | "noTasks"
+        | "users"
       )
     | ReactNode;
   illustrationConfigs?: {
