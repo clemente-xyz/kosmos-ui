@@ -22,7 +22,7 @@ export type IProps = {
     className?: string;
     height?: string;
   };
-  header: string | ReactNode;
+  header?: string | ReactNode;
   headerStyle?: CSSProperties;
   body?: string | ReactNode;
   bodyStyle?: CSSProperties;

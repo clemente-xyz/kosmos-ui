@@ -63,6 +63,7 @@ import MessagesIllustration from "./illustrations/Messages";
 import NoConectionIllustration from "./illustrations/NoConection";
 import NoSearchResultsIllustration from "./illustrations/NoSearchResults";
 import NoTasksIllustration from "./illustrations/NoTasks";
+import UsersIllustration from "./illustrations/Users";
 
 // Theme
 import theme from "./theme";
@@ -133,6 +134,7 @@ export {
   NoConectionIllustration,
   NoSearchResultsIllustration,
   NoTasksIllustration,
+  UsersIllustration,
   // Theme
   theme,
 };

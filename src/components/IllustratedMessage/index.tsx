@@ -20,17 +20,19 @@ function IllustratedMessage({
           ? illustration
           : getIllustrationToRender(illustration as any, illustrationConfigs))}
 
-      {typeof header === "string" ? (
-        <Header style={headerStyle}>{header}</Header>
-      ) : (
-        header
-      )}
+      {header &&
+        (typeof header === "string" ? (
+          <Header style={headerStyle}>{header}</Header>
+        ) : (
+          header
+        ))}
 
-      {typeof body === "string" ? (
-        <Paragraph style={bodyStyle}>{body}</Paragraph>
-      ) : (
-        body
-      )}
+      {body &&
+        (typeof body === "string" ? (
+          <Paragraph style={bodyStyle}>{body}</Paragraph>
+        ) : (
+          body
+        ))}
     </MainContainer>
   );
 }
