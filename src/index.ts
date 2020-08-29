@@ -65,6 +65,9 @@ import NoSearchResultsIllustration from "./illustrations/NoSearchResults";
 import NoTasksIllustration from "./illustrations/NoTasks";
 import UsersIllustration from "./illustrations/Users";
 
+// Animations
+import BlobAnimation from "./animations/Blob";
+
 // Theme
 import theme from "./theme";
 
@@ -135,6 +138,8 @@ export {
   NoSearchResultsIllustration,
   NoTasksIllustration,
   UsersIllustration,
+  // Animations
+  BlobAnimation,
   // Theme
   theme,
 };
