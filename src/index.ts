@@ -7,7 +7,6 @@ import ContentEditor from "./components/ContentEditor";
 import ContentViewer from "./components/ContentViewer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
-import GalaxyBackground from "./components/GalaxyBackground";
 import IllustratedMessage from "./components/IllustratedMessage";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
@@ -44,7 +43,6 @@ import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
 import ProfileIcon from "./icons/Profile";
 import ProfilesIcon from "./icons/Profiles";
-import QuasarIcon from "./icons/Quasar";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import SuccessIcon from "./icons/Success";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
@@ -81,7 +79,6 @@ export {
   ContentViewer,
   DatePicker,
   Dialog,
-  GalaxyBackground,
   IllustratedMessage,
   ImagePicker,
   Loader,
@@ -119,7 +116,6 @@ export {
   PhotosIcon,
   ProfileIcon,
   ProfilesIcon,
-  QuasarIcon,
   ShoppingBagIcon,
   SuccessIcon,
   ThemeAndContentIcon,
