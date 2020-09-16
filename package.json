@@ -1,14 +1,14 @@
 {
   "name": "kosmos-ui",
-  "version": "1.0.26",
+  "version": "1.0.28-beta3",
+  "author": "Clemente Serrano",
+  "license": "ISC",
   "description": "A cool React components UI library",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
     "build": "rm -rf ./lib && yarn tsc"
   },
-  "author": "Clemente Serrano",
-  "license": "ISC",
   "peerDependencies": {
     "react": ">=16.0.0"
   },
@@ -26,11 +26,13 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.3.1",
+    "@popperjs/core": "^2.4.4",
     "draft-js": "^0.11.5",
     "markdown-draft-js": "^2.2.0",
     "polished": "^3.6.3",
     "react-color": "^2.18.1",
     "react-dropzone": "^11.0.1",
+    "react-popper": "^2.2.3",
     "styled-components": "^5.1.0"
   }
 }

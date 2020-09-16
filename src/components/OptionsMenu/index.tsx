@@ -1,7 +1,9 @@
-import React, { useState, useRef } from "react";
-import { useTransition, animated } from "react-spring";
+import React, { useState, useRef, MouseEvent } from "react";
+import { createPortal } from "react-dom";
+import { useTransition } from "react-spring";
+import { usePopper } from "react-popper";
 
-import { useOutsideContainer } from "../../hooks";
+import { useClickOutsideContainer } from "../../hooks";
 
 import { IProps } from "./types";
 import {
@@ -12,10 +14,30 @@ import {
   Label,
 } from "./styles";
 
-function OptionsMenu({ options, triggerButton, position = "left" }: IProps) {
+function OptionsMenu({
+  options,
+  triggerButton,
+  placement = "bottom-start",
+  menuStyle,
+}: IProps) {
   const menuContainerRef = useRef(null);
 
+  let triggerButtonElement: HTMLButtonElement | null;
+
+  const [
+    referenceElement,
+    setReferenceElement,
+  ] = useState<HTMLButtonElement | null>(null);
+
+  const [popperElement, setPopperElement] = useState<HTMLButtonElement | null>(
+    null
+  );
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    placement,
+  });
 
   const spring = useTransition(isMenuOpen, null, {
     delay: 1,
@@ -24,8 +46,25 @@ function OptionsMenu({ options, triggerButton, position = "left" }: IProps) {
     leave: { opacity: 0 },
   });
 
-  useOutsideContainer(menuContainerRef, () => {
-    setIsMenuOpen(false);
+  function handleClickOutsideMenu(
+    event: MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
+    const isOutsideMenu =
+      menuContainerRef &&
+      menuContainerRef.current &&
+      !((menuContainerRef.current as unknown) as HTMLElement).contains(
+        event.target as Node
+      );
+
+    const isOutsideTriggerButton =
+      triggerButtonElement &&
+      !triggerButtonElement.contains(event.target as Node);
+
+    if (isOutsideMenu && isOutsideTriggerButton) setIsMenuOpen(false);
+  }
+
+  useClickOutsideContainer(menuContainerRef, (event) => {
+    event && handleClickOutsideMenu(event);
   });
 
   return (
@@ -37,6 +76,11 @@ function OptionsMenu({ options, triggerButton, position = "left" }: IProps) {
 
             setIsMenuOpen(!isMenuOpen);
           }}
+          ref={(reference) => {
+            triggerButtonElement = reference;
+
+            return setReferenceElement(reference);
+          }}
         >
           {triggerButton}
         </TriggerPropButton>
@@ -47,6 +91,7 @@ function OptionsMenu({ options, triggerButton, position = "left" }: IProps) {
 
             setIsMenuOpen(!isMenuOpen);
           }}
+          ref={setReferenceElement}
         >
           {[...new Array(3)].map((_, index) => (
             <Dot key={index} />
@@ -54,39 +99,44 @@ function OptionsMenu({ options, triggerButton, position = "left" }: IProps) {
         </DefaultButton>
       )}
 
-      {spring.map(({ item, key, props }) => {
-        return item ? (
-          <animated.article
-            key={key}
-            style={{ position: "relative", ...props }}
-            ref={menuContainerRef}
+      {isMenuOpen &&
+        createPortal(
+          <article
+            ref={setPopperElement as any}
+            style={{ ...styles.popper, ...menuStyle }}
+            {...attributes.popper}
           >
-            <MenuContainer position={position}>
-              {options.map((option, index) => {
-                return (
-                  <Label
-                    hasSeparator={option.hasSeparator}
-                    onClick={
-                      option.callback
-                        ? (event) => {
-                            event.stopPropagation();
+            {spring.map(({ item, key, props }) => {
+              return item ? (
+                <MenuContainer key={key} style={props} ref={menuContainerRef}>
+                  {options.map((option, index) => {
+                    return (
+                      <Label
+                        hasSeparator={option.hasSeparator}
+                        onClick={
+                          option.callback
+                            ? (event) => {
+                                event.stopPropagation();
 
-                            option.callback && option.callback();
+                                option.callback && option.callback();
 
-                            setIsMenuOpen(false);
-                          }
-                        : undefined
-                    }
-                    key={index}
-                  >
-                    {option.label}
-                  </Label>
-                );
-              })}
-            </MenuContainer>
-          </animated.article>
-        ) : null;
-      })}
+                                setIsMenuOpen(false);
+                              }
+                            : undefined
+                        }
+                        key={index}
+                      >
+                        {option.label}
+                      </Label>
+                    );
+                  })}
+                </MenuContainer>
+              ) : null;
+            })}
+          </article>,
+
+          document.body
+        )}
     </>
   );
 }

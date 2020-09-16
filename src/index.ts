@@ -23,7 +23,7 @@ import TextInput from "./components/TextInput";
 import Slider from "./components/Slider";
 
 // Hooks
-import { useOutsideContainer, useTabs } from "./hooks";
+import { useClickOutsideContainer, useTabs } from "./hooks";
 
 // Icons
 import CalendarIcon from "./icons/Calendar";
@@ -96,7 +96,7 @@ export {
   TabContainer,
   TextInput,
   // Hooks
-  useOutsideContainer,
+  useClickOutsideContainer,
   useTabs,
   // Icons
   CalendarIcon,

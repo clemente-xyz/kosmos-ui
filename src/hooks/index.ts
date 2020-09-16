@@ -12,9 +12,9 @@ import {
  * @param callback Callback to execute once the click outside happens (optional).
  * @returns A flag indicating if the user clicked or not outside the passed ref component.
  */
-function useOutsideContainer(
+function useClickOutsideContainer(
   ref: MutableRefObject<any>,
-  callback?: () => void
+  callback?: (event?: MouseEvent<HTMLButtonElement, MouseEvent>) => void
 ) {
   const [clickedOutside, setClickedOutside] = useState(false);
 
@@ -23,7 +23,7 @@ function useOutsideContainer(
       event: MouseEvent<HTMLButtonElement, MouseEvent>
     ) {
       if (ref.current && !ref.current.contains(event.target)) {
-        callback && callback();
+        callback && callback(event);
 
         setClickedOutside(true);
       }
@@ -99,4 +99,4 @@ function useTabs(
   return { tabs, handleTabClick };
 }
 
-export { useOutsideContainer, useTabs };
+export { useClickOutsideContainer, useTabs };

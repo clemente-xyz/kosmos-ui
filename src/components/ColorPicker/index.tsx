@@ -3,7 +3,7 @@ import { useTransition } from "react-spring";
 import { CustomPicker } from "react-color";
 import { Saturation, Hue } from "react-color/lib/components/common";
 
-import { useOutsideContainer } from "../../hooks";
+import { useClickOutsideContainer } from "../../hooks";
 import CloseIcon from "../../icons/Close";
 import PenIcon from "../../icons/Pen";
 import theme from "../../theme";
@@ -43,7 +43,7 @@ function ColorPicker(
 
   const pickerDialogRef = useRef(null);
 
-  useOutsideContainer(pickerDialogRef, () => {
+  useClickOutsideContainer(pickerDialogRef, () => {
     setShowPicker(false);
   });
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { animated } from "react-spring";
 
 import theme from "../../theme";
 
@@ -14,7 +15,7 @@ const DefaultButton = styled.button`
   justify-content: center;
   align-items: center;
   height: fit-content;
-  padding: 7px;
+  padding: 8px;
   border-radius: 3px;
   /* TODO: Add this color to palette */
   background-color: #f1f1f1;
@@ -48,25 +49,16 @@ const TriggerPropButton = styled.button`
   outline: inherit;
 `;
 
-const MenuContainer = styled.div<{ position: "left" | "right" }>`
-  position: absolute;
+const MenuContainer = styled(animated.div)`
   display: flex;
   flex-direction: column;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
-  top: 5px;
   overflow-y: scroll;
-  z-index: 3;
-  padding: 15px;
+  padding: 16px;
   justify-content: space-between;
   min-width: 180px;
-
-  ${({ position }) => {
-    if (position === "left") return `right: 0;`;
-
-    return `left: 0;`;
-  }}
 `;
 
 const Label = styled.div<{ hasSeparator?: boolean }>`

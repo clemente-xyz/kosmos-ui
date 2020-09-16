@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 export type IProps = {
   triggerButton?: ReactNode;
@@ -7,5 +7,18 @@ export type IProps = {
     callback?: () => void;
     hasSeparator?: boolean;
   }[];
-  position?: "left" | "right";
+  placement?:
+    | "top-start"
+    | "top"
+    | "top-end"
+    | "right-start"
+    | "right"
+    | "right-end"
+    | "bottom-end"
+    | "bottom"
+    | "bottom-start"
+    | "left-end"
+    | "left"
+    | "left-start";
+  menuStyle?: CSSProperties;
 };
