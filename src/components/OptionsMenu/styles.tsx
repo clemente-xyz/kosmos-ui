@@ -17,8 +17,7 @@ const DefaultButton = styled.button`
   height: fit-content;
   padding: 8px;
   border-radius: 3px;
-  /* TODO: Add this color to palette */
-  background-color: #f1f1f1;
+  background-color: ${theme.colorsPalette.gray.lighter};
 
   transition: all 0.3s;
 
@@ -78,8 +77,7 @@ const Dot = styled.div`
   height: 3px;
   width: 3px;
   border-radius: 50%;
-  /* TODO: Add this color to palette */
-  background-color: #929292;
+  background-color: ${theme.colorsPalette.gray.light};
   margin-right: 3px;
 
   &:last-child {
