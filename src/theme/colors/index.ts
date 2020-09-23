@@ -27,8 +27,8 @@ const colorsPalette = {
     light: "hsl(221,22%, 71%)",
     lighter: "hsl(221,22%, 90%)",
     superLight: "hsl(210,50%, 98%)",
-    dark: "hsl(211,11%, 25%)",
-    darker: "hsl(211,11%,15%)",
+    dark: "hsl(221,22%, 40%)",
+    darker: "hsl(221,22%, 20%)",
   },
   white: {
     default: "hsl(0, 0%, 100%)",

@@ -57,10 +57,7 @@ function getButtonStyles({
 
     case "secondary":
       return {
-        backgroundColor:
-          format === "outline"
-            ? "transparent"
-            : theme.colorsPalette.gray.superLight,
+        backgroundColor: "transparent",
         border:
           format === "outline" ? theme.colorsPalette.gray.superLight : "none",
         fontColor:
@@ -68,10 +65,7 @@ function getButtonStyles({
             ? theme.colorsPalette.gray.superLight
             : theme.colorsPalette.blue.default,
         boxShadow: "none",
-        backgroundColorOnHover:
-          format === "outline"
-            ? theme.colorsPalette.blue.lighter
-            : theme.colorsPalette.gray.lighter,
+        backgroundColorOnHover: theme.colorsPalette.blue.lighter,
         fontColorOnHover: theme.colorsPalette.gray.dark,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
