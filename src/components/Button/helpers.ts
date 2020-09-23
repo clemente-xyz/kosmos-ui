@@ -15,7 +15,7 @@ function getButtonStyles({
 }) {
   const buttonsTheme = {
     primary: {
-      backgroundColor: theme.colorsPalette.black.default,
+      backgroundColor: theme.colorsPalette.blue.default,
       fontColor: theme.colorsPalette.white.default,
     },
     danger: {
@@ -48,7 +48,7 @@ function getButtonStyles({
         backgroundColorOnHover:
           format === "outline"
             ? buttonsTheme[type].backgroundColor
-            : theme.colorsPalette.black.dark,
+            : theme.colorsPalette.blue.dark,
         fontColorOnHover: buttonsTheme[type].fontColor,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
@@ -66,7 +66,7 @@ function getButtonStyles({
         fontColor:
           format === "outline"
             ? theme.colorsPalette.gray.superLight
-            : theme.colorsPalette.black.default,
+            : theme.colorsPalette.blue.default,
         boxShadow: "none",
         backgroundColorOnHover:
           format === "outline"

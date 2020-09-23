@@ -9,8 +9,7 @@ const MainContainer = styled.div`
   padding: 1px 13px;
   height: 20px;
   border-radius: 16px;
-  /* TODO: Define color for this in colors palette */
-  background-color: #dedede;
+  background-color: ${theme.colorsPalette.gray.default};
   color: ${theme.colorsPalette.gray.default};
   font-size: x-small;
   font-weight: 900;
