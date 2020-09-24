@@ -44,7 +44,7 @@ function TextInput({
         style={inputStyle}
         type={type || "text"}
         baseColor={baseColor || theme.colorsPalette.gray.default}
-        highlightColor={highlightColor || theme.colorsPalette.gray.darker}
+        highlightColor={highlightColor || theme.colorsPalette.gray.default}
         required
         onCopy={onCopy}
         onCut={onCut}
@@ -63,7 +63,7 @@ function TextInput({
 
       <Label
         htmlFor={id}
-        baseColor={baseColor || theme.colorsPalette.gray.darker}
+        baseColor={baseColor || theme.colorsPalette.gray.default}
       >
         {label}
       </Label>

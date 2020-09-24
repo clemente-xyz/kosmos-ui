@@ -5,8 +5,9 @@ const colorsPalette = {
     default: "hsl(209, 100%, 50%)",
     light: "hsl(209, 100%, 70%)",
     lighter: "hsl(208, 100%, 97%)",
-    dark: "hsl(209, 75%, 25%)",
-    darker: "hsl(223, 46%, 24%)",
+    dark: "hsl(209, 100%, 35%)",
+    darker: "hsl(209, 75%, 25%)",
+    superDark: "hsl(223, 46%, 24%)",
   },
   cyan: {
     default: "hsl(181, 83%, 65%)",

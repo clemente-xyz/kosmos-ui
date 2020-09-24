@@ -17,7 +17,7 @@ const DefaultButton = styled.button`
   height: fit-content;
   padding: 8px;
   border-radius: 3px;
-  background-color: ${theme.colorsPalette.gray.lighter};
+  background-color: ${theme.colorsPalette.blue.lighter};
 
   transition: all 0.3s;
 
@@ -77,7 +77,7 @@ const Dot = styled.div`
   height: 3px;
   width: 3px;
   border-radius: 50%;
-  background-color: ${theme.colorsPalette.gray.light};
+  background-color: ${theme.colorsPalette.blue.default};
   margin-right: 3px;
 
   &:last-child {

@@ -26,21 +26,25 @@ import Slider from "./components/Slider";
 import { useClickOutsideContainer, useTabs } from "./hooks";
 
 // Icons
+import BarChartIcon from "./icons/BarChart";
 import CalendarIcon from "./icons/Calendar";
 import CardIcon from "./icons/Card";
 import CarretIcon from "./icons/Carret";
 import CloseIcon from "./icons/Close";
 import DeliveryIcon from "./icons/Delivery";
+import EditIcon from "./icons/Edit";
 import ErrorIcon from "./icons/Error";
 import EyeIcon from "./icons/Eye";
 import FacebookIcon from "./icons/Facebook";
 import HamburgerIcon from "./icons/Hamburger";
+import HomeIcon from "./icons/Home";
 import InstagramIcon from "./icons/Instagram";
 import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
 import ListIcon from "./icons/List";
 import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
+import ProductLabelsIcon from "./icons/ProductLabels";
 import ProfileIcon from "./icons/Profile";
 import ProfilesIcon from "./icons/Profiles";
 import ShoppingBagIcon from "./icons/ShoppingBag";
@@ -99,21 +103,25 @@ export {
   useClickOutsideContainer,
   useTabs,
   // Icons
+  BarChartIcon,
   CalendarIcon,
   CardIcon,
   CarretIcon,
   CloseIcon,
   DeliveryIcon,
+  EditIcon,
   ErrorIcon,
   EyeIcon,
   FacebookIcon,
   HamburgerIcon,
+  HomeIcon,
   InstagramIcon,
   LayersIcon,
   LineChartIcon,
   ListIcon,
   PenIcon,
   PhotosIcon,
+  ProductLabelsIcon,
   ProfileIcon,
   ProfilesIcon,
   ShoppingBagIcon,

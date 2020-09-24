@@ -1,18 +1,14 @@
-import React, { ReactNode, CSSProperties } from "react";
+import React from "react";
 
+import { getChipMainStyles } from "./helpers";
+import { IChipProps } from "./types";
 import { MainContainer } from "./styles";
 
-function Chip({
-  children,
-  style,
-  className,
-}: {
-  children: ReactNode;
-  style?: CSSProperties;
-  className?: string;
-}) {
+function Chip({ children, style, className, type = "primary" }: IChipProps) {
+  const mainStyles = getChipMainStyles(type);
+
   return (
-    <MainContainer style={style} className={className}>
+    <MainContainer style={{ ...mainStyles, ...style }} className={className}>
       {children}
     </MainContainer>
   );
