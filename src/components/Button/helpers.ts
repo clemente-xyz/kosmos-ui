@@ -57,16 +57,16 @@ function getButtonStyles({
 
     case "secondary":
       return {
-        backgroundColor: "transparent",
+        backgroundColor:
+          format === "outline"
+            ? "transparent"
+            : theme.colorsPalette.blue.lighter,
         border:
           format === "outline" ? theme.colorsPalette.gray.superLight : "none",
-        fontColor:
-          format === "outline"
-            ? theme.colorsPalette.gray.superLight
-            : theme.colorsPalette.blue.default,
+        fontColor: theme.colorsPalette.blue.default,
         boxShadow: "none",
         backgroundColorOnHover: theme.colorsPalette.blue.lighter,
-        fontColorOnHover: theme.colorsPalette.gray.dark,
+        fontColorOnHover: theme.colorsPalette.blue.default,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
         padding: size === "small" ? "4px 16px" : "12px 24px",

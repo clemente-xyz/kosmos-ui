@@ -44,7 +44,7 @@ function TextInput({
         style={inputStyle}
         type={type || "text"}
         baseColor={baseColor || theme.colorsPalette.gray.default}
-        highlightColor={highlightColor || theme.colorsPalette.black.default}
+        highlightColor={highlightColor || theme.colorsPalette.gray.darker}
         required
         onCopy={onCopy}
         onCut={onCut}
@@ -58,12 +58,12 @@ function TextInput({
       <Highlight />
 
       <Bar
-        highlightColor={highlightColor || theme.colorsPalette.black.default}
+        highlightColor={highlightColor || theme.colorsPalette.blue.default}
       />
 
       <Label
         htmlFor={id}
-        baseColor={baseColor || theme.colorsPalette.gray.default}
+        baseColor={baseColor || theme.colorsPalette.gray.darker}
       >
         {label}
       </Label>

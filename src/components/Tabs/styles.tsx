@@ -11,7 +11,7 @@ const TabContainer = styled.button<{ isActive: boolean }>`
   padding: 16px 8px;
   border: none;
   border-bottom: ${({ isActive }) =>
-    isActive ? `2px solid ${theme.colorsPalette.blue.default}` : "none"};
+    isActive ? `3px solid ${theme.colorsPalette.blue.default}` : "none"};
   background: none;
   color: inherit;
   font: inherit;

@@ -14,7 +14,7 @@ const MainContainer = styled.div`
   width: 100%;
 
   &:not(:first-child) {
-    margin-left: 15px;
+    margin-left: 16px;
   }
 `;
 
@@ -23,7 +23,7 @@ const Label = styled.label<{ baseColor: string }>`
   color: ${({ baseColor }) => baseColor};
   position: absolute;
   pointer-events: none;
-  top: 10px;
+  top: 12px;
   transition: 0.2s ease all;
 
   -moz-transition: 0.2s ease all;
@@ -69,7 +69,7 @@ const Highlight = styled.span`
 
 const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   font-size: ${theme.fontSizes.regular};
-  padding: 10px 0;
+  padding: 12px 0;
   display: block;
   width: 100%;
   border: none;
@@ -84,13 +84,13 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   }
 
   &:focus ~ ${Label}, &:valid ~ ${Label} {
-    top: -15px;
+    top: -16px;
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
   }
 
   &:read-only ~ ${Label} {
-    top: -15px;
+    top: -16px;
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
   }
@@ -111,7 +111,7 @@ const ErrorParagraph = styled.p`
   font-size: ${theme.fontSizes.regular};
   margin: 0;
   color: ${theme.colorsPalette.red.default};
-  margin-top: 15px;
+  margin-top: 16px;
 `;
 
 export { MainContainer, Input, Highlight, Bar, Label, ErrorParagraph };

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import theme from "../../theme";
+
 const publicDraftEditorPlaceholderRoot = "public-DraftEditorPlaceholder-root";
 const publicDraftEditorContent = "public-DraftEditor-content";
 const richEditorHidePlaceholder = "RichEditor-hidePlaceholder";
@@ -10,8 +12,9 @@ const MainContainer = styled.section`
   background: #fff;
   border: 1px solid #ddd;
   font-size: 14px;
-  padding: 15px;
+  padding: 16px;
   z-index: 0;
+  color: ${theme.colorsPalette.gray.darker};
 `;
 
 const RichEditorControlsContainer = styled.section`

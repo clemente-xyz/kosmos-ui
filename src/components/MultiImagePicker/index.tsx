@@ -102,8 +102,7 @@ function MultiImagePicker({
         <Button
           onClick={() => {}}
           text="Seleccionar"
-          type="primary"
-          format="outline"
+          type="secondary"
           size="small"
         />
       </div>

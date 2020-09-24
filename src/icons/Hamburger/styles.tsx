@@ -11,7 +11,7 @@ const MainContainer = styled.div`
 const Line = styled.div`
   width: 20px;
   height: 3px;
-  background-color: ${theme.colorsPalette.black.default};
+  background-color: ${theme.colorsPalette.blue.default};
   margin-bottom: 3px;
   transition: 0.2s;
 
@@ -20,7 +20,7 @@ const Line = styled.div`
   }
 
   ${MainContainer}:hover & {
-    background-color: ${theme.colorsPalette.gray.light};
+    background-color: ${theme.colorsPalette.blue.dark};
   }
 `;
 

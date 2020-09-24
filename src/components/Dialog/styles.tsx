@@ -40,7 +40,7 @@ const Card = styled(animated.article)`
 const Header = styled.h1`
   color: ${theme.colorsPalette.gray.dark};
   font-size: ${theme.fontSizes.regularLarge};
-  font-weight: ${theme.fontWeights.bold};
+  font-weight: ${theme.fontWeights.bolder};
 `;
 
 const Paragraph = styled.p`

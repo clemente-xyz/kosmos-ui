@@ -42,8 +42,6 @@ function Button({
 
   return (
     <MainContainer
-      style={style}
-      className={className}
       onClick={onClick}
       backgroundColor={backgroundColor as string}
       fontColor={fontColor as string}
@@ -54,6 +52,8 @@ function Button({
       fontColorOnHover={fontColorOnHover}
       border={border as string}
       disabled={disabled}
+      style={style}
+      className={className}
     >
       {loading ? <Loader /> : text}
     </MainContainer>

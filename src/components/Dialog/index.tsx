@@ -73,7 +73,8 @@ function Dialog({
                         //@ts-ignore
                         text={declineAction.message}
                         type={confirmAction ? "secondary" : "primary"}
-                        style={{ marginRight: confirmAction ? "15px" : "none" }}
+                        format={confirmAction ? "outline" : "fill"}
+                        style={{ marginRight: confirmAction ? "16px" : "none" }}
                       />
                     )}
 
