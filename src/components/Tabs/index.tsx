@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { IProps, ITabsProps } from "./types";
+import { ITabsProps, ITabsItemsProps } from "./types";
 import { TabsSliderContainer, TabContainer } from "./styles";
 
 /**
@@ -9,8 +9,8 @@ import { TabsSliderContainer, TabContainer } from "./styles";
  * @param content Array of tabs, in which it is specified the tab
  * label and component to render on active mode.
  */
-function Tabs({ content }: IProps) {
-  const [tabs, setTabs] = useState<ITabsProps[]>([]);
+function Tabs({ content }: ITabsProps): JSX.Element | null {
+  const [tabs, setTabs] = useState<ITabsItemsProps[]>([]);
 
   useEffect(() => {
     if (content.length > 0) {

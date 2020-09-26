@@ -2,7 +2,7 @@ import React from "react";
 
 import theme from "../../theme";
 
-import { IProps } from "./types";
+import { ITextInputProps } from "./types";
 import {
   MainContainer,
   Input,
@@ -32,7 +32,7 @@ function TextInput({
   autoComplete,
   readOnly,
   error,
-}: IProps) {
+}: ITextInputProps): JSX.Element {
   return (
     <MainContainer style={mainContainerStyle}>
       <Input
@@ -44,7 +44,7 @@ function TextInput({
         style={inputStyle}
         type={type || "text"}
         baseColor={baseColor || theme.colorsPalette.gray.default}
-        highlightColor={highlightColor || theme.colorsPalette.gray.default}
+        highlightColor={highlightColor || theme.colorsPalette.gray.dark}
         required
         onCopy={onCopy}
         onCut={onCut}

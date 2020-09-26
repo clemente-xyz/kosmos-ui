@@ -1,6 +1,6 @@
 import { CSSProperties, FocusEvent } from "react";
 
-export type IProps = {
+export interface ITextInputProps {
   placeholder?: string;
   type?: string;
   label?: string;
@@ -20,4 +20,4 @@ export type IProps = {
   onBlur?: (event: FocusEvent<any>) => void;
   readOnly?: boolean;
   error?: string;
-};
+}

@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone";
 
 import theme from "../../theme";
 
-import { IProps } from "./types";
+import { IImagePickerProps } from "./types";
 import { MainContainer, SelectContainer, Paragraph } from "./styles";
 
 /**
@@ -21,7 +21,7 @@ function ImagePicker({
   id,
   errorMessage,
   onDropRejected,
-}: IProps) {
+}: IImagePickerProps): JSX.Element {
   const [selectedImage, setSelectedImage] = useState<
     { file: File; preview: string } | undefined
   >(undefined);

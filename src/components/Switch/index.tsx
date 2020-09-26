@@ -2,7 +2,7 @@ import React, { CSSProperties, FocusEvent } from "react";
 
 import { MainContainer, Input, Label, ErrorParagraph } from "./styles";
 
-type IProps = {
+type ISwitchProps = {
   checked?: boolean;
   onChange?: (event: any) => void;
   id?: string;
@@ -34,7 +34,7 @@ function Switch({
   onDrop,
   autoComplete,
   error,
-}: IProps) {
+}: ISwitchProps): JSX.Element {
   return (
     <MainContainer style={mainContainerStyle}>
       <Input

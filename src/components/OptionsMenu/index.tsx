@@ -5,7 +5,7 @@ import { usePopper } from "react-popper";
 
 import { useClickOutsideContainer } from "../../hooks";
 
-import { IProps } from "./types";
+import { IOptionsMenuProps } from "./types";
 import {
   DefaultButton,
   Dot,
@@ -19,7 +19,7 @@ function OptionsMenu({
   triggerButton,
   placement = "bottom-start",
   menuStyle,
-}: IProps) {
+}: IOptionsMenuProps): JSX.Element {
   const menuContainerRef = useRef(null);
 
   let triggerButtonElement: HTMLButtonElement | null;

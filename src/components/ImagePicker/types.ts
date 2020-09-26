@@ -1,7 +1,7 @@
 import { SetStateAction, Dispatch, CSSProperties } from "react";
 import { DropzoneOptions, FileRejection } from "react-dropzone";
 
-export type IProps = {
+export interface IImagePickerProps {
   setUploadImage: (
     file: any
   ) => void | Dispatch<SetStateAction<File | undefined>>;
@@ -12,4 +12,4 @@ export type IProps = {
   id?: string;
   errorMessage?: string;
   onDropRejected?: (error: FileRejection[]) => void;
-};
+}

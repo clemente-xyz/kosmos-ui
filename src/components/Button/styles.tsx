@@ -19,7 +19,7 @@ const MainContainer = styled.button.attrs((props: any) => ({
   min-width: 120px;
   max-width: 180px;
   font-size: ${({ fontSize }) => fontSize};
-  font-weight: 500;
+  font-weight: 700;
   border: ${({ border }) => border};
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: ${({ fontColor }) => fontColor};

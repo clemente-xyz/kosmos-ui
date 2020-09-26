@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 import CloseIcon from "../../icons/Close";
 import theme from "../../theme";
 
-import { IProps } from "./types";
+import { IDialogProps } from "./types";
 import {
   Backdrop,
   Card,
@@ -24,7 +24,7 @@ function Dialog({
   confirmAction,
   declineAction,
   cardStyle,
-}: IProps) {
+}: IDialogProps) {
   const spring = useTransition(isOpen, null, {
     delay: 2,
     from: { opacity: 0 },

@@ -1,10 +1,10 @@
 import React from "react";
 
 import { IVectorProps } from "../../types";
-import { IDirections } from "../../types";
+import { TDirection } from "../../types";
 
-type IProps = IVectorProps & {
-  direction?: IDirections;
+type TCarretIconProps = IVectorProps & {
+  direction?: TDirection;
 };
 
 const ROTATION_DICTIONARY = {
@@ -19,7 +19,7 @@ function CarretIcon({
   color = "currentColor",
   style,
   direction,
-}: IProps) {
+}: TCarretIconProps) {
   return (
     <svg
       height={height}

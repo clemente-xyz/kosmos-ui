@@ -5,7 +5,7 @@ import theme from "../../../../theme";
 
 import { MainContainer, Input, Highlight, Bar, Label } from "./styles";
 
-type IProps = {
+interface IDatePickerInputProps {
   placeholder?: string;
   label?: string;
   value?: string;
@@ -17,7 +17,7 @@ type IProps = {
   highlightColor?: string;
   autoComplete?: string;
   onBlur?: (event: FocusEvent<any>) => void;
-};
+}
 
 function DatePickerInput({
   placeholder,
@@ -30,7 +30,7 @@ function DatePickerInput({
   highlightColor,
   onBlur,
   autoComplete,
-}: IProps) {
+}: IDatePickerInputProps) {
   return (
     <MainContainer>
       <Input

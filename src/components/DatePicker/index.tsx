@@ -7,7 +7,7 @@ import DatePickerMonth from "./components/DatePickerMonth";
 import DatePickerInput from "./components/DatePickerInput";
 import DatepickerContext from "./context";
 
-import { IProps } from "./types";
+import { IDatepickerProps } from "./types";
 import {
   Button,
   ButtonContainer,
@@ -28,7 +28,7 @@ function Datepicker({
   onChanges,
   values,
   mainContainerStyle,
-}: IProps) {
+}: IDatepickerProps) {
   const [showCalendar, setShowCalendar] = useState(false);
   const [state, setState] = useState({
     focusedInput: START_DATE,

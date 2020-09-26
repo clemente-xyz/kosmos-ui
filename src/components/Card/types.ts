@@ -1,8 +1,8 @@
 import { CSSProperties, ReactNode } from "react";
 
-export type IProps = {
+export interface ICardProps {
   children: ReactNode;
   style?: CSSProperties;
   title?: string;
   className?: string;
-};
+}

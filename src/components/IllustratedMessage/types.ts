@@ -1,6 +1,6 @@
 import { ReactNode, CSSProperties } from "react";
 
-export type IProps = {
+export interface IIllustratedMessageProps {
   illustration?:
     | (
         | "creditCard"
@@ -28,4 +28,4 @@ export type IProps = {
   body?: string | ReactNode;
   bodyStyle?: CSSProperties;
   mainContainerStyle?: CSSProperties;
-};
+}

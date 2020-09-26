@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import CarretIcon from "../../icons/Carret";
 
-import { IProps } from "./types";
+import { ISliderProps } from "./types";
 import { MainContainer, Slide, Button } from "./styles";
 
-function Slider({ slides, style, className }: IProps) {
+function Slider({ slides, style, className }: ISliderProps): JSX.Element {
   const [xCoordinate, setXCoordinate] = useState(0);
 
   return (

@@ -5,7 +5,7 @@ import { translateMonth, translateDay } from "../../helpers";
 import CarretIcon from "../../../../icons/Carret";
 import DatePickerDay from "../DatePickerDay";
 
-import { IProps } from "./types";
+import { IDatePickerMonthProps } from "./types";
 import {
   Button,
   DaysContainer,
@@ -19,7 +19,7 @@ function DatePickerMonth({
   firstDayOfWeek,
   goToPreviousMonths,
   goToNextMonths,
-}: IProps) {
+}: IDatePickerMonthProps) {
   const { days, weekdayLabels, monthLabel } = useMonth({
     year,
     month,

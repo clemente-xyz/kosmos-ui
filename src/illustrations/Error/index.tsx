@@ -31,14 +31,14 @@ function ErrorIllustration({
             <path
               d="M75,96 C62.8497355,96 53,86.3741221 53,74.5 C53,62.6258779 62.8497355,53 75,53 C75.516677,53 76.029194,53.0174063 76.5369705,53.0516517 C76.1841654,51.087799 76,49.0654066 76,47 C76,28.2223185 91.2223185,13 110,13 C124.991043,13 137.716066,22.7019845 142.238615,36.1694983 C143.310147,36.0574596 144.398251,36 145.5,36 C162.344685,36 176,49.4314575 176,66 C176,81.7406088 163.675305,94.727337 148,95.9781847 L148,96 L91.5078125,96 M86.9959717,96 L80.0313721,96"
               id="Shape"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               fill="#FFFFFF"
               strokeLinecap="round"
             />
             <circle
               id="Oval"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               cx="110.5"
               cy="76.5"
@@ -46,7 +46,7 @@ function ErrorIllustration({
             />
             <polyline
               id="Line"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -54,7 +54,7 @@ function ErrorIllustration({
             ></polyline>
             <polyline
               id="Line"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"

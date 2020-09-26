@@ -1,6 +1,6 @@
 import { CSSProperties, FocusEvent } from "react";
 
-export type IProps = {
+export interface IDatepickerProps {
   placeholder?: string;
   ids?: string[];
   names?: string[];
@@ -13,4 +13,4 @@ export type IProps = {
   values: { startDate: null | Date; endDate: null | Date };
   onChanges: ((event: any) => void)[];
   labels: string[];
-};
+}

@@ -36,7 +36,7 @@ function CreditCartIllustration({
             <path
               d="M36.3448504,71.4233581 L33.1614775,71.9480322 C30.9748078,72.3084327 28.9214022,70.7559548 28.5750677,68.4804758 L21.0499395,19.0390458 C20.7036051,16.7635668 22.1954916,14.6267643 24.3821613,14.2663639 L104.558306,1.05196779 C106.744976,0.691567325 108.798381,2.24404521 109.144716,4.51952419 C109.48216,6.73659658 109.75109,8.5035117 109.951504,9.82026955 M110.523095,13.575722 C110.704628,14.7684246 110.863596,15.8128747 111,16.7090721"
               id="Shape"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
             />
@@ -47,7 +47,7 @@ function CreditCartIllustration({
             />
             <rect
               id="Rectangle"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               fill="#FFFFFF"
               x="41.25"
@@ -55,7 +55,7 @@ function CreditCartIllustration({
               width="86.5"
               height="56.5"
               rx="4"
-            ></rect>
+            />
             <rect
               id="Rectangle"
               fill="#E8F0FE"
@@ -63,11 +63,11 @@ function CreditCartIllustration({
               y="33"
               width="84"
               height="14"
-            ></rect>
+            />
             <path
               d="M127.171113,33 L61.3308824,33 L127.171113,33 Z M121.171113,46 L42.3315548,46 L121.171113,46 Z M78.0625,65 L49.7546471,65 L78.0625,65 Z M56.2890625,33 L49.0926339,33 L56.2890625,33 Z"
               id="lines"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"

@@ -1,15 +1,15 @@
 import { ReactNode, CSSProperties } from "react";
 
-export type IProps = {
+export interface IStepperProps {
   steps: IStep[];
   activeStep: number;
   hideLabels?: boolean;
   mainContainerStyles?: CSSProperties;
   stepContainerStyles?: CSSProperties;
   stepBarStyles?: CSSProperties;
-};
+}
 
-export type IStep = {
+export interface IStep {
   index: number;
   label: string | ReactNode;
-};
+}

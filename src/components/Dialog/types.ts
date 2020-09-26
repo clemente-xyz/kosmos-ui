@@ -1,6 +1,6 @@
 import { ReactNode, CSSProperties } from "react";
 
-export type IProps = {
+export interface IDialogProps {
   isOpen: boolean;
   header: string | ReactNode;
   content: string | ReactNode;
@@ -17,4 +17,4 @@ export type IProps = {
       }
     | ReactNode;
   cardStyle?: CSSProperties;
-};
+}

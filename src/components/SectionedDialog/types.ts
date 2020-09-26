@@ -1,6 +1,6 @@
-import { ReactNode, CSSProperties, SetStateAction, Dispatch } from "react";
+import { ReactNode, CSSProperties } from "react";
 
-export type IProps = {
+export interface ISectionedDialogProps {
   show: boolean;
   setShow: () => void;
   header: string | ReactNode;
@@ -9,4 +9,4 @@ export type IProps = {
     content: string | ReactNode;
   }[];
   cardStyle?: CSSProperties;
-};
+}

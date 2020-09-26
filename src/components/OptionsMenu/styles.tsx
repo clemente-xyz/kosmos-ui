@@ -52,7 +52,8 @@ const MenuContainer = styled(animated.div)`
   display: flex;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 0px 7px 20px rgba(0, 0, 0, 0),
+    0 3px 5px 5px rgba(0, 0, 0, 0.03);
   border-radius: 5px;
   overflow-y: scroll;
   padding: 16px;
@@ -61,15 +62,18 @@ const MenuContainer = styled(animated.div)`
 `;
 
 const Label = styled.div<{ hasSeparator?: boolean }>`
-  padding: 10px 20px;
-  margin: 0 -15px;
+  padding: 12px 20px;
   cursor: default;
   border-bottom: ${({ hasSeparator }) =>
     hasSeparator ? `1px solid ${theme.colorsPalette.gray.superLight}` : "none"};
+  color: ${theme.colorsPalette.gray.default};
+  border-radius: 5px;
+  font-size: 14px;
 
   &:hover {
     background-color: ${({ hasSeparator }) =>
-      !hasSeparator ? theme.colorsPalette.gray.superLight : "none"};
+      !hasSeparator ? theme.colorsPalette.blue.lighter : "none"};
+    color: ${theme.colorsPalette.blue.default};
   }
 `;
 

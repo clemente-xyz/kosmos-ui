@@ -1,17 +1,18 @@
 import { darken } from "polished";
 
 import theme from "../../theme";
+import { TStyledComponentType } from "../../types";
 
-import { IButtonFormat, IButtonSize, IButtonType } from "./types";
+import { TButtonFormat, TButtonSize, TButtonType } from "./types";
 
 function getButtonStyles({
   type,
   format,
   size,
 }: {
-  type: IButtonType;
-  format?: IButtonFormat;
-  size?: IButtonSize;
+  type: TButtonType;
+  format?: TButtonFormat;
+  size?: TButtonSize;
 }) {
   const buttonsTheme = {
     primary: {
@@ -26,30 +27,30 @@ function getButtonStyles({
       backgroundColor: theme.colorsPalette.green.default,
       fontColor: theme.colorsPalette.white.default,
     },
+  } as {
+    [key in TStyledComponentType]: {
+      backgroundColor: string;
+      fontColor: string;
+    };
   };
+
+  const { backgroundColor, fontColor } = buttonsTheme[
+    type as TStyledComponentType
+  ];
 
   switch (type) {
     case "primary":
       return {
-        backgroundColor:
-          format === "outline"
-            ? "transparent"
-            : buttonsTheme[type].backgroundColor,
-        border:
-          format === "outline"
-            ? `1px solid ${buttonsTheme[type].backgroundColor}`
-            : "none",
-        fontColor:
-          format === "outline"
-            ? buttonsTheme[type].backgroundColor
-            : buttonsTheme[type].fontColor,
+        backgroundColor: format === "outline" ? "transparent" : backgroundColor,
+        border: format === "outline" ? `1px solid ${backgroundColor}` : "none",
+        fontColor: format === "outline" ? backgroundColor : fontColor,
         boxShadow:
           "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
         backgroundColorOnHover:
           format === "outline"
-            ? buttonsTheme[type].backgroundColor
+            ? backgroundColor
             : theme.colorsPalette.blue.dark,
-        fontColorOnHover: buttonsTheme[type].fontColor,
+        fontColorOnHover: fontColor,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
         padding: size === "small" ? "4px 16px" : "12px 24px",
@@ -74,25 +75,14 @@ function getButtonStyles({
 
     default:
       return {
-        backgroundColor:
-          format === "outline"
-            ? "transparent"
-            : buttonsTheme[type].backgroundColor,
-        border:
-          format === "outline"
-            ? `1px solid ${buttonsTheme[type].backgroundColor}`
-            : "none",
-        fontColor:
-          format === "outline"
-            ? buttonsTheme[type].backgroundColor
-            : buttonsTheme[type].fontColor,
+        backgroundColor: format === "outline" ? "transparent" : backgroundColor,
+        border: format === "outline" ? `1px solid ${backgroundColor}` : "none",
+        fontColor: format === "outline" ? backgroundColor : fontColor,
         boxShadow:
           "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
         backgroundColorOnHover:
-          format === "outline"
-            ? buttonsTheme[type].backgroundColor
-            : darken(0.9, buttonsTheme[type].fontColor),
-        fontColorOnHover: buttonsTheme[type].fontColor,
+          format === "outline" ? backgroundColor : darken(0.9, fontColor),
+        fontColorOnHover: fontColor,
         fontSize: size === "small" ? "12px" : "16px",
         padding: size === "small" ? "4px 16px" : "10px 24px",
       };

@@ -5,7 +5,7 @@ import { useTransition } from "react-spring";
 import CloseIcon from "../../icons/Close";
 import theme from "../../theme";
 
-import { IProps } from "./types";
+import { ISectionedDialogProps } from "./types";
 import {
   Backdrop,
   Card,
@@ -21,7 +21,7 @@ function SectionedDialog({
   header,
   sections,
   cardStyle,
-}: IProps) {
+}: ISectionedDialogProps): JSX.Element {
   const [activeSection, setActiveSection] = useState(0);
 
   const spring = useTransition(show, null, {

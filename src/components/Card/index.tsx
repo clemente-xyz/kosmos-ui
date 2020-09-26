@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IProps } from "./types";
+import { ICardProps } from "./types";
 import { MainContainer, Header } from "./styles";
 
 /**
@@ -10,7 +10,7 @@ import { MainContainer, Header } from "./styles";
  * @param title Card title (optional).
  * @param className Styles classname (optional).
  */
-function Card({ children, style, title, className }: IProps) {
+function Card({ children, style, title, className }: ICardProps): JSX.Element {
   return (
     <MainContainer style={style} className={className}>
       {title && <Header>{title}</Header>}

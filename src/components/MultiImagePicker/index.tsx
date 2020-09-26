@@ -5,7 +5,7 @@ import theme from "../../theme";
 import Button from "../Button";
 import CloseIcon from "../../icons/Close";
 
-import { IProps } from "./types";
+import { IMultiImagePickerProps } from "./types";
 import {
   ThumbContainer,
   Thumb,
@@ -21,7 +21,7 @@ function MultiImagePicker({
   style,
   errorMessage,
   onDropRejected,
-}: IProps) {
+}: IMultiImagePickerProps): JSX.Element {
   const { getRootProps, getInputProps } = useDropzone({
     ...options,
     accept: "image/*",

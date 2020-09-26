@@ -14,11 +14,11 @@ function ListIcon({
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
-        <g id="noun_List_2262524" fill-rule="nonzero">
+        <g id="noun_List_2262524" fillRule="nonzero">
           <path
             d="M2.7041667,0.5875 C1.5452653,0.5875 0.5875,1.54476 0.5875,2.70366 L0.5875,21.75417 C0.5875,22.91307 1.5452653,23.87083 2.7041667,23.87083 L21.754167,23.87083 C22.913068,23.87083 23.870833,22.91307 23.870833,21.75417 L23.870833,2.70366 C23.870833,1.54476 22.913068,0.5875 21.754167,0.5875 L2.7041667,0.5875 Z"
             id="Path"

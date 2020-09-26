@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IProps } from "./types";
+import { IStepperProps } from "./types";
 import { MainContainer, StepContainer, StepLabel, StepBar } from "./styles";
 
 /**
@@ -19,7 +19,7 @@ function Stepper({
   mainContainerStyles,
   stepContainerStyles,
   stepBarStyles,
-}: IProps) {
+}: IStepperProps): JSX.Element {
   const orderedSteps = steps.sort((stepI, stepJ) => stepI.index - stepJ.index);
 
   return (

@@ -1,6 +1,6 @@
 import { ReactNode, CSSProperties } from "react";
 
-export type IProps = {
+export interface IOptionsMenuProps {
   triggerButton?: ReactNode;
   options: {
     label: string | ReactNode;
@@ -21,4 +21,4 @@ export type IProps = {
     | "left"
     | "left-start";
   menuStyle?: CSSProperties;
-};
+}

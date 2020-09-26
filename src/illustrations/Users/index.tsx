@@ -44,7 +44,7 @@ function UsersIllustration({
                 <path
                   d="M84.6076109,5.63876273 L88.717753,5.63876273 C90.926892,5.63876273 92.717753,7.42962374 92.717753,9.63876273 L92.717753,89.6387627 C92.717753,91.8479017 90.926892,93.6387627 88.717753,93.6387627 L9.71775296,93.6387627 C7.50861396,93.6387627 5.71775296,91.8479017 5.71775296,89.6387627 C5.71775296,86.2286573 5.71775296,83.9371018 5.71775296,82.7640963"
                   id="Rectangle"
-                  stroke="#75A4FE"
+                  stroke="hsl(209, 100%, 50%)"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   transform="translate(49.217753, 49.638763) rotate(-188.000000) translate(-49.217753, -49.638763) "
@@ -52,7 +52,7 @@ function UsersIllustration({
                 <path
                   d="M88.5174755,15.3925331 L89.0174755,18.5129378"
                   id="Line"
-                  stroke="#75A4FE"
+                  stroke="hsl(209, 100%, 50%)"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                 />
@@ -61,7 +61,7 @@ function UsersIllustration({
                 <path
                   d="M9,6.25 C7.48121694,6.25 6.25,7.48121694 6.25,9 L6.25,89 C6.25,90.5187831 7.48121694,91.75 9,91.75 L88,91.75 C89.5187831,91.75 90.75,90.5187831 90.75,89 L90.75,9 C90.75,7.48121694 89.5187831,6.25 88,6.25 L9,6.25 Z"
                   id="Rectangle"
-                  stroke="#75A4FE"
+                  stroke="hsl(209, 100%, 50%)"
                   strokeWidth="2.5"
                   fill="#FFFFFF"
                   transform="translate(48.500000, 49.000000) rotate(6.000000) translate(-48.500000, -49.000000) "
@@ -75,20 +75,20 @@ function UsersIllustration({
                 <path
                   d="M17.5749065,15.2801296 C16.6084082,15.2801296 15.8249065,16.0636313 15.8249065,17.0301296 L15.8249065,70.0301296 C15.8249065,70.9966279 16.6084082,71.7801296 17.5749065,71.7801296 L80.5749065,71.7801296 C81.5414049,71.7801296 82.3249065,70.9966279 82.3249065,70.0301296 L82.3249065,17.0301296 C82.3249065,16.0636313 81.5414049,15.2801296 80.5749065,15.2801296 L17.5749065,15.2801296 Z"
                   id="Rectangle"
-                  stroke="#75A4FE"
+                  stroke="hsl(209, 100%, 50%)"
                   strokeWidth="2.5"
                   transform="translate(49.074907, 43.530130) rotate(6.000000) translate(-49.074907, -43.530130) "
                 />
                 <path
                   d=""
                   id="Rectangle"
-                  stroke="#75A4FE"
+                  stroke="hsl(209, 100%, 50%)"
                   strokeWidth="2.5"
                   transform="translate(135.462831, 29.203709) rotate(6.000000) translate(-135.462831, -29.203709) "
                 />
                 <circle
                   id="Oval"
-                  stroke="#75A4FE"
+                  stroke="hsl(209, 100%, 50%)"
                   strokeWidth="2.5"
                   fill="#E8F0FE"
                   transform="translate(34.281799, 43.530130) rotate(6.000000) translate(-34.281799, -43.530130) "
@@ -101,7 +101,7 @@ function UsersIllustration({
             <path
               d="M117.893439,68.5303382 C115.577598,71.5502497 113.32247,73.6707615 111.128055,74.8918734"
               id="Rectangle"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               transform="translate(114.510747, 71.711106) scale(-1, 1) rotate(-188.000000) translate(-114.510747, -71.711106) "
@@ -109,14 +109,14 @@ function UsersIllustration({
             <path
               d="M100.892797,68.1598385 C99.1914272,71.9289155 96.9946093,74.97644 94.3023427,77.302412 C91.6100761,79.628384 89.0387712,81.0499752 86.5884278,81.5671856"
               id="Rectangle"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               transform="translate(93.740612, 74.863512) rotate(-188.000000) translate(-93.740612, -74.863512) "
             />
             <circle
               id="Oval"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               fill="#E8F0FE"
               transform="translate(136.311558, 53.435178) rotate(6.000000) translate(-136.311558, -53.435178) "
@@ -127,7 +127,7 @@ function UsersIllustration({
             <path
               d="M131.005434,61.9271553 C129.29925,65.3808811 127.100025,68.27073 124.407759,70.596702 C121.715492,72.922674 119.144187,74.3442652 116.693844,74.8614756"
               id="Rectangle"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               transform="translate(123.849639, 68.394315) rotate(-188.000000) translate(-123.849639, -68.394315) "
@@ -135,7 +135,7 @@ function UsersIllustration({
             <path
               d="M153.64169,62.8234405 C152.16672,66.4969522 150.177209,69.5834365 147.673155,72.0828934 C145.169102,74.5823503 142.879614,76.280239 140.804694,77.1765595"
               id="Rectangle"
-              stroke="#75A4FE"
+              stroke="hsl(209, 100%, 50%)"
               strokeWidth="2.5"
               strokeLinecap="round"
               transform="translate(147.223192, 70.000000) scale(-1, 1) rotate(-188.000000) translate(-147.223192, -70.000000) "

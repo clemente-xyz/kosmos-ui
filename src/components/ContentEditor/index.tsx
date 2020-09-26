@@ -14,7 +14,7 @@ import theme from "../../theme";
 import InlineStyleControls from "./components/InlineStyleControls";
 import BlockStyleControls from "./components/BlockStyleControls";
 
-import { IProps } from "./types";
+import { IContentEditorProps } from "./types";
 import { styleMap } from "./constants";
 import { MainContainer, RichEditorContainer } from "./styles";
 
@@ -34,7 +34,7 @@ function ContentEditor({
   onChange: externalOnChange,
   error,
   style,
-}: IProps): JSX.Element {
+}: IContentEditorProps): JSX.Element {
   const contentEditorRef = useRef<Editor>(null);
 
   const prevRawContent = markdownToDraft(prevContent || "");

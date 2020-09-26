@@ -4,7 +4,7 @@ import { colorsPalette } from "../../theme/colors";
 import { IVectorProps } from "../../types";
 
 function DeliveryIcon({
-  height = "16",
+  height = "24px",
   primaryColor = colorsPalette.blue.light,
   secondaryColor = colorsPalette.blue.default,
   style,

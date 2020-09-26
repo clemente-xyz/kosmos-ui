@@ -6,13 +6,11 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1px 12px;
-  height: 20px;
+  padding: 6px 8px;
   border-radius: 16px;
-  background-color: ${theme.colorsPalette.blue.lighter};
-  color: ${theme.colorsPalette.gray.default};
-  font-size: x-small;
-  font-weight: 900;
+  width: fit-content;
+  font-size: ${theme.fontSizes.xxsmall};
+  font-weight: ${theme.fontWeights.bolder};
 `;
 
 export { MainContainer };

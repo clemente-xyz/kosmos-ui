@@ -1,19 +1,25 @@
 import React from "react";
 
-export type IProps = {
+import {
+  TStyledComponentType,
+  TStyledComponentFormat,
+  TStyledComponentSize,
+} from "../../types";
+
+export type TButtonProps = {
   onClick?: () => void;
   text: string;
-  type: IButtonType;
-  format?: IButtonFormat;
-  size?: IButtonSize;
+  type: Omit<TStyledComponentType, "warning">;
+  format?: TStyledComponentFormat;
+  size?: Omit<TStyledComponentSize, "large">;
   style?: React.CSSProperties;
   className?: string;
   disabled?: boolean;
   loading?: boolean;
 };
 
-export type IButtonType = "primary" | "secondary" | "danger" | "success";
+export type TButtonType = Omit<TStyledComponentType, "warning">;
 
-export type IButtonFormat = "fill" | "outline";
+export type TButtonFormat = TStyledComponentFormat;
 
-export type IButtonSize = "small" | "regular";
+export type TButtonSize = Omit<TStyledComponentSize, "large">;

@@ -1,4 +1,5 @@
 // Components
+import BoxedIcon from "./components/BoxedIcon";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import Chip from "./components/Chip";
@@ -47,6 +48,7 @@ import PhotosIcon from "./icons/Photos";
 import ProductLabelsIcon from "./icons/ProductLabels";
 import ProfileIcon from "./icons/Profile";
 import ProfilesIcon from "./icons/Profiles";
+import RocketIcon from "./icons/Rocket";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import SuccessIcon from "./icons/Success";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
@@ -75,6 +77,7 @@ import theme from "./theme";
 
 export {
   // Components
+  BoxedIcon,
   Button,
   Card,
   Chip,
@@ -124,6 +127,7 @@ export {
   ProductLabelsIcon,
   ProfileIcon,
   ProfilesIcon,
+  RocketIcon,
   ShoppingBagIcon,
   SuccessIcon,
   ThemeAndContentIcon,

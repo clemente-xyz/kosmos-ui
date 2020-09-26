@@ -10,7 +10,8 @@ const MainContainer = styled.section`
 
 const Header = styled.h1`
   font-size: ${theme.fontSizes.regularLarge};
-  color: ${theme.colorsPalette.black.default};
+  color: ${theme.colorsPalette.gray.dark};
+  font-weight: ${theme.fontWeights.bolder};
   margin-bottom: 8px;
 `;
 

@@ -3,7 +3,7 @@ import React from "react";
 import Loader from "../Loader";
 
 import { getButtonStyles } from "./helpers";
-import { IProps } from "./types";
+import { TButtonProps } from "./types";
 import { MainContainer } from "./styles";
 
 /**
@@ -24,7 +24,7 @@ function Button({
   disabled,
   loading,
   className,
-}: IProps) {
+}: TButtonProps) {
   const {
     backgroundColor,
     fontColor,

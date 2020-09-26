@@ -4,7 +4,7 @@ import theme from "../../theme";
 
 import { MainContainer, Select, Highlight, Bar, Label } from "./styles";
 
-type IProps = {
+type ISelectInputProps = {
   placeholder?: string;
   label?: string;
   value?: string | number;
@@ -38,7 +38,7 @@ function SelectInput({
   onDrag,
   onDrop,
   autoComplete,
-}: IProps) {
+}: ISelectInputProps): JSX.Element {
   return (
     <MainContainer style={mainContainerStyle}>
       <Select
