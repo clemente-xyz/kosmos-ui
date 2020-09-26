@@ -2,18 +2,26 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
-const MainContainer = styled.div`
+const MainContainer = styled.article<{ hasIcon: boolean }>`
+  display: flex;
+  align-items: ${({ hasIcon }) => (hasIcon ? "center" : "unset")};
+  flex-direction: ${({ hasIcon }) => (hasIcon ? "row" : "column")};
+  padding: 32px 48px;
   background-color: ${theme.colorsPalette.white.default};
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 48px;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0),
     0 3px 5px 0px rgba(0, 0, 0, 0.03);
 
   @media (max-width: 600px) {
     margin-bottom: 20px;
   }
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
 `;
 
 const Header = styled.h1`
@@ -24,4 +32,4 @@ const Header = styled.h1`
   margin: 0;
 `;
 
-export { MainContainer, Header };
+export { MainContainer, ContentContainer, Header };

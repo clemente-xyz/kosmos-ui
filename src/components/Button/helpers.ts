@@ -34,23 +34,24 @@ function getButtonStyles({
     };
   };
 
-  const { backgroundColor, fontColor } = buttonsTheme[
-    type as TStyledComponentType
-  ];
+  const button = buttonsTheme[type as TStyledComponentType];
 
   switch (type) {
     case "primary":
       return {
-        backgroundColor: format === "outline" ? "transparent" : backgroundColor,
-        border: format === "outline" ? `1px solid ${backgroundColor}` : "none",
-        fontColor: format === "outline" ? backgroundColor : fontColor,
+        backgroundColor:
+          format === "outline" ? "transparent" : button.backgroundColor,
+        border:
+          format === "outline" ? `1px solid ${button.backgroundColor}` : "none",
+        fontColor:
+          format === "outline" ? button.backgroundColor : button.fontColor,
         boxShadow:
           "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
         backgroundColorOnHover:
           format === "outline"
-            ? backgroundColor
+            ? button.backgroundColor
             : theme.colorsPalette.blue.dark,
-        fontColorOnHover: fontColor,
+        fontColorOnHover: button.fontColor,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
         padding: size === "small" ? "4px 16px" : "12px 24px",
@@ -75,14 +76,19 @@ function getButtonStyles({
 
     default:
       return {
-        backgroundColor: format === "outline" ? "transparent" : backgroundColor,
-        border: format === "outline" ? `1px solid ${backgroundColor}` : "none",
-        fontColor: format === "outline" ? backgroundColor : fontColor,
+        backgroundColor:
+          format === "outline" ? "transparent" : button.backgroundColor,
+        border:
+          format === "outline" ? `1px solid ${button.backgroundColor}` : "none",
+        fontColor:
+          format === "outline" ? button.backgroundColor : button.fontColor,
         boxShadow:
           "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
         backgroundColorOnHover:
-          format === "outline" ? backgroundColor : darken(0.9, fontColor),
-        fontColorOnHover: fontColor,
+          format === "outline"
+            ? button.backgroundColor
+            : darken(0.9, button.fontColor),
+        fontColorOnHover: button.fontColor,
         fontSize: size === "small" ? "12px" : "16px",
         padding: size === "small" ? "4px 16px" : "10px 24px",
       };

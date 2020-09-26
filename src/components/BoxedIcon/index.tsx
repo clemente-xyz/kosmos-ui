@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import { getStyledComponentMainStyles } from "../../utils/helpers";
 import { TStyledComponentType } from "../../types";
@@ -10,7 +10,7 @@ function BoxedIcon({
   icon,
 }: {
   type: TStyledComponentType;
-  icon: SVGElement;
+  icon: ReactNode;
 }): JSX.Element {
   const mainStyles = getStyledComponentMainStyles(type);
 

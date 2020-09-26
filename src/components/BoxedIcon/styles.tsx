@@ -6,6 +6,8 @@ const MainContainer = styled.div`
   align-items: center;
   padding: 16px;
   border-radius: 16px;
+  width: fit-content;
+  height: fit-content;
 `;
 
 export { MainContainer };

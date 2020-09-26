@@ -3,7 +3,7 @@ import React from "react";
 import { IVectorProps } from "../../types";
 
 function CardIcon({
-  height = "20px",
+  height = "24px",
   color = "currentColor",
   style,
   type = "na",
