@@ -38,6 +38,10 @@ const Header = styled.h1`
   font-size: ${theme.fontSizes.small};
   font-weight: ${theme.fontWeights.bold};
   margin: 0;
+
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `;
 
 export { MainContainer, ContentContainer, Header };
