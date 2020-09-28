@@ -14,6 +14,8 @@ const MainContainer = styled.article<{ hasIcon: boolean }>`
 
   @media (max-width: 600px) {
     margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -22,6 +24,12 @@ const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-left: 16px;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+    margin-bottom: 16px;
+    align-items: center;
+  }
 `;
 
 const Header = styled.h1`
