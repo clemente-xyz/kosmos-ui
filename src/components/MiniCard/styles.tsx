@@ -27,7 +27,7 @@ const ContentContainer = styled.div`
 
   @media (max-width: 600px) {
     margin-left: 0;
-    margin-bottom: 16px;
+    margin-top: 16px;
     align-items: center;
   }
 `;
