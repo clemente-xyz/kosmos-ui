@@ -21,7 +21,7 @@ const StepLabel = styled.p`
 
 const StepBar = styled.div<{ completed: boolean }>`
   height: 3px;
-  background: ${`linear-gradient(to right, ${theme.colorsPalette.black.default} 50%, ${theme.colorsPalette.white.default} 50%)`};
+  background: ${`linear-gradient(to right, ${theme.colorsPalette.blue.default} 50%, ${theme.colorsPalette.white.default} 50%)`};
   background-size: 200% 100%;
   background-position: ${({ completed }) =>
     completed ? "left bottom" : "right bottom"};
