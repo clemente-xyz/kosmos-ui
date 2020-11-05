@@ -50,6 +50,7 @@ import ProfileIcon from "./icons/Profile";
 import ProfilesIcon from "./icons/Profiles";
 import RocketIcon from "./icons/Rocket";
 import ShoppingBagIcon from "./icons/ShoppingBag";
+import StoreIcon from "./icons/Store";
 import SuccessIcon from "./icons/Success";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TrashIcon from "./icons/Trash";
@@ -129,6 +130,7 @@ export {
   ProfilesIcon,
   RocketIcon,
   ShoppingBagIcon,
+  StoreIcon,
   SuccessIcon,
   ThemeAndContentIcon,
   TrashIcon,
