@@ -1,11 +1,10 @@
 import React from "react";
 
-import { colorsPalette } from "../../theme/colors";
 import { IVectorProps } from "../../types";
 
 function StoreIcon({
   height = "24px",
-  color = colorsPalette.blue.default,
+  color = "currentColor",
   style,
 }: IVectorProps) {
   return (
