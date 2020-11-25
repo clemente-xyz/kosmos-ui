@@ -155,7 +155,7 @@ function ContentEditor({
           onToggle={toggleInlineStyle}
         />
 
-        <RichEditorContainer className={`${className} editor`} onClick={focusContentEditor}>
+        <RichEditorContainer className={className} onClick={focusContentEditor}>  
           <Editor
             ref={contentEditorRef}
             editorState={editorState}
