@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "draftjs-md-converter": ["global.d.ts"]
+      }
+    }
+  }
+  
