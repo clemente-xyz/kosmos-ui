@@ -1,4 +1,5 @@
 {
+  "extends": "./base-tsconfig.json",
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
@@ -67,5 +68,5 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "lib": ["es6", "dom", "esnext"]
   },
-  "include": ["src"]
+  "include": ["src", "global.d.ts"]
 }
