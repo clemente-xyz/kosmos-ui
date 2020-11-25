@@ -17,11 +17,12 @@ import MultiImagePicker from "./components/MultiImagePicker";
 import OptionsMenu from "./components/OptionsMenu";
 import SectionedDialog from "./components/SectionedDialog";
 import SelectInput from "./components/SelectInput";
+import Slider from "./components/Slider";
 import Stepper from "./components/Stepper";
 import Switch from "./components/Switch";
 import { Tabs, TabsSliderContainer, TabContainer } from "./components/Tabs";
 import TextInput from "./components/TextInput";
-import Slider from "./components/Slider";
+import ToggleButtons from "./components/ToggleButtons";
 
 // Hooks
 import { useClickOutsideContainer, useTabs } from "./hooks";
@@ -50,6 +51,7 @@ import ProfileIcon from "./icons/Profile";
 import ProfilesIcon from "./icons/Profiles";
 import RocketIcon from "./icons/Rocket";
 import ShoppingBagIcon from "./icons/ShoppingBag";
+import StoreIcon from "./icons/Store";
 import SuccessIcon from "./icons/Success";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TrashIcon from "./icons/Trash";
@@ -102,6 +104,7 @@ export {
   TabsSliderContainer,
   TabContainer,
   TextInput,
+  ToggleButtons,
   // Hooks
   useClickOutsideContainer,
   useTabs,
@@ -129,6 +132,7 @@ export {
   ProfilesIcon,
   RocketIcon,
   ShoppingBagIcon,
+  StoreIcon,
   SuccessIcon,
   ThemeAndContentIcon,
   TrashIcon,
