@@ -112,6 +112,8 @@ function OptionsMenu({
                   {options.map((option, index) => {
                     return (
                       <Label
+                        key={index}
+                        styled={typeof option.label === "string"}
                         hasSeparator={option.hasSeparator}
                         onClick={
                           option.callback
@@ -124,7 +126,6 @@ function OptionsMenu({
                               }
                             : undefined
                         }
-                        key={index}
                       >
                         {option.label}
                       </Label>

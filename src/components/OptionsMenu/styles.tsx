@@ -61,20 +61,28 @@ const MenuContainer = styled(animated.div)`
   min-width: 180px;
 `;
 
-const Label = styled.div<{ hasSeparator?: boolean }>`
+const Label = styled.div<{ styled: boolean; hasSeparator?: boolean }>`
   padding: 12px 20px;
   cursor: default;
   border-bottom: ${({ hasSeparator }) =>
     hasSeparator ? `1px solid ${theme.colorsPalette.gray.superLight}` : "none"};
-  color: ${theme.colorsPalette.gray.default};
+  color: ${({ styled }) =>
+    !styled ? theme.colorsPalette.gray.default : "inherit"};
   border-radius: 5px;
   font-size: 14px;
 
-  &:hover {
-    background-color: ${({ hasSeparator }) =>
-      !hasSeparator ? theme.colorsPalette.blue.lighter : "none"};
-    color: ${theme.colorsPalette.blue.default};
-  }
+  ${({ styled, hasSeparator }) => {
+    if (styled) {
+      return `
+        &:hover {
+          background-color: ${
+            !hasSeparator ? theme.colorsPalette.blue.lighter : "none"
+          };
+          color: ${theme.colorsPalette.blue.default};
+        }
+      `;
+    }
+  }}
 `;
 
 const Dot = styled.div`
