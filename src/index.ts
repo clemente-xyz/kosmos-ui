@@ -81,9 +81,6 @@ import BlobAnimation from "./animations/Blob";
 // Theme
 import theme from "./theme";
 
-// Types
-import * as types from "./types";
-
 export {
   // Components
   BoxedIcon,
@@ -162,6 +159,4 @@ export {
   BlobAnimation,
   // Theme
   theme,
-  // Types
-  types,
 };
