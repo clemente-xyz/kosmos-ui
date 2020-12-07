@@ -103,6 +103,15 @@ function useTabs(
   return { tabs, handleTabClick };
 }
 
+/**
+ * Provides state logic management for images import.
+ * @param images - Images to manage. Takes an empty array by default.
+ * @param setImages - Dispatcher for images prop.
+ * @param options - Configs for the dropzone.
+ * @param onDropRejected - Callback to execute when an img drop fails.
+ * @returns The images being managed, a function to remove them
+ * externally and a general picker wrapper component.
+ */
 function useMultiImagePicker({
   images = [],
   setImages,
