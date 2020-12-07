@@ -1,10 +1,14 @@
-import {
+import React, {
   useEffect,
   useState,
   useCallback,
   MutableRefObject,
   MouseEvent,
+  ReactNode,
 } from "react";
+import { useDropzone } from "react-dropzone";
+
+import { TMultiImagePickerProps } from "../types";
 
 /**
  * Alert clicks outside of the passed ref.
@@ -99,4 +103,75 @@ function useTabs(
   return { tabs, handleTabClick };
 }
 
-export { useClickOutsideContainer, useTabs };
+function useMultiImagePicker({
+  images = [],
+  setImages,
+  options,
+  onDropRejected,
+}: TMultiImagePickerProps) {
+  const ImagePicker = ({ children }: { children: ReactNode }) => {
+    const { getRootProps, getInputProps } = useDropzone({
+      ...options,
+      accept: "image/*",
+      onDrop(acceptedFiles) {
+        setImages([
+          ...images,
+          ...acceptedFiles.map((image) =>
+            (Object as any).assign(image, {
+              preview: URL.createObjectURL(image),
+            })
+          ),
+        ]);
+      },
+      onDropRejected(event) {
+        onDropRejected && onDropRejected(event);
+      },
+    });
+
+    return (
+      <div
+        {...getRootProps({ className: "dropzone" })}
+        style={{ width: "fit-content" }}
+      >
+        <input {...getInputProps()} />
+
+        {children}
+      </div>
+    );
+  };
+
+  function removeImage(
+    selectedImage:
+      | (File & {
+          preview: string;
+        })
+      | string
+  ) {
+    setImages(
+      images.filter((image) => {
+        if (image instanceof File) {
+          return selectedImage instanceof File
+            ? selectedImage.name !== image.name
+            : true;
+        }
+
+        return typeof selectedImage === "string"
+          ? selectedImage !== image
+          : true;
+      })
+    );
+  }
+
+  useEffect(
+    () => () => {
+      images.forEach((image) => {
+        image instanceof File && URL.revokeObjectURL(image.preview);
+      });
+    },
+    [images]
+  );
+
+  return { ImagePicker, images, removeImage };
+}
+
+export { useClickOutsideContainer, useTabs, useMultiImagePicker };

@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, CSSProperties } from "react";
 import { useDropzone } from "react-dropzone";
 
 import theme from "../../theme";
 import Button from "../Button";
 import CloseIcon from "../../icons/Close";
+import { TMultiImagePickerProps } from "../../types";
 
-import { IMultiImagePickerProps } from "./types";
 import {
   ThumbContainer,
   Thumb,
@@ -21,7 +21,10 @@ function MultiImagePicker({
   style,
   errorMessage,
   onDropRejected,
-}: IMultiImagePickerProps): JSX.Element {
+}: TMultiImagePickerProps & {
+  errorMessage?: string;
+  style?: CSSProperties;
+}): JSX.Element {
   const { getRootProps, getInputProps } = useDropzone({
     ...options,
     accept: "image/*",

@@ -25,7 +25,11 @@ import TextInput from "./components/TextInput";
 import ToggleButtons from "./components/ToggleButtons";
 
 // Hooks
-import { useClickOutsideContainer, useTabs } from "./hooks";
+import {
+  useClickOutsideContainer,
+  useTabs,
+  useMultiImagePicker,
+} from "./hooks";
 
 // Icons
 import BarChartIcon from "./icons/BarChart";
@@ -77,6 +81,9 @@ import BlobAnimation from "./animations/Blob";
 // Theme
 import theme from "./theme";
 
+// Types
+import * as types from "./types";
+
 export {
   // Components
   BoxedIcon,
@@ -108,6 +115,7 @@ export {
   // Hooks
   useClickOutsideContainer,
   useTabs,
+  useMultiImagePicker,
   // Icons
   BarChartIcon,
   CalendarIcon,
@@ -154,4 +162,6 @@ export {
   BlobAnimation,
   // Theme
   theme,
+  // Types
+  types,
 };
