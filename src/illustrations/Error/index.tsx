@@ -1,5 +1,5 @@
-import { lighten } from "polished";
 import React from "react";
+import { lighten } from "polished";
 
 import theme from "../../theme";
 import { IVectorProps } from "../../types";

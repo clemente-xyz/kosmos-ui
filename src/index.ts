@@ -77,6 +77,7 @@ import UsersIllustration from "./illustrations/Users";
 
 // Animations
 import BlobAnimation from "./animations/Blob";
+import LoadingAnimation from "./animations/Loading";
 
 // Theme
 import theme from "./theme";
@@ -157,6 +158,7 @@ export {
   UsersIllustration,
   // Animations
   BlobAnimation,
+  LoadingAnimation,
   // Theme
   theme,
 };
