@@ -10,6 +10,14 @@ const MainContainer = styled.article`
   padding: 32px 54px;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0),
     0 3px 5px 0px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s;
+
+  &:hover {
+    top: 2px;
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
 `;
 
 const Header = styled.h1`
