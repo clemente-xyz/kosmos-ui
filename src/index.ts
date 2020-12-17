@@ -11,7 +11,7 @@ import Dialog from "./components/Dialog";
 import IllustratedMessage from "./components/IllustratedMessage";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
-import LoadingSection from "./components/LoadingSection";
+import LoadingScreen from "./components/LoadingScreen";
 import MiniCard from "./components/MiniCard";
 import MultiImagePicker from "./components/MultiImagePicker";
 import OptionsMenu from "./components/OptionsMenu";
@@ -95,7 +95,7 @@ export {
   IllustratedMessage,
   ImagePicker,
   Loader,
-  LoadingSection,
+  LoadingScreen,
   MiniCard,
   MultiImagePicker,
   OptionsMenu,
