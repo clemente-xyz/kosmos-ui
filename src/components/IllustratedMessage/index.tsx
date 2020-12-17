@@ -1,7 +1,7 @@
 import React from "react";
 
-import { IIllustratedMessageProps } from "./types";
 import { getIllustrationToRender } from "./helpers";
+import { IIllustratedMessageProps } from "./types";
 import { MainContainer, Header, Paragraph } from "./styles";
 
 function IllustratedMessage({

@@ -8,10 +8,10 @@ import ContentEditor from "./components/ContentEditor";
 import ContentViewer from "./components/ContentViewer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
+import FallbackScreen from "./components/FallbackScreen";
 import IllustratedMessage from "./components/IllustratedMessage";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
-import LoadingScreen from "./components/LoadingScreen";
 import MiniCard from "./components/MiniCard";
 import MultiImagePicker from "./components/MultiImagePicker";
 import OptionsMenu from "./components/OptionsMenu";
@@ -92,10 +92,10 @@ export {
   ContentViewer,
   DatePicker,
   Dialog,
+  FallbackScreen,
   IllustratedMessage,
   ImagePicker,
   Loader,
-  LoadingScreen,
   MiniCard,
   MultiImagePicker,
   OptionsMenu,
