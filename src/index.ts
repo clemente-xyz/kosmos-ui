@@ -37,6 +37,7 @@ import CalendarIcon from "./icons/Calendar";
 import CardIcon from "./icons/Card";
 import CarretIcon from "./icons/Carret";
 import CloseIcon from "./icons/Close";
+import CouponIcon from "./icons/Coupon";
 import DeliveryIcon from "./icons/Delivery";
 import EditIcon from "./icons/Edit";
 import ErrorIcon from "./icons/Error";
@@ -121,6 +122,7 @@ export {
   CardIcon,
   CarretIcon,
   CloseIcon,
+  CouponIcon,
   DeliveryIcon,
   EditIcon,
   ErrorIcon,

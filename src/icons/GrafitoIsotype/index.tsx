@@ -1,7 +1,6 @@
 import React from "react";
 
 import theme from "../../theme";
-
 import { IVectorProps } from "../../types";
 
 function GrafitoIsotype({ height = "690px", style }: IVectorProps) {
