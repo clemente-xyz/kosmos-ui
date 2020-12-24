@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { useTransition } from "react-spring";
 import { usePopper } from "react-popper";
@@ -10,6 +10,7 @@ import { MainContainer } from "./styles";
 function Menu({
   children,
   placement = "bottom-start",
+  style,
 }: {
   children: ReactNode;
   placement?:
@@ -25,6 +26,7 @@ function Menu({
     | "left-end"
     | "left"
     | "left-start";
+  style?: CSSProperties;
 }) {
   const { isMenuOpen, triggerButtonRef, menuContainerRef } = useDropdown();
 
@@ -48,7 +50,7 @@ function Menu({
   return createPortal(
     <article
       ref={setPopperElement as any}
-      style={{ ...styles.popper }}
+      style={{ ...styles.popper, ...style }}
       {...attributes.popper}
     >
       {spring.map(({ item, key, props }) => {

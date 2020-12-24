@@ -1,9 +1,13 @@
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import { useDropdown } from "../../index";
 
 import { Button, Dot } from "./styles";
 
-function ToggleButton(props: { children?: ReactNode; default?: boolean }) {
+function ToggleButton(props: {
+  children?: ReactNode;
+  default?: boolean;
+  style?: CSSProperties;
+}) {
   const {
     setIsMenuOpen,
     setTriggerButtonElement,
@@ -22,7 +26,12 @@ function ToggleButton(props: { children?: ReactNode; default?: boolean }) {
 
         return setTriggerButtonRef(reference);
       }}
-      onClick={() => setIsMenuOpen(true)}
+      onClick={(event) => {
+        event.stopPropagation();
+
+        setIsMenuOpen(true);
+      }}
+      style={props.style}
     >
       {children}
     </Button>
