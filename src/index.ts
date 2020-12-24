@@ -8,13 +8,13 @@ import ContentEditor from "./components/ContentEditor";
 import ContentViewer from "./components/ContentViewer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
+import Dropdown from "./components/Dropdown";
 import FallbackScreen from "./components/FallbackScreen";
 import IllustratedMessage from "./components/IllustratedMessage";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
 import MiniCard from "./components/MiniCard";
 import MultiImagePicker from "./components/MultiImagePicker";
-import OptionsMenu from "./components/OptionsMenu";
 import SectionedDialog from "./components/SectionedDialog";
 import SelectInput from "./components/SelectInput";
 import Slider from "./components/Slider";
@@ -95,13 +95,13 @@ export {
   ContentViewer,
   DatePicker,
   Dialog,
+  Dropdown,
   FallbackScreen,
   IllustratedMessage,
   ImagePicker,
   Loader,
   MiniCard,
   MultiImagePicker,
-  OptionsMenu,
   SectionedDialog,
   SelectInput,
   Slider,
