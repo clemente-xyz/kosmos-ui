@@ -1,0 +1,22 @@
+$datepicker__background-color: #fff !default;
+$datepicker__border-color: hsl(221, 22%, 90%) !default;
+$datepicker__highlighted-color: hsl(153, 60%, 53%) !default;
+$datepicker__muted-color: hsl(221, 22%, 71%) !default;
+$datepicker__selected-color: hsl(209, 100%, 50%) !default;
+$datepicker__text-color: hsl(221, 22%, 40%) !default;
+$datepicker__header-color: hsl(221, 22%, 40%) !default;
+$datepicker__navigation-disabled-color: lighten(
+  $datepicker__muted-color,
+  10%
+) !default;
+
+$datepicker__border-radius: 0.3rem !default;
+$datepicker__day-margin: 2px !default;
+$datepicker__font-size: 0.8rem !default;
+$datepicker__font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+  'Helvetica Neue', sans-serif !default;
+$datepicker__item-size: 1.7rem !default;
+$datepicker__margin: 0.4rem !default;
+$datepicker__navigation-size: 0.45rem !default;
+$datepicker__triangle-size: 8px !default;

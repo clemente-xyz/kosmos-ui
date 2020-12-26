@@ -1,66 +1,81 @@
-import React, { CSSProperties, FocusEvent } from "react";
+import React from "react";
 
-import { validateDateFormat } from "../../../../utils/helpers";
+import { IDatePickerInputProps } from "./types";
+import {
+  MainContainer,
+  Input,
+  Highlight,
+  Bar,
+  Label,
+  ErrorParagraph,
+} from "./styles";
 import theme from "../../../../theme";
 
-import { MainContainer, Input, Highlight, Bar, Label } from "./styles";
+const DatePickerInput = React.forwardRef(
+  (
+    {
+      placeholder,
+      type,
+      label,
+      value,
+      onChange,
+      onClick,
+      id,
+      name,
+      mainContainerStyle,
+      inputStyle,
+      baseColor,
+      highlightColor,
+      onBlur,
+      onCopy,
+      onCut,
+      onDrag,
+      onDrop,
+      autoComplete,
+      readOnly,
+      error,
+    }: IDatePickerInputProps,
+    ref: any
+  ) => {
+    return (
+      <MainContainer style={mainContainerStyle} onClick={onClick} ref={ref}>
+        <Input
+          id={id}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          style={inputStyle}
+          type={type || "text"}
+          baseColor={baseColor || theme.colorsPalette.gray.default}
+          highlightColor={highlightColor || theme.colorsPalette.gray.dark}
+          required
+          onCopy={onCopy}
+          onCut={onCut}
+          onDrag={onDrag}
+          onDrop={onDrop}
+          autoComplete={autoComplete}
+          readOnly={readOnly}
+          onBlur={onBlur}
+        />
 
-interface IDatePickerInputProps {
-  placeholder?: string;
-  label?: string;
-  value?: string;
-  onChange?: (event: any) => void;
-  id?: string;
-  name?: string;
-  inputStyle?: CSSProperties;
-  baseColor?: string;
-  highlightColor?: string;
-  autoComplete?: string;
-  onBlur?: (event: FocusEvent<any>) => void;
-}
+        <Highlight />
 
-function DatePickerInput({
-  placeholder,
-  label,
-  value,
-  onChange,
-  id,
-  name,
-  baseColor,
-  highlightColor,
-  onBlur,
-  autoComplete,
-}: IDatePickerInputProps) {
-  return (
-    <MainContainer>
-      <Input
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        onChange={validateDateFormat(value) ? onChange : () => {}}
-        type="text"
-        baseColor={baseColor || theme.colorsPalette.gray.default}
-        highlightColor={highlightColor || theme.colorsPalette.black.default}
-        required
-        autoComplete={autoComplete}
-        onBlur={onBlur}
-      />
+        <Bar
+          highlightColor={highlightColor || theme.colorsPalette.blue.default}
+        />
 
-      <Highlight />
+        <Label
+          htmlFor={id}
+          baseColor={baseColor || theme.colorsPalette.gray.default}
+        >
+          {label}
+        </Label>
 
-      <Bar
-        highlightColor={highlightColor || theme.colorsPalette.black.default}
-      />
-
-      <Label
-        htmlFor={id}
-        baseColor={baseColor || theme.colorsPalette.gray.default}
-      >
-        {label}
-      </Label>
-    </MainContainer>
-  );
-}
+        {error && <ErrorParagraph>{error}</ErrorParagraph>}
+      </MainContainer>
+    );
+  }
+);
 
 export default DatePickerInput;

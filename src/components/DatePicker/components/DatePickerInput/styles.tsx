@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import theme from "../../../../theme";
+
 function inputHighlighter(highlightColor: string) {
   return keyframes`
   from { background: ${highlightColor}; }
@@ -10,21 +12,20 @@ function inputHighlighter(highlightColor: string) {
 const MainContainer = styled.div`
   position: relative;
   width: 100%;
-  margin-right: 10px;
 
-  &:last-child {
-    margin-right: 0;
+  &:not(:first-child) {
+    margin-left: 16px;
   }
 `;
 
 const Label = styled.label<{ baseColor: string }>`
+  font-size: ${theme.fontSizes.regular};
   color: ${({ baseColor }) => baseColor};
-  font-size: 18px;
-  font-weight: normal;
   position: absolute;
   pointer-events: none;
-  top: 10px;
+  top: 12px;
   transition: 0.2s ease all;
+
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 `;
@@ -67,23 +68,31 @@ const Highlight = styled.span`
 `;
 
 const Input = styled.input<{ baseColor: string; highlightColor: string }>`
-  font-size: 18px;
-  padding: 10px 0;
+  font-size: ${theme.fontSizes.regular};
+  padding: 12px 0;
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid ${({ baseColor }) => baseColor};
+  border-bottom: 2px solid ${theme.colorsPalette.gray.lighter};
   background-color: transparent;
   color: ${({ baseColor }) => baseColor};
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:focus {
     outline: none;
   }
 
   &:focus ~ ${Label}, &:valid ~ ${Label} {
-    top: -15px;
-    font-size: 14px;
+    top: -16px;
     color: ${({ highlightColor }) => highlightColor};
+    font-size: ${theme.fontSizes.small};
+  }
+
+  &:read-only ~ ${Label} {
+    top: -16px;
+    color: ${({ highlightColor }) => highlightColor};
+    font-size: ${theme.fontSizes.small};
   }
 
   &:focus ~ ${Bar}::before, &:focus ~ ${Bar}::after {
@@ -98,6 +107,13 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   }
 `;
 
-export { MainContainer, Input, Highlight, Bar, Label };
+const ErrorParagraph = styled.p`
+  font-size: ${theme.fontSizes.regular};
+  margin: 0;
+  color: ${theme.colorsPalette.red.default};
+  margin-top: 16px;
+`;
+
+export { MainContainer, Input, Highlight, Bar, Label, ErrorParagraph };
 
 // https://codepen.io/chrisoncode/pen/IdGKH
