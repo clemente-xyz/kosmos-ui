@@ -1,13 +1,14 @@
 {
   "name": "kosmos-ui",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "author": "Clemente Serrano",
   "license": "ISC",
   "description": "A cool React components UI library",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
-    "build": "rm -rf ./lib && yarn tsc"
+    "copy-files": "copyfiles -u 1 src/**/*.scss lib/",
+    "build": "rm -rf ./lib && yarn tsc && yarn copy-files"
   },
   "peerDependencies": {
     "react": ">=16.0.0"
@@ -20,9 +21,11 @@
     "@types/react-datepicker": "^3.1.2",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.0",
+    "copyfiles": "^2.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-spring": "^8.0.27",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.2"
   },
   "dependencies": {
