@@ -1,6 +1,6 @@
 import { CSSProperties, FocusEvent } from "react";
 
-export interface ITextInputProps {
+export type TTextInputProps = {
   placeholder?: string;
   type?: string;
   label?: string;
@@ -8,8 +8,6 @@ export interface ITextInputProps {
   onChange?: (event: any) => void;
   id?: string;
   name?: string;
-  mainContainerStyle?: CSSProperties;
-  inputStyle?: CSSProperties;
   baseColor?: string;
   highlightColor?: string;
   onCopy?: () => boolean;
@@ -20,4 +18,14 @@ export interface ITextInputProps {
   onBlur?: (event: FocusEvent<any>) => void;
   readOnly?: boolean;
   error?: string;
-}
+  style?: TTextInputStyle;
+};
+
+export type TTextInputStyle = {
+  mainContainer?: CSSProperties;
+  input?: CSSProperties;
+  bar?: CSSProperties;
+  label?: CSSProperties;
+  hightlight?: CSSProperties;
+  error?: CSSProperties;
+};

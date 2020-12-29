@@ -2,7 +2,7 @@ import React from "react";
 
 import theme from "../../theme";
 
-import { ITextInputProps } from "./types";
+import { TTextInputProps } from "./types";
 import {
   MainContainer,
   Input,
@@ -20,8 +20,7 @@ function TextInput({
   onChange,
   id,
   name,
-  mainContainerStyle,
-  inputStyle,
+  style,
   baseColor,
   highlightColor,
   onBlur,
@@ -32,16 +31,16 @@ function TextInput({
   autoComplete,
   readOnly,
   error,
-}: ITextInputProps): JSX.Element {
+}: TTextInputProps): JSX.Element {
   return (
-    <MainContainer style={mainContainerStyle}>
+    <MainContainer style={style && style.mainContainer}>
       <Input
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        style={inputStyle}
+        style={style && style.input}
         type={type || "text"}
         baseColor={baseColor || theme.colorsPalette.gray.default}
         highlightColor={highlightColor || theme.colorsPalette.gray.dark}
@@ -55,20 +54,24 @@ function TextInput({
         onBlur={onBlur}
       />
 
-      <Highlight />
+      <Highlight style={style && style.hightlight} />
 
       <Bar
+        style={style && style.bar}
         highlightColor={highlightColor || theme.colorsPalette.blue.default}
       />
 
       <Label
+        style={style && style.label}
         htmlFor={id}
         baseColor={baseColor || theme.colorsPalette.gray.default}
       >
         {label}
       </Label>
 
-      {error && <ErrorParagraph>{error}</ErrorParagraph>}
+      {error && (
+        <ErrorParagraph style={style && style.error}>{error}</ErrorParagraph>
+      )}
     </MainContainer>
   );
 }
