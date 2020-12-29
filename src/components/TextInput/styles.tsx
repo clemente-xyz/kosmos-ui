@@ -73,7 +73,7 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 2px solid ${theme.colorsPalette.gray.lighter};
+  border-bottom: 2px solid ${({ baseColor }) => baseColor};
   background-color: transparent;
   color: ${({ baseColor }) => baseColor};
   overflow: hidden;
