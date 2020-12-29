@@ -1,15 +1,23 @@
-import { ReactNode, CSSProperties } from "react";
+import { CSSProperties, ReactElement } from 'react';
 
-export interface IStepperProps {
-  steps: IStep[];
+import { TStepProps } from './components/Step/types';
+import Step from './components/Step';
+import StepLabel from './components/Label';
+
+export type TStepper = JSX.Element & {
+  Step: typeof Step;
+  Label: typeof StepLabel;
+};
+
+export type TStepperProps = {
   activeStep: number;
-  hideLabels?: boolean;
-  mainContainerStyles?: CSSProperties;
-  stepContainerStyles?: CSSProperties;
-  stepBarStyles?: CSSProperties;
-}
+  style?: TStepperStyleProps;
+  children: ReactElement<TStepProps>[];
+};
 
-export interface IStep {
-  index: number;
-  label: string | ReactNode;
-}
+export type TStepperStyleProps = {
+  color?: string;
+  bar?: CSSProperties;
+  active?: CSSProperties;
+  completed?: CSSProperties;
+};

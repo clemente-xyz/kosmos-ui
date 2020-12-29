@@ -1,43 +1,28 @@
-import React from "react";
+import React from 'react';
 
-import { IStepperProps } from "./types";
-import { MainContainer, StepContainer, StepLabel, StepBar } from "./styles";
+import Step from './components/Step';
+import StepLabel from './components/Label';
 
-/**
- * Renders a progress through a sequence of logical and numbered steps.
- * @param activeStep The active step (zero based index).
- * @param steps Index-label based object which contains all the steps that wanted to be rendered.
- * @param hideLabels Flag indication if the stepper hides or not the steps labels.
- * @param mainContainerStyles Main component container styles.
- * @param stepContainerStyles Step container styles.
- * @param stepBarStyles Step bar container styles.
- */
-function Stepper({
-  activeStep,
-  steps,
-  hideLabels,
-  mainContainerStyles,
-  stepContainerStyles,
-  stepBarStyles,
-}: IStepperProps): JSX.Element {
-  const orderedSteps = steps.sort((stepI, stepJ) => stepI.index - stepJ.index);
+import { TStepper, TStepperProps } from './types';
+import { MainContainer } from './styles';
 
-  return (
-    <MainContainer style={mainContainerStyles}>
-      {orderedSteps.map((step) => {
-        return (
-          <StepContainer key={step.index} style={stepContainerStyles}>
-            {!hideLabels && <StepLabel>{step.label}</StepLabel>}
+function Stepper(props: TStepperProps): TStepper {
+  const stepsCount = React.Children.count(props.children);
 
-            <StepBar
-              completed={step.index <= activeStep}
-              style={stepBarStyles}
-            />
-          </StepContainer>
-        );
-      })}
-    </MainContainer>
-  );
+  const steps = React.Children.map(props.children, (step, index) => {
+    return React.cloneElement(step, {
+      index,
+      active: index === props.activeStep,
+      completed: index < props.activeStep,
+      stepsCount,
+      style: props.style,
+    });
+  });
+
+  return ((<MainContainer>{steps}</MainContainer>) as unknown) as TStepper;
 }
+
+Stepper.Step = Step;
+Stepper.Label = StepLabel;
 
 export default Stepper;
