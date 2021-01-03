@@ -40,7 +40,7 @@ const Bar = styled.span<{ highlightColor: string }>`
     content: "";
     height: 2px;
     width: 0;
-    bottom: 1px;
+    bottom: 0;
     position: absolute;
     background: ${({ highlightColor }) => highlightColor};
     transition: 0.2s ease all;
