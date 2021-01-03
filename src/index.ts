@@ -39,6 +39,7 @@ import CarretIcon from "./icons/Carret";
 import CloseIcon from "./icons/Close";
 import CouponIcon from "./icons/Coupon";
 import DeliveryIcon from "./icons/Delivery";
+import DiscountTicketIcon from "./icons/DiscountTicket";
 import EditIcon from "./icons/Edit";
 import ErrorIcon from "./icons/Error";
 import EyeIcon from "./icons/Eye";
@@ -124,6 +125,7 @@ export {
   CloseIcon,
   CouponIcon,
   DeliveryIcon,
+  DiscountTicketIcon,
   EditIcon,
   ErrorIcon,
   EyeIcon,
