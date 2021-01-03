@@ -15,7 +15,7 @@ const Bar = styled.div<TStepBarProps>`
   background: ${({ color }) =>
     `linear-gradient(to right, ${
       color || theme.colorsPalette.blue.default
-    } 50%, ${theme.colorsPalette.gray.light} 50%)`};
+    } 50%, ${theme.colorsPalette.gray.lighter} 50%)`};
   background-size: 200% 100%;
   background-position: ${({ active, completed }) =>
     active || completed ? "left bottom" : "right bottom"};
