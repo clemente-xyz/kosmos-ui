@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { TProps } from './types';
-import { MainContainer, ToggleButton } from './styles';
+import { TProps } from "./types";
+import { MainContainer, ToggleButton } from "./styles";
 
 function ToggleButtons({
   options,
@@ -16,7 +16,7 @@ function ToggleButtons({
   ) {
     let newValue: string | Array<string> = option;
 
-    if (!exclusive && typeof value !== 'string') {
+    if (!exclusive && typeof value !== "string") {
       newValue = [...(value || []), newValue];
     }
 
@@ -24,7 +24,7 @@ function ToggleButtons({
   }
 
   return (
-    <MainContainer style={style}>
+    <MainContainer style={style && style.mainContainer}>
       {options.map((option, index) => {
         return (
           <ToggleButton
@@ -32,7 +32,7 @@ function ToggleButtons({
             isSelected={
               !!(
                 value &&
-                (typeof value === 'string'
+                (typeof value === "string"
                   ? value === option.value
                   : value.find(
                       (selectedOption) => selectedOption === option.value
@@ -40,6 +40,7 @@ function ToggleButtons({
               )
             }
             onClick={(event) => handleOptionButtonClick(option.value, event)}
+            style={style && style.buttons}
           >
             {option.label}
           </ToggleButton>

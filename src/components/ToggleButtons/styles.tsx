@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
+import { TToggleButtonsStyle } from "./types";
+
+type TToggleButtonProps = {
+  isSelected: boolean;
+  style?: TToggleButtonsStyle;
+};
+
 const MainContainer = styled.div`
   display: flex;
   align-items: center;
@@ -12,16 +19,17 @@ const MainContainer = styled.div`
   transition: all 0.3s;
 `;
 
-const ToggleButton = styled.button<{ isSelected: boolean }>`
+const ToggleButton = styled.button<TToggleButtonProps>`
   padding: 8px 16px;
-  background-color: ${({ isSelected }) =>
-    isSelected ? theme.colorsPalette.white.default : "transparent"};
-  color: ${({ isSelected }) =>
+  background-color: ${({ isSelected, style }) =>
     isSelected
-      ? theme.colorsPalette.gray.default
+      ? (style && style.backgroundColor) || theme.colorsPalette.white.default
+      : "transparent"};
+  color: ${({ isSelected, style }) =>
+    isSelected
+      ? (style && style.backgroundColor) || theme.colorsPalette.gray.default
       : theme.colorsPalette.gray.light};
-  font-weight: ${({ isSelected }) =>
-    isSelected ? theme.fontWeights.regular : theme.fontWeights.regular};
+  font-weight: ${theme.fontWeights.regular};
   box-shadow: ${({ isSelected }) =>
     isSelected
       ? "0px 0px 7px 0px rgba(0, 0, 0, 0), 0 3px 5px 0px rgba(0, 0, 0, 0.03);"

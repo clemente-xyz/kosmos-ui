@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode } from "react";
 
 export type TProps = {
   options: { value: string; label: string | ReactNode }[];
@@ -8,5 +8,13 @@ export type TProps = {
     event: React.MouseEvent<HTMLElement>
   ) => void;
   exclusive?: boolean;
-  style?: CSSProperties;
+  style?: {
+    mainContainer?: CSSProperties;
+    buttons?: TToggleButtonsStyle;
+  };
 };
+
+export type TToggleButtonsStyle = Pick<
+  CSSProperties,
+  "backgroundColor" | "color" | "fontFamily" | "padding"
+>;
