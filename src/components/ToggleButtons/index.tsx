@@ -40,7 +40,7 @@ function ToggleButtons({
               )
             }
             onClick={(event) => handleOptionButtonClick(option.value, event)}
-            style={style && style.buttons}
+            customStyle={style && style.buttons}
           >
             {option.label}
           </ToggleButton>

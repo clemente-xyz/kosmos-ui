@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { lighten } from "polished";
 
 import theme from "../../theme";
 
@@ -6,7 +7,7 @@ import { TToggleButtonsStyle } from "./types";
 
 type TToggleButtonProps = {
   isSelected: boolean;
-  style?: TToggleButtonsStyle;
+  customStyle?: TToggleButtonsStyle;
 };
 
 const MainContainer = styled.div`
@@ -21,14 +22,16 @@ const MainContainer = styled.div`
 
 const ToggleButton = styled.button<TToggleButtonProps>`
   padding: 8px 16px;
-  background-color: ${({ isSelected, style }) =>
+  background-color: ${({ isSelected, customStyle }) =>
     isSelected
-      ? (style && style.backgroundColor) || theme.colorsPalette.white.default
+      ? (customStyle && customStyle.backgroundColor) ||
+        theme.colorsPalette.white.default
       : "transparent"};
-  color: ${({ isSelected, style }) =>
+  color: ${({ isSelected, customStyle }) =>
     isSelected
-      ? (style && style.backgroundColor) || theme.colorsPalette.gray.default
-      : theme.colorsPalette.gray.light};
+      ? (customStyle && customStyle.color) || theme.colorsPalette.gray.default
+      : (customStyle && lighten(0.7, customStyle.color as string)) ||
+        theme.colorsPalette.gray.light};
   font-weight: ${theme.fontWeights.regular};
   box-shadow: ${({ isSelected }) =>
     isSelected
