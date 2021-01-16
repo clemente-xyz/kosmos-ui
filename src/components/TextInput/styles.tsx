@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { lighten } from "polished";
 
 import theme from "../../theme";
 
@@ -73,7 +74,7 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 2px solid ${({ baseColor }) => baseColor};
+  border-bottom: 2px solid ${({ baseColor }) => lighten(0.2, baseColor)};
   background-color: transparent;
   color: ${({ baseColor }) => baseColor};
   overflow: hidden;

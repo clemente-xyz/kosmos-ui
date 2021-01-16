@@ -42,7 +42,7 @@ function TextInput({
         onChange={onChange}
         style={style && style.input}
         type={type || "text"}
-        baseColor={baseColor || theme.colorsPalette.gray.lighter}
+        baseColor={baseColor || theme.colorsPalette.gray.light}
         highlightColor={highlightColor || theme.colorsPalette.gray.dark}
         required
         onCopy={onCopy}
