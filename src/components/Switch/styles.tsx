@@ -37,7 +37,7 @@ const Input = styled.input.attrs({ type: "checkbox" })<{ baseColor?: string }>`
 
   &:checked + ${Label} {
     background: ${({ baseColor }) =>
-      baseColor || theme.colorsPalette.black.default};
+      baseColor || theme.colorsPalette.blue.default};
 
     &::after {
       content: "";
