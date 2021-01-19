@@ -29,6 +29,8 @@ function ToggleButton(props: {
       onClick={(event) => {
         event.stopPropagation();
 
+        event.preventDefault();
+
         setIsMenuOpen(true);
       }}
       style={props.style}
