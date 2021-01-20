@@ -105,7 +105,7 @@ function MultiImagePicker({
         <Button
           onClick={() => {}}
           text="Seleccionar"
-          type="secondary"
+          variant="secondary"
           size="small"
         />
       </div>

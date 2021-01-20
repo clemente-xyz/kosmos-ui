@@ -72,7 +72,7 @@ function Dialog({
                         onClick={declineAction.callback}
                         //@ts-ignore
                         text={declineAction.message}
-                        type={confirmAction ? "secondary" : "primary"}
+                        variant={confirmAction ? "secondary" : "primary"}
                         format={confirmAction ? "outline" : "fill"}
                         style={{ marginRight: confirmAction ? "16px" : "none" }}
                       />
@@ -87,7 +87,7 @@ function Dialog({
                           onClick={confirmAction.callback}
                           //@ts-ignore
                           text={confirmAction.message}
-                          type="primary"
+                          variant="primary"
                         />
                       ))}
                   </ButtonsContainer>
