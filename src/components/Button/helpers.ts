@@ -3,14 +3,14 @@ import { darken } from "polished";
 import theme from "../../theme";
 import { TStyledComponentType } from "../../types";
 
-import { TButtonFormat, TButtonSize, TButtonType } from "./types";
+import { TButtonFormat, TButtonSize, TButtonVariant } from "./types";
 
 function getButtonStyles({
-  type,
+  variant,
   format,
   size,
 }: {
-  type: TButtonType;
+  variant: TButtonVariant;
   format?: TButtonFormat;
   size?: TButtonSize;
 }) {
@@ -34,9 +34,9 @@ function getButtonStyles({
     };
   };
 
-  const button = buttonsTheme[type as TStyledComponentType];
+  const button = buttonsTheme[variant as TStyledComponentType];
 
-  switch (type) {
+  switch (variant) {
     case "primary":
       return {
         backgroundColor:

@@ -1,9 +1,10 @@
-/*eslint no-unexpected-multiline: 0*/
 import styled from "styled-components";
 
-const MainContainer = styled.button.attrs((props: any) => ({
-  disabled: props.disabled,
-}))<{
+const MainContainer = styled.button.attrs(
+  (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => ({
+    disabled: props.disabled,
+  })
+)<{
   backgroundColor: string;
   fontColor: string;
   fontSize: string;

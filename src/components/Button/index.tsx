@@ -8,23 +8,23 @@ import { MainContainer } from "./styles";
 
 /**
  * Render button component.
- * @param onClick Function to trigger when button is clicked.
- * @param text Text content that will display the button.
- * @param type Button type (each type has its own style).
+ * @param variant Button type (each type has its own style).
  * @param disabled Flag that enable/disable button clicking.
  * @param loading Flag that determines if the Loader component renders or not.
  */
-function Button({
-  onClick,
-  text,
-  type,
-  format,
-  size,
-  style,
-  disabled,
-  loading,
-  className,
-}: TButtonProps) {
+function Button(props: TButtonProps) {
+  const {
+    variant,
+    format,
+    size,
+    disabled,
+    loading,
+    children,
+    style,
+    className,
+    ...restProps
+  } = props;
+
   const {
     backgroundColor,
     fontColor,
@@ -35,14 +35,13 @@ function Button({
     fontSize,
     padding,
   } = getButtonStyles({
-    type,
+    variant,
     format,
     size,
   });
 
   return (
     <MainContainer
-      onClick={onClick}
       backgroundColor={backgroundColor as string}
       fontColor={fontColor as string}
       fontSize={fontSize}
@@ -54,8 +53,9 @@ function Button({
       disabled={disabled}
       style={style}
       className={className}
+      {...restProps}
     >
-      {loading ? <Loader /> : text}
+      {loading ? <Loader /> : children}
     </MainContainer>
   );
 }
