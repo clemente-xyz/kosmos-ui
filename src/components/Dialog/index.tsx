@@ -70,12 +70,15 @@ function Dialog({
                       <Button
                         //@ts-ignore
                         onClick={declineAction.callback}
-                        //@ts-ignore
-                        text={declineAction.message}
                         variant={confirmAction ? "secondary" : "primary"}
                         format={confirmAction ? "outline" : "fill"}
                         style={{ marginRight: confirmAction ? "16px" : "none" }}
-                      />
+                      >
+                        {
+                          //@ts-ignore
+                          declineAction.message
+                        }
+                      </Button>
                     )}
 
                     {confirmAction &&
@@ -85,10 +88,13 @@ function Dialog({
                         <Button
                           //@ts-ignore
                           onClick={confirmAction.callback}
-                          //@ts-ignore
-                          text={confirmAction.message}
                           variant="primary"
-                        />
+                        >
+                          {
+                            //@ts-ignore
+                            confirmAction.message
+                          }
+                        </Button>
                       ))}
                   </ButtonsContainer>
                 )}

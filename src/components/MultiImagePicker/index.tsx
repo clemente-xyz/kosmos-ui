@@ -102,12 +102,9 @@ function MultiImagePicker({
       >
         <input {...getInputProps()} />
 
-        <Button
-          onClick={() => {}}
-          text="Seleccionar"
-          variant="secondary"
-          size="small"
-        />
+        <Button onClick={() => {}} variant="secondary" size="small">
+          Seleccionar
+        </Button>
       </div>
 
       <ThumbsContainer>{thumbs}</ThumbsContainer>

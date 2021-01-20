@@ -7,7 +7,6 @@ import {
 } from "../../types";
 
 export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  text: string;
   variant: Omit<TStyledComponentType, "warning">;
   format?: TStyledComponentFormat;
   size?: Omit<TStyledComponentSize, "large">;
