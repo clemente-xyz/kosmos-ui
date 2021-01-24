@@ -1,3 +1,4 @@
+import { CSSProperties } from "styled-components";
 import theme from "../../theme";
 import { TStyledComponentType } from "../../types";
 
@@ -63,4 +64,36 @@ function getStyledComponentMainStyles(
   }
 }
 
-export { validateDateFormat, getStyledComponentMainStyles };
+/**
+ * Parses a styles object into a CSS template literal.
+ * @param styledObject - The css props in JSON format.
+ */
+function toCSS(stylesObject: CSSProperties) {
+  function createParser(matcher: RegExp, replacer: (_: string) => string) {
+    const regex = RegExp(matcher, "g");
+
+    return (string: string) => {
+      if (!string.match(regex)) {
+        return string;
+      }
+
+      return string.replace(regex, replacer);
+    };
+  }
+
+  const kebabize = createParser(
+    /[A-Z]/,
+    (match: string) => `-${match.toLowerCase()}`
+  );
+
+  const lines = Object.keys(stylesObject).map(
+    (property) =>
+      `${kebabize(property)}: ${
+        (stylesObject as { [key: string]: string })[property]
+      };`
+  );
+
+  return lines.join("\n");
+}
+
+export { validateDateFormat, toCSS, getStyledComponentMainStyles };
