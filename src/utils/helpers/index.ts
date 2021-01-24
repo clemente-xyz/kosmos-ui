@@ -1,4 +1,5 @@
-import { CSSProperties } from "styled-components";
+import { CSSProperties } from "react";
+
 import theme from "../../theme";
 import { TStyledComponentType } from "../../types";
 
