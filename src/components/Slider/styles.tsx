@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { toCSS } from "utils/helpers";
+import { toCSS } from "../../utils/helpers";
 
 import { TSliderInputProps } from "./types";
 
