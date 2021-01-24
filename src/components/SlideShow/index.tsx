@@ -2,10 +2,14 @@ import React, { useState } from "react";
 
 import CarretIcon from "../../icons/Carret";
 
-import { ISliderProps } from "./types";
+import { ISlideShowProps } from "./types";
 import { MainContainer, Slide, Button } from "./styles";
 
-function Slider({ slides, style, className }: ISliderProps): JSX.Element {
+export default function SlideShow({
+  slides,
+  style,
+  className,
+}: ISlideShowProps): JSX.Element {
   const [xCoordinate, setXCoordinate] = useState(0);
 
   return (
@@ -54,5 +58,3 @@ function Slider({ slides, style, className }: ISliderProps): JSX.Element {
     </MainContainer>
   );
 }
-
-export default Slider;

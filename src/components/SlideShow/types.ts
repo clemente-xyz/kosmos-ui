@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export interface ISliderProps {
+export interface ISlideShowProps {
   slides: string[];
   style?: CSSProperties;
   className?: string;
