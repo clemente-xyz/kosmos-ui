@@ -1,14 +1,21 @@
 import styled from "styled-components";
 
+import { toCSS } from "utils/helpers";
+
 import { TSliderInputProps } from "./types";
 
 export const Input = styled.input<TSliderInputProps>`
   appearance: none;
   width: 100%;
   margin: 0;
-  height: ${({ style }) => style.thumb.height};
   padding: 0;
   transition: 0.3s all;
+
+  ${({ style }) => {
+    return toCSS(style.root);
+  }}
+
+  height: ${({ style }) => style.thumb.height};
 
   &:focus {
     outline: none;

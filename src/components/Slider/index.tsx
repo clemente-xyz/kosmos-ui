@@ -53,6 +53,7 @@ export default function Slider(props: TSliderProps) {
         sliderValueChanged(event);
       },
       style: {
+        root: props.style?.root || {},
         track: {
           backgroundColor:
             props.style?.track?.backgroundColor ||

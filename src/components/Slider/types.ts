@@ -10,6 +10,7 @@ export type TSliderProps = {
 };
 
 type TSliderInputStyleProps = {
+  root?: Omit<CSSProperties, "height" | "appearance">;
   track?: Pick<CSSProperties, "backgroundColor" | "height">;
   rail?: Pick<CSSProperties, "backgroundColor">;
   thumb?: Pick<CSSProperties, "backgroundColor" | "height">;

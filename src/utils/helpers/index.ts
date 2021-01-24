@@ -65,8 +65,8 @@ function getStyledComponentMainStyles(
 }
 
 /**
- * Parses a styles object into a CSS template literal.
- * @param styledObject - The css props in JSON format.
+ * Parses an CSS-styles object into a CSS template literal.
+ * @param styledObject - CSS props in JSON format (keys in camelCase).
  */
 function toCSS(stylesObject: CSSProperties) {
   function createParser(matcher: RegExp, replacer: (_: string) => string) {
