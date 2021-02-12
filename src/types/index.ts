@@ -12,6 +12,8 @@ export interface IVectorProps {
 
 export type TDirection = "up" | "down" | "left" | "right";
 
+export type TPosition = "top" | "bottom" | "center";
+
 export type TStyledComponentType =
   | "primary"
   | "secondary"
