@@ -162,10 +162,12 @@ function Carousel({
     return arr;
   }
 
+  const isMultiSlide = slides.length > 1;
+
   return ((
     <MainContainer ref={sliderRef} style={style && style.root}>
       <Container>
-        {withArrows && (
+        {isMultiSlide && withArrows && (
           <ArrowsContainer>
             <CarouselArrow
               arrow={arrow}
@@ -183,7 +185,7 @@ function Carousel({
           </ArrowsContainer>
         )}
 
-        {withBullets && (
+        {isMultiSlide && withBullets && (
           <BulletsContainer>
             <BulletList>{renderBullets()}</BulletList>
           </BulletsContainer>
