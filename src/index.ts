@@ -25,6 +25,7 @@ import Switch from "./components/Switch";
 import { Tabs, TabsSliderContainer, TabContainer } from "./components/Tabs";
 import TextInput from "./components/TextInput";
 import ToggleButtons from "./components/ToggleButtons";
+import FilePicker from "./components/FilePicker";
 
 // Hooks
 import {
@@ -120,6 +121,7 @@ export {
   TabContainer,
   TextInput,
   ToggleButtons,
+  FilePicker,
   // Hooks
   useClickOutsideContainer,
   useTabs,
