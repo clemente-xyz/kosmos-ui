@@ -6,6 +6,9 @@ import theme from "../../theme";
 import { IFilePickerProps } from "./types";
 import { MainContainer, SelectContainer, Paragraph } from "./styles";
 
+const CSV_ICON_URL =
+  "https://freeiconshop.com/wp-content/uploads/edd/csv-outline.png";
+
 /**
  * Renders an File picker component, which pass to parent the imported img. Renders the picker and also the current selected File.
  * @param setUploadFile Set state function which pass up the File imported object in order to trigger the corresponding mutation.
@@ -31,8 +34,7 @@ function FilePicker({
 
         setSelectedFile(
           (Object as any).assign(file, {
-            preview:
-              "https://freeiconshop.com/wp-content/uploads/edd/csv-outline.png",
+            preview: CSV_ICON_URL,
           })
         );
       }
