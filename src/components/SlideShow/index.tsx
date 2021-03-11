@@ -13,7 +13,7 @@ export default function SlideShow({
   const [xCoordinate, setXCoordinate] = useState(0);
 
   return (
-    <MainContainer style={style} className={className}>
+    <MainContainer style={style?.root} className={className}>
       {slides.map((slide, index) => {
         return (
           <Slide
@@ -21,6 +21,7 @@ export default function SlideShow({
             src={slide}
             style={{
               transform: `translateX(${xCoordinate}%)`,
+              ...style?.slide,
             }}
           />
         );
@@ -37,6 +38,7 @@ export default function SlideShow({
               )
             }
             direction="left"
+            style={style?.buttons}
           >
             <CarretIcon direction="left" height="16px" />
           </Button>
@@ -50,6 +52,7 @@ export default function SlideShow({
               )
             }
             direction="right"
+            style={style?.buttons}
           >
             <CarretIcon height="16px" />
           </Button>
