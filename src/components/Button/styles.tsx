@@ -16,6 +16,7 @@ const MainContainer = styled.button.attrs(
 }>`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: ${({ padding }) => padding};
   min-width: 120px;
   max-width: 180px;

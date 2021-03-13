@@ -54,7 +54,7 @@ function getButtonStyles({
         fontColorOnHover: button.fontColor,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
-        padding: size === "small" ? "4px 16px" : "12px 24px",
+        padding: size === "small" ? "4px 16px" : "12px 16px",
       };
 
     case "secondary":
@@ -71,7 +71,27 @@ function getButtonStyles({
         fontColorOnHover: theme.colorsPalette.blue.default,
         fontSize:
           size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
-        padding: size === "small" ? "4px 16px" : "12px 24px",
+        padding: size === "small" ? "4px 16px" : "12px 16px",
+      };
+
+    case "danger":
+      return {
+        backgroundColor:
+          format === "outline" ? "transparent" : button.backgroundColor,
+        border:
+          format === "outline" ? `1px solid ${button.backgroundColor}` : "none",
+        fontColor:
+          format === "outline" ? button.backgroundColor : button.fontColor,
+        boxShadow:
+          "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
+        backgroundColorOnHover:
+          format === "outline"
+            ? button.backgroundColor
+            : theme.colorsPalette.red.dark,
+        fontColorOnHover: button.fontColor,
+        fontSize:
+          size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
+        padding: size === "small" ? "4px 16px" : "12px 16px",
       };
 
     default:
@@ -90,7 +110,7 @@ function getButtonStyles({
             : darken(0.9, button.fontColor),
         fontColorOnHover: button.fontColor,
         fontSize: size === "small" ? "12px" : "16px",
-        padding: size === "small" ? "4px 16px" : "10px 24px",
+        padding: size === "small" ? "4px 16px" : "12px 16px",
       };
   }
 }
