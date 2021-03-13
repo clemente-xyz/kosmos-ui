@@ -9,7 +9,6 @@ const MainContainer = styled.button.attrs(
   fontColor: string;
   fontSize: string;
   padding: string;
-  boxShadow: string;
   backgroundColorOnHover: string;
   fontColorOnHover: string;
   border: string;
@@ -27,7 +26,6 @@ const MainContainer = styled.button.attrs(
   color: ${({ fontColor }) => fontColor};
   border-radius: 5px;
   transition: all 0.3s;
-  box-shadow: ${({ boxShadow }) => boxShadow};
 
   &:hover {
     background-color: ${({ backgroundColorOnHover }) => backgroundColorOnHover};

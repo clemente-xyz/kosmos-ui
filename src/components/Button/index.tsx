@@ -2,9 +2,8 @@ import React from "react";
 
 import Loader from "../Loader";
 
-import { getButtonStyles } from "./helpers";
+import { getButtonContainer } from "./helpers";
 import { TButtonProps } from "./types";
-import { MainContainer } from "./styles";
 
 /**
  * Render button component.
@@ -13,6 +12,7 @@ import { MainContainer } from "./styles";
  * @param loading Flag that determines if the Loader component renders or not.
  */
 function Button({
+  as = "button",
   variant,
   format,
   size,
@@ -23,38 +23,22 @@ function Button({
   className,
   ...props
 }: TButtonProps) {
-  const {
-    backgroundColor,
-    fontColor,
-    boxShadow,
-    backgroundColorOnHover,
-    fontColorOnHover,
-    border,
-    fontSize,
-    padding,
-  } = getButtonStyles({
+  const Container = getButtonContainer({
+    as,
     variant,
     format,
     size,
   });
 
   return (
-    <MainContainer
-      backgroundColor={backgroundColor as string}
-      fontColor={fontColor as string}
-      fontSize={fontSize}
-      padding={padding}
-      boxShadow={boxShadow}
-      backgroundColorOnHover={backgroundColorOnHover as string}
-      fontColorOnHover={fontColorOnHover}
-      border={border as string}
+    <Container
       disabled={disabled}
       style={style}
       className={className}
       {...props}
     >
       {loading ? <Loader /> : children}
-    </MainContainer>
+    </Container>
   );
 }
 

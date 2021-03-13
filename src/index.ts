@@ -20,6 +20,7 @@ import SectionedDialog from "./components/SectionedDialog";
 import SelectInput from "./components/SelectInput";
 import Slider from "./components/Slider";
 import SlideShow from "./components/SlideShow";
+import SplitButton from "./components/SplitButton";
 import Stepper from "./components/Stepper";
 import Switch from "./components/Switch";
 import { Tabs, TabsSliderContainer, TabContainer } from "./components/Tabs";
@@ -114,6 +115,7 @@ export {
   SelectInput,
   Slider,
   SlideShow,
+  SplitButton,
   Stepper,
   Switch,
   Tabs,
