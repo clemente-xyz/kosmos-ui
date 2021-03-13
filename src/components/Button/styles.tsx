@@ -27,22 +27,16 @@ const MainContainer = styled.button.attrs(
   color: ${({ fontColor }) => fontColor};
   border-radius: 5px;
   transition: all 0.3s;
-
   box-shadow: ${({ boxShadow }) => boxShadow};
 
   &:hover {
     background-color: ${({ backgroundColorOnHover }) => backgroundColorOnHover};
     color: ${({ fontColorOnHover }) => fontColorOnHover};
-    top: 1px;
-    -webkit-transform: translateY(-1px);
-    -ms-transform: translateY(-1px);
-    transform: translateY(-1px);
     cursor: pointer;
   }
 
   &:active {
     outline: none;
-    transform: scale(0.98);
   }
 
   &:focus {

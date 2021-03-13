@@ -12,19 +12,17 @@ import { MainContainer } from "./styles";
  * @param disabled Flag that enable/disable button clicking.
  * @param loading Flag that determines if the Loader component renders or not.
  */
-function Button(props: TButtonProps) {
-  const {
-    variant,
-    format,
-    size,
-    disabled,
-    loading,
-    children,
-    style,
-    className,
-    ...restProps
-  } = props;
-
+function Button({
+  variant,
+  format,
+  size,
+  disabled,
+  loading,
+  children,
+  style,
+  className,
+  ...props
+}: TButtonProps) {
   const {
     backgroundColor,
     fontColor,
@@ -53,7 +51,7 @@ function Button(props: TButtonProps) {
       disabled={disabled}
       style={style}
       className={className}
-      {...restProps}
+      {...props}
     >
       {loading ? <Loader /> : children}
     </MainContainer>

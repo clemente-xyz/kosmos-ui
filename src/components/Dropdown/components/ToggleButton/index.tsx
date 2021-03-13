@@ -7,6 +7,7 @@ function ToggleButton(props: {
   children?: ReactNode;
   default?: boolean;
   style?: CSSProperties;
+  className?: string;
 }) {
   const {
     setIsMenuOpen,
@@ -34,6 +35,7 @@ function ToggleButton(props: {
         setIsMenuOpen(true);
       }}
       style={props.style}
+      className={props.className}
     >
       {children}
     </Button>
