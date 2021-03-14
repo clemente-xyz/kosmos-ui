@@ -18,7 +18,7 @@ export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export type TButtonVariantStyle = Pick<
   CSSProperties,
-  "backgroundColor" | "border" | "color" | "fontSize" | "padding"
+  "backgroundColor" | "border" | "color" | "fontSize" | "padding" | "minWidth"
 > & {
   backgroundColorOnHover?: string;
   colorOnHover?: string;

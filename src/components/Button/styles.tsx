@@ -10,8 +10,7 @@ export const ButtonContainer = styled.button.attrs(
   justify-content: center;
   align-items: center;
   padding: ${({ variantStyle }) => variantStyle.padding};
-  min-width: 120px;
-  max-width: 180px;
+  min-width: ${({ variantStyle }) => variantStyle.minWidth};
   font-size: ${({ variantStyle }) => variantStyle.fontSize};
   font-weight: 700;
   border: ${({ variantStyle }) => variantStyle.border};

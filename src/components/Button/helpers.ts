@@ -49,11 +49,14 @@ export function getButtonVariantStyles({
         ? "transparent"
         : darken(0.12, button.backgroundColor as string),
     colorOnHover:
-      format === "link" ? darken(0.12, button.color as string) : button.color,
+      format === "link"
+        ? darken(0.12, button.backgroundColor as string)
+        : button.color,
     fontSize:
       size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
     padding:
       format === "link" ? 0 : size === "small" ? "4px 16px" : "12px 16px",
+    minWidth: format === "link" ? "unset" : 120,
   };
 
   return variantStyle;
