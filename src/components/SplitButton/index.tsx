@@ -1,6 +1,7 @@
 import React from "react";
 
-import { getButtonContainer } from "../Button/helpers";
+import { getButtonVariantStyles } from "../Button/helpers";
+import { ButtonContainer } from "../Button/styles";
 import { getSplitButtonStyle } from "./helpers";
 import { TSplitButtonProps } from "./types";
 
@@ -12,16 +13,20 @@ export default function SplitButton({
 }: TSplitButtonProps) {
   const style = getSplitButtonStyle({ side });
 
-  const Container = getButtonContainer({
-    as: Component as any,
+  const variantStyles = getButtonVariantStyles({
     variant: props.variant,
     format: props.format,
     size: props.size,
   });
 
   return (
-    <Container style={{ ...style, ...baseStyle }} {...props}>
+    <ButtonContainer
+      as={Component as any}
+      variantStyles={variantStyles}
+      style={{ ...style, ...baseStyle }}
+      {...props}
+    >
       {props.children}
-    </Container>
+    </ButtonContainer>
   );
 }

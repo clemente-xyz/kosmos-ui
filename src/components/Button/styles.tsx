@@ -1,35 +1,29 @@
 import styled from "styled-components";
+import { TButtonVariantStyle } from "./types";
 
-const MainContainer = styled.button.attrs(
+export const ButtonContainer = styled.button.attrs(
   (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => ({
     disabled: props.disabled,
   })
-)<{
-  backgroundColor: string;
-  fontColor: string;
-  fontSize: string;
-  padding: string;
-  backgroundColorOnHover: string;
-  fontColorOnHover: string;
-  border: string;
-}>`
+)<{ variantStyle: TButtonVariantStyle }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${({ padding }) => padding};
+  padding: ${({ variantStyle }) => variantStyle.padding};
   min-width: 120px;
   max-width: 180px;
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ variantStyle }) => variantStyle.fontSize};
   font-weight: 700;
-  border: ${({ border }) => border};
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  color: ${({ fontColor }) => fontColor};
+  border: ${({ variantStyle }) => variantStyle.border};
+  background-color: ${({ variantStyle }) => variantStyle.backgroundColor};
+  color: ${({ variantStyle }) => variantStyle.color};
   border-radius: 5px;
   transition: all 0.3s;
 
   &:hover {
-    background-color: ${({ backgroundColorOnHover }) => backgroundColorOnHover};
-    color: ${({ fontColorOnHover }) => fontColorOnHover};
+    background-color: ${({ variantStyle }) =>
+      variantStyle.backgroundColorOnHover};
+    color: ${({ variantStyle }) => variantStyle.colorOnHover};
     cursor: pointer;
   }
 
@@ -47,5 +41,3 @@ const MainContainer = styled.button.attrs(
     cursor: not-allowed;
   }
 `;
-
-export { MainContainer };

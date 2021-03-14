@@ -2,8 +2,9 @@ import React from "react";
 
 import Loader from "../Loader";
 
-import { getButtonContainer } from "./helpers";
+import { getButtonVariantStyles } from "./helpers";
 import { TButtonProps } from "./types";
+import { ButtonContainer } from "./styles";
 
 /**
  * Render button component.
@@ -12,7 +13,7 @@ import { TButtonProps } from "./types";
  * @param loading Flag that determines if the Loader component renders or not.
  */
 function Button({
-  as = "button",
+  as: Component = "button",
   variant,
   format,
   size,
@@ -23,22 +24,23 @@ function Button({
   className,
   ...props
 }: TButtonProps) {
-  const Container = getButtonContainer({
-    as,
+  const variantStyle = getButtonVariantStyles({
     variant,
     format,
     size,
   });
 
   return (
-    <Container
+    <ButtonContainer
+      as={Component}
       disabled={disabled}
       style={style}
       className={className}
+      variantStyle={variantStyle}
       {...props}
     >
       {loading ? <Loader /> : children}
-    </Container>
+    </ButtonContainer>
   );
 }
 

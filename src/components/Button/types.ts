@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSProperties } from "styled-components";
 
 import {
   TStyledComponentType,
@@ -14,6 +15,14 @@ export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
   loading?: boolean;
   as?: "button" | "div";
+};
+
+export type TButtonVariantStyle = Pick<
+  CSSProperties,
+  "backgroundColor" | "border" | "color" | "fontSize" | "padding"
+> & {
+  backgroundColorOnHover?: string;
+  colorOnHover?: string;
 };
 
 export type TButtonVariant = Exclude<TStyledComponentType, "warning">;
