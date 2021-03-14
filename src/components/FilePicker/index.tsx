@@ -53,8 +53,8 @@ function FilePicker({
             illustrationConfigs={{ height: "64px", ...illustration?.configs }}
             body={
               isDragActive
-                ? messages?.default || "Suelta aquí tus archivos..."
-                : messages?.onDrag ||
+                ? messages?.onDrag || "Suelta aquí tus archivos..."
+                : messages?.default ||
                   "Arrastra tus archivos aquí, o haz click para seleccionar"
             }
             bodyStyle={{ marginTop: 16 }}
