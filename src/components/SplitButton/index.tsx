@@ -6,14 +6,14 @@ import { getSplitButtonStyle } from "./helpers";
 import { TSplitButtonProps } from "./types";
 
 export default function SplitButton({
-  side,
   as: Component = "button",
+  side,
   style: baseStyle,
   ...props
 }: TSplitButtonProps) {
   const style = getSplitButtonStyle({ side });
 
-  const variantStyles = getButtonVariantStyles({
+  const variantStyle = getButtonVariantStyles({
     variant: props.variant,
     format: props.format,
     size: props.size,
@@ -21,8 +21,8 @@ export default function SplitButton({
 
   return (
     <ButtonContainer
-      as={Component as any}
-      variantStyles={variantStyles}
+      as={Component}
+      variantStyle={variantStyle}
       style={{ ...style, ...baseStyle }}
       {...props}
     >

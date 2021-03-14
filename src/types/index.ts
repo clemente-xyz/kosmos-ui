@@ -28,6 +28,6 @@ export type TMultiImagePickerProps = {
   options?: DropzoneOptions;
 };
 
-export type TStyledComponentFormat = "fill" | "outline";
+export type TStyledComponentFormat = "fill" | "outline" | "link";
 
 export type TStyledComponentSize = "small" | "regular" | "large";

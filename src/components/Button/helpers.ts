@@ -33,59 +33,28 @@ export function getButtonVariantStyles({
 
   const variantStyle: TButtonVariantStyle = {
     backgroundColor:
-      format === "outline" ? "transparent" : button.backgroundColor,
+      format === "outline" || format === "link"
+        ? "transparent"
+        : button.backgroundColor,
     border:
       format === "outline" ? `1px solid ${button.backgroundColor}` : "none",
-    color: format === "outline" ? button.backgroundColor : button.color,
+    color:
+      format === "outline" || format === "link"
+        ? button.backgroundColor
+        : button.color,
     backgroundColorOnHover:
       format === "outline"
         ? button.backgroundColor
+        : format === "link"
+        ? "transparent"
         : darken(0.12, button.backgroundColor as string),
-    colorOnHover: button.color,
-    fontSize: size === "small" ? theme.fontSizes.small : theme.fontSizes.small,
-    padding: size === "small" ? "4px 16px" : "12px 16px",
+    colorOnHover:
+      format === "link" ? darken(0.12, button.color as string) : button.color,
+    fontSize:
+      size === "small" ? theme.fontSizes.small : theme.fontSizes.regular,
+    padding:
+      format === "link" ? 0 : size === "small" ? "4px 16px" : "12px 16px",
   };
-
-  // @ts-ignore
-  // const component = styled(Component).attrs(
-  //   (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => ({
-  //     disabled: props.disabled,
-  //   })
-  // )`
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   padding: ${variantStyle.padding};
-  //   min-width: 120px;
-  //   max-width: 180px;
-  //   font-size: ${variantStyle.fontSize};
-  //   font-weight: 700;
-  //   border: ${variantStyle.border};
-  //   background-color: ${variantStyle.backgroundColor};
-  //   color: ${variantStyle.color};
-  //   border-radius: 5px;
-  //   transition: all 0.3s;
-
-  //   &:hover {
-  //     background-color: ${variantStyle.backgroundColorOnHover};
-  //     color: ${variantStyle.colorOnHover};
-  //     cursor: pointer;
-  //   }
-
-  //   &:active {
-  //     outline: none;
-  //   }
-
-  //   &:focus {
-  //     outline: none;
-  //   }
-
-  //   &:disabled,
-  //   &[disabled] {
-  //     opacity: 0.6;
-  //     cursor: not-allowed;
-  //   }
-  // `;
 
   return variantStyle;
 }
