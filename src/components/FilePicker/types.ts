@@ -1,14 +1,20 @@
-import { SetStateAction, Dispatch, CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { DropzoneOptions, FileRejection } from "react-dropzone";
 
+import { TIllustratedMessageConfigs } from "../IllustratedMessage/types";
 export interface IFilePickerProps {
-  setUploadFile: (
-    file: File
-  ) => void | Dispatch<SetStateAction<File | undefined>>;
+  files?: File[];
+  setFiles(files: File[]): void;
   options?: DropzoneOptions;
-  style?: CSSProperties;
-  name?: string;
-  id?: string;
-  errorMessage?: string;
   onDropRejected?: (error: FileRejection[]) => void;
+  style?: CSSProperties;
+  messages?: {
+    default?: string;
+    onDrag?: string;
+    error?: string;
+  };
+  illustration?: {
+    type?: ReactNode;
+    configs?: TIllustratedMessageConfigs;
+  };
 }

@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
-const MainContainer = styled.div<{ backgroundImage: string }>`
-  background: url("${({ backgroundImage }) => backgroundImage}") no-repeat
-    center center;
+export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,27 +10,39 @@ const MainContainer = styled.div<{ backgroundImage: string }>`
   text-align: center;
   height: 100%;
   width: 100%;
-  cursor: pointer;
-  border: 1px solid ${theme.colorsPalette.gray.lighter};
-  border-radius: 8px;
 `;
 
-const Paragraph = styled.p`
+export const Paragraph = styled.p`
   margin: 0;
   z-index: 2;
-  color: white;
-  margin-bottom: 20px;
 `;
 
-const SelectContainer = styled.div`
-  z-index: 1;
-  height: 60px;
-  width: 100%;
-  background: linear-gradient(to top, #0000008c, transparent);
+export const SelectContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  border-width: 2px;
+  border-radius: 4px;
+  border-color: ${theme.colorsPalette.gray.lighter};
+  border-style: dashed;
+  background-color: transparent;
+  outline: none;
+  transition: border 0.24s ease-in-out;
 `;
 
-export { MainContainer, SelectContainer, Paragraph };
+export const FileContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+`;
+
+export const FilesContainer = styled.aside`
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  width: 100%;
+`;

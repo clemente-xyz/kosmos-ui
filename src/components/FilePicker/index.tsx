@@ -1,87 +1,91 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React from "react";
 import { useDropzone } from "react-dropzone";
 
+import Button from "../Button";
+import IllustratedMessage from "../IllustratedMessage";
 import theme from "../../theme";
 
 import { IFilePickerProps } from "./types";
-import { MainContainer, SelectContainer, Paragraph } from "./styles";
+import {
+  MainContainer,
+  SelectContainer,
+  Paragraph,
+  FilesContainer,
+  FileContainer,
+} from "./styles";
 
-const CSV_ICON_URL =
-  "https://freeiconshop.com/wp-content/uploads/edd/csv-outline.png";
-
-/**
- * Renders an File picker component, which pass to parent the imported img. Renders the picker and also the current selected File.
- * @param setUploadFile Set state function which pass up the File imported object in order to trigger the corresponding mutation.
- * @param style Optional extra styles to add to the components main container.
- */
 function FilePicker({
-  setUploadFile,
+  files = [],
+  setFiles,
   options,
-  style,
-  name,
-  id,
-  errorMessage,
   onDropRejected,
+  style,
+  messages,
+  illustration,
 }: IFilePickerProps): JSX.Element {
-  const [selectedFile, setSelectedFile] = useState<
-    { file: File; preview: string } | undefined
-  >(undefined);
-
-  const onDrop = useCallback(
-    ([file]) => {
-      if (file) {
-        setUploadFile(file);
-
-        setSelectedFile(
-          (Object as any).assign(file, {
-            preview: CSV_ICON_URL,
-          })
-        );
-      }
-    },
-    [setUploadFile]
-  );
-
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
+    ...options,
+    onDrop(acceptedFiles) {
+      setFiles([...files, ...acceptedFiles]);
+    },
     onDropRejected(event) {
       onDropRejected && onDropRejected(event);
     },
-    ...options,
-    accept: ".csv",
-    multiple: false,
   });
 
-  useEffect(
-    () => () => {
-      if (selectedFile) URL.revokeObjectURL(selectedFile.preview);
-    },
-    [selectedFile]
-  );
+  function handleRemoveFile(selectedFile: File) {
+    setFiles(
+      files.filter((file) => {
+        console.log({ file, selectedFile });
+        return selectedFile.name !== file.name;
+      })
+    );
+  }
 
   return (
     <>
-      <MainContainer
-        {...getRootProps()}
-        backgroundImage={(selectedFile && selectedFile.preview) || ""}
-        style={style}
-      >
-        <input name={name} id={id} {...getInputProps()} />
+      <MainContainer style={style}>
+        <input {...getInputProps()} />
 
-        {isDragActive ? (
-          <p>Suelta aquí el archivo CSV...</p>
-        ) : (
-          <>
-            <SelectContainer>
-              <Paragraph>Seleccionar</Paragraph>
-            </SelectContainer>
-          </>
-        )}
+        <SelectContainer {...getRootProps()}>
+          <IllustratedMessage
+            illustration={illustration?.type || "documents"}
+            illustrationConfigs={{ height: "64px", ...illustration?.configs }}
+            body={
+              isDragActive
+                ? messages?.default || "Suelta aquí tus archivos..."
+                : messages?.onDrag ||
+                  "Arrastra tus archivos aquí, o haz click para seleccionar"
+            }
+            bodyStyle={{ marginTop: 16 }}
+          />
+        </SelectContainer>
+
+        <FilesContainer>
+          {files.map((file, index) => {
+            return (
+              <FileContainer key={index}>
+                <Paragraph>{file.name}</Paragraph>
+
+                <Button
+                  variant="primary"
+                  format="link"
+                  size="small"
+                  onClick={() => {
+                    handleRemoveFile(file);
+                  }}
+                >
+                  Quitar
+                </Button>
+              </FileContainer>
+            );
+          })}
+        </FilesContainer>
       </MainContainer>
 
-      {errorMessage && (
+      {messages?.error && (
         <p style={{ color: theme.colorsPalette.red.default, marginLeft: 10 }}>
-          {errorMessage}
+          {messages?.error}
         </p>
       )}
     </>

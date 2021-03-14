@@ -1,7 +1,7 @@
 import React from "react";
 
 import { getIllustrationToRender } from "./helpers";
-import { IIllustratedMessageProps } from "./types";
+import { TIllustratedMessageProps } from "./types";
 import { MainContainer, Header, Paragraph } from "./styles";
 
 function IllustratedMessage({
@@ -12,7 +12,7 @@ function IllustratedMessage({
   body,
   bodyStyle,
   mainContainerStyle,
-}: IIllustratedMessageProps): JSX.Element {
+}: TIllustratedMessageProps): JSX.Element {
   return (
     <MainContainer style={mainContainerStyle}>
       {illustration &&

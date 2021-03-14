@@ -11,6 +11,7 @@ import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
 import Dropdown from "./components/Dropdown";
 import FallbackScreen from "./components/FallbackScreen";
+import FilePicker from "./components/FilePicker";
 import IllustratedMessage from "./components/IllustratedMessage";
 import ImagePicker from "./components/ImagePicker";
 import Loader from "./components/Loader";
@@ -26,7 +27,6 @@ import Switch from "./components/Switch";
 import { Tabs, TabsSliderContainer, TabContainer } from "./components/Tabs";
 import TextInput from "./components/TextInput";
 import ToggleButtons from "./components/ToggleButtons";
-import FilePicker from "./components/FilePicker";
 
 // Hooks
 import {
@@ -106,6 +106,7 @@ export {
   Dialog,
   Dropdown,
   FallbackScreen,
+  FilePicker,
   IllustratedMessage,
   ImagePicker,
   Loader,
@@ -123,7 +124,6 @@ export {
   TabContainer,
   TextInput,
   ToggleButtons,
-  FilePicker,
   // Hooks
   useClickOutsideContainer,
   useTabs,

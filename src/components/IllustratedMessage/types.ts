@@ -1,6 +1,7 @@
 import { ReactNode, CSSProperties } from "react";
+import { IVectorProps } from "types";
 
-export interface IIllustratedMessageProps {
+export type TIllustratedMessageProps = {
   illustration?:
     | (
         | "creditCard"
@@ -18,14 +19,15 @@ export interface IIllustratedMessageProps {
         | "users"
       )
     | ReactNode;
-  illustrationConfigs?: {
-    style?: CSSProperties;
-    className?: string;
-    height?: string;
-  };
+  illustrationConfigs?: TIllustratedMessageConfigs;
   header?: string | ReactNode;
   headerStyle?: CSSProperties;
   body?: string | ReactNode;
   bodyStyle?: CSSProperties;
   mainContainerStyle?: CSSProperties;
-}
+};
+
+export type TIllustratedMessageConfigs = Pick<
+  IVectorProps,
+  "height" | "style" | "className"
+>;
