@@ -1,5 +1,6 @@
 import { ReactNode, CSSProperties } from "react";
-import { IVectorProps } from "types";
+
+import { IVectorProps } from "../../types";
 
 export type TIllustratedMessageProps = {
   illustration?:
