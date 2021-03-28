@@ -1,30 +1,29 @@
-import React, { useEffect, CSSProperties } from "react";
+import React, { useEffect, createContext } from "react";
 import { useDropzone } from "react-dropzone";
 
-import theme from "../../theme";
-import Button from "../Button";
-import CloseIcon from "../../icons/Close";
-import { TMultiImagePickerProps } from "../../types";
-
 import {
-  ThumbContainer,
-  Thumb,
-  ThumbsContainer,
-  Image,
-  CloseIconContainer,
-} from "./styles";
+  TMultiImagePicker,
+  TMultiImagePickerContext,
+  TMultiImagePickerImage,
+  TMultiImagePickerProps,
+} from "./types";
+import MultiImagePickerSelectButton from "./components/SelectButton";
+import MultiImagePickerThumb from "./components/Thumb";
+import MultiImagePickerThumbs from "./components/Thumbs";
 
-function MultiImagePicker({
+export const MultiImagePickerContext = createContext(
+  {} as TMultiImagePickerContext
+);
+MultiImagePickerContext.displayName = "MultiImagePickerContext";
+
+export default function MultiImagePicker({
   images = [],
   setImages,
   options,
-  style,
-  errorMessage,
   onDropRejected,
-}: TMultiImagePickerProps & {
-  errorMessage?: string;
-  style?: CSSProperties;
-}): JSX.Element {
+  cleanupUrl,
+  children,
+}: TMultiImagePickerProps): TMultiImagePicker {
   const { getRootProps, getInputProps } = useDropzone({
     ...options,
     accept: "image/*",
@@ -43,13 +42,7 @@ function MultiImagePicker({
     },
   });
 
-  function removeImage(
-    selectedImage:
-      | (File & {
-          preview: string;
-        })
-      | string
-  ) {
+  function removeImage(selectedImage: TMultiImagePickerImage) {
     setImages(
       images.filter((image) => {
         if (image instanceof File) {
@@ -65,57 +58,25 @@ function MultiImagePicker({
     );
   }
 
-  const thumbs = images.map((image, index) => {
-    return (
-      <ThumbContainer
-        key={image instanceof File ? image.name : `${index}-${image}`}
-      >
-        <CloseIconContainer
-          onClick={() => {
-            removeImage(image);
-          }}
-        >
-          <CloseIcon color={theme.colorsPalette.white.default} height="8px" />
-        </CloseIconContainer>
-
-        <Thumb>
-          <Image src={image instanceof File ? image.preview : image} />
-        </Thumb>
-      </ThumbContainer>
-    );
-  });
-
   useEffect(
     () => () => {
-      images.forEach((image) => {
-        image instanceof File && URL.revokeObjectURL(image.preview);
-      });
+      cleanupUrl &&
+        images.forEach((image) => {
+          image instanceof File && URL.revokeObjectURL(image.preview);
+        });
     },
     [images]
   );
 
-  return (
-    <section style={style}>
-      <div
-        {...getRootProps({ className: "dropzone" })}
-        style={{ width: "fit-content" }}
-      >
-        <input {...getInputProps()} />
-
-        <Button onClick={() => {}} variant="secondary" size="small">
-          Seleccionar
-        </Button>
-      </div>
-
-      <ThumbsContainer>{thumbs}</ThumbsContainer>
-
-      {errorMessage && (
-        <p style={{ color: theme.colorsPalette.red.default, marginLeft: 10 }}>
-          {errorMessage}
-        </p>
-      )}
-    </section>
-  );
+  return ((
+    <MultiImagePickerContext.Provider
+      value={{ getInputProps, getRootProps, removeImage }}
+    >
+      {children}
+    </MultiImagePickerContext.Provider>
+  ) as unknown) as TMultiImagePicker;
 }
 
-export default MultiImagePicker;
+MultiImagePicker.SelectButton = MultiImagePickerSelectButton;
+MultiImagePicker.Thumbs = MultiImagePickerThumbs;
+MultiImagePicker.Thumb = MultiImagePickerThumb;

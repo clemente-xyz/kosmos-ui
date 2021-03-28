@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const ThumbContainer = styled.div`
+export const Container = styled.article`
   display: inline-flex;
   border-radius: 2px;
   border: 1px solid #eaeaea;
@@ -13,26 +13,19 @@ const ThumbContainer = styled.div`
   position: relative;
 `;
 
-const Thumb = styled.div`
+export const ThumbContainer = styled.div`
   display: flex;
   min-width: 0;
   overflow: hidden;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   display: block;
   width: auto;
   height: 100%;
 `;
 
-const ThumbsContainer = styled.aside`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 16px;
-`;
-
-const CloseIconContainer = styled.div`
+export const CloseIconContainer = styled.div`
   opacity: 0;
   position: absolute;
   top: -7px;
@@ -45,7 +38,7 @@ const CloseIconContainer = styled.div`
   background-color: #4a4a4a;
   cursor: pointer;
 
-  ${ThumbContainer}:hover & {
+  ${Container}:hover & {
     opacity: 1;
   }
 
@@ -58,5 +51,3 @@ const CloseIconContainer = styled.div`
     transform: scale(0.98);
   }
 `;
-
-export { ThumbContainer, Thumb, ThumbsContainer, Image, CloseIconContainer };
