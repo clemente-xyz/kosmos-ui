@@ -60,12 +60,12 @@ export default function MultiImagePicker({
 
   useEffect(
     () => () => {
-      cleanupUrl &&
+      !cleanupUrl &&
         images.forEach((image) => {
           image instanceof File && URL.revokeObjectURL(image.preview);
         });
     },
-    [images]
+    [images, cleanupUrl]
   );
 
   return ((

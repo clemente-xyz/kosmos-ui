@@ -1,29 +1,42 @@
 import React, { forwardRef } from "react";
 
 import theme from "../../../../theme";
-import CloseIcon from "../../../../icons/Close";
 import { useMultiImagePicker } from "../../hooks";
-import { TMultiImagePickerImage } from "../../types";
+import DragIcon from "../../../../icons/Drag";
+import TrashIcon from "../../../../icons/Trash";
 
-import { Container, CloseIconContainer, ThumbContainer, Image } from "./styles";
+import { TMultiImagePickerThumbProps } from "./types";
+import {
+  Container,
+  HoverContainer,
+  IconsContainer,
+  ThumbContainer,
+  Image,
+} from "./styles";
 
-const MultiImagePickerThumb = forwardRef<
-  any,
-  { image: TMultiImagePickerImage }
->(({ image }, ref) => {
-  const { removeImage } = useMultiImagePicker();
+const MultiImagePickerThumb = forwardRef<any, TMultiImagePickerThumbProps>(
+  ({ image, style, className }, ref) => {
+    const { removeImage } = useMultiImagePicker();
 
-  return (
-    <Container ref={ref}>
-      <CloseIconContainer onClick={() => removeImage(image)}>
-        <CloseIcon color={theme.colorsPalette.white.default} height="8px" />
-      </CloseIconContainer>
+    return (
+      <Container ref={ref} className={className} style={style?.container}>
+        <IconsContainer onClick={() => removeImage(image)}>
+          <DragIcon color={theme.colorsPalette.white.default} height="14px" />
 
-      <ThumbContainer>
-        <Image src={image instanceof File ? image.preview : image} />
-      </ThumbContainer>
-    </Container>
-  );
-});
+          <TrashIcon color={theme.colorsPalette.white.default} height="14px" />
+        </IconsContainer>
+
+        <ThumbContainer>
+          <Image
+            src={image instanceof File ? image.preview : image}
+            style={style?.image}
+          />
+        </ThumbContainer>
+
+        <HoverContainer />
+      </Container>
+    );
+  }
+);
 
 export default MultiImagePickerThumb;

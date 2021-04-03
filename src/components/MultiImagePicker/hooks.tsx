@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
-import { MultiImagePickerContext } from "./index";
+import { MultiImagePickerContext } from './index';
 
 export function useMultiImagePicker() {
   return useContext(MultiImagePickerContext);
