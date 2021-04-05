@@ -9,6 +9,7 @@ import ContentEditor from "./components/ContentEditor";
 import ContentViewer from "./components/ContentViewer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
+import DraggableList from "./components/DraggableList";
 import Dropdown from "./components/Dropdown";
 import FallbackScreen from "./components/FallbackScreen";
 import FilePicker from "./components/FilePicker";
@@ -105,6 +106,7 @@ export {
   ContentViewer,
   DatePicker,
   Dialog,
+  DraggableList,
   Dropdown,
   FallbackScreen,
   FilePicker,
