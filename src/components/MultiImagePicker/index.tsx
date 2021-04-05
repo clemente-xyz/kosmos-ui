@@ -4,12 +4,12 @@ import { useDropzone } from "react-dropzone";
 import {
   TMultiImagePicker,
   TMultiImagePickerContext,
-  TMultiImagePickerImage,
   TMultiImagePickerProps,
 } from "./types";
 import MultiImagePickerSelectButton from "./components/SelectButton";
 import MultiImagePickerThumb from "./components/Thumb";
 import MultiImagePickerThumbs from "./components/Thumbs";
+import { TComponentImage } from "types/components";
 
 export const MultiImagePickerContext = createContext(
   {} as TMultiImagePickerContext
@@ -42,7 +42,7 @@ export default function MultiImagePicker<T = {}>({
     },
   });
 
-  function removeImage(selectedImage: TMultiImagePickerImage<T>) {
+  function removeImage(selectedImage: TComponentImage<T>) {
     setImages(
       images.filter((image) => {
         if (image instanceof File) {

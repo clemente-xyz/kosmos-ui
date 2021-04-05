@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 
+import { TComponentType } from "types/components";
 import { getStyledComponentMainStyles } from "../../utils/helpers";
 
 import { MainContainer } from "./styles";

@@ -1,5 +1,11 @@
 import React, { CSSProperties } from "react";
 
+import {
+  TComponentFormat,
+  TComponentSize,
+  TComponentType,
+} from "types/components";
+
 export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: Exclude<TComponentType, "warning">;
   format?: TComponentFormat;

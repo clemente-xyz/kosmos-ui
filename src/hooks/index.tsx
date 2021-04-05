@@ -8,10 +8,8 @@ import React, {
 } from "react";
 import { useDropzone } from "react-dropzone";
 
-import {
-  TMultiImagePickerImage,
-  TMultiImagePickerProps,
-} from "components/MultiImagePicker/types";
+import { TMultiImagePickerProps } from "components/MultiImagePicker/types";
+import { TComponentImage } from "types/components";
 
 /**
  * Alert clicks outside of the passed ref.
@@ -152,7 +150,7 @@ function useMultiImagePicker<T = {}>({
     );
   };
 
-  function removeImage(selectedImage: TMultiImagePickerImage<T>) {
+  function removeImage(selectedImage: TComponentImage<T>) {
     setImages(
       images.filter((image) => {
         if (image instanceof File) {
