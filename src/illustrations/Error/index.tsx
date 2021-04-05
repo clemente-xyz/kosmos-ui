@@ -2,7 +2,7 @@ import React from "react";
 import { lighten } from "polished";
 
 import theme from "../../theme";
-import { IVectorProps } from "../../types";
+import { IVectorProps } from "../../types/vectors";
 
 function ErrorIllustration({
   height = "99px",

@@ -1,7 +1,6 @@
 import { CSSProperties } from "react";
 
 import theme from "../../theme";
-import { TStyledComponentType } from "../../types";
 
 /**
  * Validates if the provided date follows the
@@ -21,7 +20,7 @@ function validateDateFormat(date?: string): boolean {
  * @returns The background color and content color to be passed to the styled component.
  */
 function getStyledComponentMainStyles(
-  type: TStyledComponentType
+  type: TComponentType
 ): {
   backgroundColor: string;
   color: string;

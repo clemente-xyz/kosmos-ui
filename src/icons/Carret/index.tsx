@@ -1,17 +1,9 @@
 import React from "react";
 
-import { IVectorProps } from "../../types";
-import { TDirection } from "../../types";
+import { IVectorProps } from "../../types/vectors";
 
 type TCarretIconProps = IVectorProps & {
   direction?: TDirection;
-};
-
-const ROTATION_DICTIONARY = {
-  ["left"]: "rotate(180)",
-  ["right"]: "rotate(360)",
-  ["down"]: "rotate(90)",
-  ["up"]: "rotate(270)",
 };
 
 function CarretIcon({
@@ -20,13 +12,20 @@ function CarretIcon({
   style,
   direction,
 }: TCarretIconProps) {
+  const ROTATIONS: Record<TDirection, string> = {
+    left: "rotate(180)",
+    right: "rotate(360)",
+    down: "rotate(90)",
+    up: "rotate(270)",
+  };
+
   return (
     <svg
       height={height}
       viewBox="0 0 492.004 492.004"
       fill={color}
       style={style}
-      transform={ROTATION_DICTIONARY[direction || "right"]}
+      transform={ROTATIONS[direction || "right"]}
     >
       <path
         d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12

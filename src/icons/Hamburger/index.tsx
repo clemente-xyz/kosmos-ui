@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IVectorProps } from "../../types";
+import { IVectorProps } from "../../types/vectors";
 
 function HamburguerIcon({
   height = "100px",

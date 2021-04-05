@@ -1,15 +1,9 @@
 import React, { CSSProperties } from "react";
 
-import {
-  TStyledComponentType,
-  TStyledComponentFormat,
-  TStyledComponentSize,
-} from "../../types";
-
 export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant: Exclude<TStyledComponentType, "warning">;
-  format?: TStyledComponentFormat;
-  size?: Exclude<TStyledComponentSize, "large">;
+  variant: Exclude<TComponentType, "warning">;
+  format?: TComponentFormat;
+  size?: Exclude<TComponentSize, "large">;
   style?: React.CSSProperties;
   className?: string;
   loading?: boolean;
@@ -24,8 +18,8 @@ export type TButtonVariantStyle = Pick<
   colorOnHover?: string;
 };
 
-export type TButtonVariant = Exclude<TStyledComponentType, "warning">;
+export type TButtonVariant = Exclude<TComponentType, "warning">;
 
-export type TButtonFormat = TStyledComponentFormat;
+export type TButtonFormat = TComponentFormat;
 
-export type TButtonSize = Exclude<TStyledComponentSize, "large">;
+export type TButtonSize = Exclude<TComponentSize, "large">;

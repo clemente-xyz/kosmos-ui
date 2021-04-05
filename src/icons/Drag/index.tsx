@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IVectorProps } from "../../types";
+import { IVectorProps } from "../../types/vectors";
 
 export default function DragIcon({
   height = "52px",

@@ -1,7 +1,5 @@
 import { CSSProperties } from "react";
 
-import { TDirection } from "../../../../types";
-
 export type TCarouselArrowComponent = (
   props: Pick<TCarouselArrowProps, "onClick" | "direction">
 ) => React.ReactElement;

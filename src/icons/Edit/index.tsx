@@ -1,7 +1,7 @@
 import React from "react";
 
 import { colorsPalette } from "../../theme/colors";
-import { IVectorProps } from "../../types";
+import { IVectorProps } from "../../types/vectors";
 
 function EditIcon({
   height = "24px",

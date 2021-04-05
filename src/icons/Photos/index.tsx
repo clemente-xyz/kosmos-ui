@@ -1,7 +1,7 @@
 import React from "react";
 
 import theme from "../../theme";
-import { IVectorProps } from "../../types";
+import { IVectorProps } from "../../types/vectors";
 
 function PhotosIcon({
   height = "45px",

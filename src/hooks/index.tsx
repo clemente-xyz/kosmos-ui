@@ -8,7 +8,10 @@ import React, {
 } from "react";
 import { useDropzone } from "react-dropzone";
 
-import { TMultiImagePickerProps } from "../types";
+import {
+  TMultiImagePickerImage,
+  TMultiImagePickerProps,
+} from "components/MultiImagePicker/types";
 
 /**
  * Alert clicks outside of the passed ref.
@@ -112,12 +115,12 @@ function useTabs(
  * @returns The images being managed, a function to remove them
  * externally and a general picker wrapper component.
  */
-function useMultiImagePicker({
+function useMultiImagePicker<T = {}>({
   images = [],
   setImages,
   options,
   onDropRejected,
-}: TMultiImagePickerProps) {
+}: TMultiImagePickerProps<T>) {
   const ImagePicker = ({ children }: { children: ReactNode }) => {
     const { getRootProps, getInputProps } = useDropzone({
       ...options,
@@ -149,13 +152,7 @@ function useMultiImagePicker({
     );
   };
 
-  function removeImage(
-    selectedImage:
-      | (File & {
-          preview: string;
-        })
-      | string
-  ) {
+  function removeImage(selectedImage: TMultiImagePickerImage<T>) {
     setImages(
       images.filter((image) => {
         if (image instanceof File) {
@@ -164,9 +161,7 @@ function useMultiImagePicker({
             : true;
         }
 
-        return typeof selectedImage === "string"
-          ? selectedImage !== image
-          : true;
+        return "_id" in selectedImage ? selectedImage._id !== image._id : true;
       })
     );
   }
