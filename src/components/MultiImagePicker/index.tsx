@@ -16,14 +16,14 @@ export const MultiImagePickerContext = createContext(
 );
 MultiImagePickerContext.displayName = "MultiImagePickerContext";
 
-export default function MultiImagePicker({
+export default function MultiImagePicker<T = {}>({
   images = [],
   setImages,
   options,
   onDropRejected,
   cleanupUrl,
   children,
-}: TMultiImagePickerProps): TMultiImagePicker {
+}: TMultiImagePickerProps<T>): TMultiImagePicker {
   const { getRootProps, getInputProps } = useDropzone({
     ...options,
     accept: "image/*",
@@ -42,7 +42,7 @@ export default function MultiImagePicker({
     },
   });
 
-  function removeImage(selectedImage: TMultiImagePickerImage) {
+  function removeImage(selectedImage: TMultiImagePickerImage<T>) {
     setImages(
       images.filter((image) => {
         if (image instanceof File) {
@@ -51,9 +51,7 @@ export default function MultiImagePicker({
             : true;
         }
 
-        return typeof selectedImage === "string"
-          ? selectedImage !== image
-          : true;
+        return "_id" in selectedImage ? selectedImage._id !== image._id : true;
       })
     );
   }

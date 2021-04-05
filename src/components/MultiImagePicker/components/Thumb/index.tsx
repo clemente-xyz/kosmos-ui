@@ -28,7 +28,7 @@ const MultiImagePickerThumb = forwardRef<any, TMultiImagePickerThumbProps>(
 
         <ThumbContainer>
           <Image
-            src={image instanceof File ? image.preview : image}
+            src={image instanceof File ? image.preview : image.url}
             style={style?.image}
           />
         </ThumbContainer>

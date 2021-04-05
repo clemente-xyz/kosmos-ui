@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
-import { DropzoneOptions, FileRejection, DropzoneState } from 'react-dropzone';
-import MultiImagePickerSelectButton from './components/SelectButton';
-import MultiImagePickerThumb from './components/Thumb';
-import MultiImagePickerThumbs from './components/Thumbs';
+import { ReactNode } from "react";
+import { DropzoneOptions, FileRejection, DropzoneState } from "react-dropzone";
+import MultiImagePickerSelectButton from "./components/SelectButton";
+import MultiImagePickerThumb from "./components/Thumb";
+import MultiImagePickerThumbs from "./components/Thumbs";
 
 export type TMultiImagePicker = JSX.Element & {
   SelectButton: typeof MultiImagePickerSelectButton;
@@ -12,24 +12,20 @@ export type TMultiImagePicker = JSX.Element & {
 
 export type TMultiImagePickerContext = Pick<
   DropzoneState,
-  'getRootProps' | 'getInputProps'
+  "getRootProps" | "getInputProps"
 > & {
-  removeImage(
-    selectedImage:
-      | (File & {
-          preview: string;
-        })
-      | string
-  ): void;
+  removeImage(_: TMultiImagePickerImage): void;
 };
 
-export type TMultiImagePickerProps = {
-  images?: TMultiImagePickerImage[];
-  setImages(images: ((File & { preview: string }) | string)[]): void;
-  onDropRejected?: (error: FileRejection[]) => void;
+export type TMultiImagePickerProps<T> = {
+  images?: TMultiImagePickerImage<T>[];
+  setImages(_: TMultiImagePickerImage<T>[]): void;
+  onDropRejected?: (_: FileRejection[]) => void;
   options?: DropzoneOptions;
   cleanupUrl?: boolean;
   children: ReactNode;
 };
 
-export type TMultiImagePickerImage = (File & { preview: string }) | string;
+export type TMultiImagePickerImage<T = {}> =
+  | WithId<T & { url?: string }>
+  | (File & { preview: string });
