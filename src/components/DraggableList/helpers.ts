@@ -4,7 +4,7 @@ import { DraggingStyle, NotDraggingStyle } from "react-beautiful-dnd";
 import theme from "../../theme";
 
 export function reorderDndItems<T = {}>(
-  array: (T & { id: string })[],
+  array: (T & { _id: string })[],
   startIndex: number,
   endIndex: number
 ) {

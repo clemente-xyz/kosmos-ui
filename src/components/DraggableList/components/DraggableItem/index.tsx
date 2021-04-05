@@ -8,7 +8,7 @@ import { getDraggableItemStyle } from "../../helpers";
 import { TDraggableItemProps } from "./types";
 
 export default function DraggableItem({
-  id,
+  _id,
   index,
   as: Container = "div",
   children,
@@ -26,7 +26,7 @@ export default function DraggableItem({
   }
 
   return (
-    <Draggable draggableId={id} index={index}>
+    <Draggable draggableId={_id} index={index}>
       {(provided, snapshot) => {
         const child = (
           <Container

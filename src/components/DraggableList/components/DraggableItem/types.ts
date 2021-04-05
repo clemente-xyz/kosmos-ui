@@ -1,10 +1,10 @@
-import { CSSProperties, ReactElement } from 'react';
+import { CSSProperties, ReactElement } from "react";
 
 export type TDraggableItemProps = {
-  id: string;
+  _id: string;
   index: number;
   className?: string;
   style?: CSSProperties;
   children: ReactElement;
-  as?: 'aside' | 'div' | 'section';
+  as?: "aside" | "div" | "section";
 };

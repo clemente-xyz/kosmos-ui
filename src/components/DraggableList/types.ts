@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 
-import DraggableItem from './components/DraggableItem';
-import DroppableZone from './components/DroppableZone';
+import DraggableItem from "./components/DraggableItem";
+import DroppableZone from "./components/DroppableZone";
 
 export type TDraggableListContext = {
   direction: TDraggableListDirection;
@@ -15,13 +15,13 @@ export type TDraggableList = JSX.Element & {
 };
 
 export type TDraggableListProps<T> = {
-  items: (T & { id: string })[];
-  setItems(_: (T & { id: string })[]): void;
-  onDrop?: (_: (T & { id: string })[]) => void;
+  items: (T & { _id: string })[];
+  setItems(_: (T & { _id: string })[]): void;
+  onDrop?: (_: (T & { _id: string })[]) => void;
   direction?: TDraggableListDirection;
   inPortal?: boolean;
   children: ReactElement<typeof DroppableZone>;
   grid?: number;
 };
 
-export type TDraggableListDirection = 'vertical' | 'horizontal';
+export type TDraggableListDirection = "vertical" | "horizontal";
