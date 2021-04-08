@@ -28,14 +28,16 @@ export default function MultiImagePicker<T = {}>({
     ...options,
     accept: "image/*",
     onDrop(acceptedFiles) {
-      setImages([
-        ...images,
-        ...acceptedFiles.map((image) =>
-          (Object as any).assign(image, {
+      const droppedImages = acceptedFiles.map((image, index) => {
+        return {
+          _id: `${image.name}-${index}`,
+          file: (Object as any).assign(image, {
             preview: URL.createObjectURL(image),
-          })
-        ),
-      ]);
+          }) as File & { preview: string },
+        };
+      }) as TComponentImage<T>[];
+
+      setImages([...images, ...droppedImages]);
     },
     onDropRejected(event) {
       onDropRejected && onDropRejected(event);
@@ -51,7 +53,7 @@ export default function MultiImagePicker<T = {}>({
             : true;
         }
 
-        return "_id" in selectedImage ? selectedImage._id !== image._id : true;
+        return selectedImage._id !== image._id;
       })
     );
   }
