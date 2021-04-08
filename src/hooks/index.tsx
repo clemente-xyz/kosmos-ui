@@ -153,9 +153,9 @@ function useMultiImagePicker<T = {}>({
   function removeImage(selectedImage: TComponentImage<T>) {
     setImages(
       images.filter((image) => {
-        if (image instanceof File) {
-          return selectedImage instanceof File
-            ? selectedImage.name !== image.name
+        if (image.file) {
+          return selectedImage.file
+            ? selectedImage.file.name !== image.file.name
             : true;
         }
 
@@ -167,7 +167,7 @@ function useMultiImagePicker<T = {}>({
   useEffect(
     () => () => {
       images.forEach((image) => {
-        image instanceof File && URL.revokeObjectURL(image.preview);
+        image.file && URL.revokeObjectURL(image.file.preview);
       });
     },
     [images]
