@@ -1,11 +1,11 @@
 import React, { ReactNode } from "react";
 
-import { TComponentType } from "types/components";
+import { TComponentType } from "../../types/components";
 import { getStyledComponentMainStyles } from "../../utils/helpers";
 
 import { MainContainer } from "./styles";
 
-function BoxedIcon({
+export default function BoxedIcon({
   type,
   icon,
 }: {
@@ -16,5 +16,3 @@ function BoxedIcon({
 
   return <MainContainer style={mainStyles}>{icon}</MainContainer>;
 }
-
-export default BoxedIcon;
