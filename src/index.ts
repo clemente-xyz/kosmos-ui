@@ -60,6 +60,7 @@ import InstagramIcon from "./icons/Instagram";
 import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
 import ListIcon from "./icons/List";
+import PaymentCardIcon from "./icons/PaymentCard";
 import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
 import ProductLabelsIcon from "./icons/ProductLabels";
@@ -154,6 +155,7 @@ export {
   LayersIcon,
   LineChartIcon,
   ListIcon,
+  PaymentCardIcon,
   PenIcon,
   PhotosIcon,
   ProductLabelsIcon,
