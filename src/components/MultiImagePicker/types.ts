@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { DropzoneOptions, FileRejection, DropzoneState } from "react-dropzone";
-import { TComponentImage } from "types/components";
+import { TComponentImage } from "../../types/components";
 import MultiImagePickerSelectButton from "./components/SelectButton";
 import MultiImagePickerThumb from "./components/Thumb";
 import MultiImagePickerThumbs from "./components/Thumbs";

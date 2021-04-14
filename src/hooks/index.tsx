@@ -8,8 +8,8 @@ import React, {
 } from "react";
 import { useDropzone } from "react-dropzone";
 
-import { TMultiImagePickerProps } from "components/MultiImagePicker/types";
-import { TComponentImage } from "types/components";
+import { TMultiImagePickerProps } from "../components/MultiImagePicker/types";
+import { TComponentImage } from "../types/components";
 
 /**
  * Alert clicks outside of the passed ref.

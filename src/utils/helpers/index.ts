@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 
 import theme from "../../theme";
-import { TComponentType } from "types/components";
+import { TComponentType } from "../../types/components";
 
 /**
  * Validates if the provided date follows the

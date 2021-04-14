@@ -9,7 +9,7 @@ import {
 import MultiImagePickerSelectButton from "./components/SelectButton";
 import MultiImagePickerThumb from "./components/Thumb";
 import MultiImagePickerThumbs from "./components/Thumbs";
-import { TComponentImage } from "types/components";
+import { TComponentImage } from "../../types/components";
 
 export const MultiImagePickerContext = createContext(
   {} as TMultiImagePickerContext

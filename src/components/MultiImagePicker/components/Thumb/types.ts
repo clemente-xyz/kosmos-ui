@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-import { TComponentImage } from "types/components";
+import { TComponentImage } from "../../../../types/components";
 
 export type TMultiImagePickerThumbProps = {
   image: TComponentImage;
