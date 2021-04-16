@@ -1,6 +1,8 @@
 import React, { ReactNode, CSSProperties } from "react";
 import styled from "styled-components";
 
+import { TPosition } from "../../../../types/general";
+
 const MainContainer = styled.aside<{ position: TPosition }>`
   position: absolute;
 

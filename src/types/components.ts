@@ -1,3 +1,5 @@
+import { WithId } from "./general";
+
 export type TComponentType =
   | "primary"
   | "secondary"
