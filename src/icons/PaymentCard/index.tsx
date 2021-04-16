@@ -2,19 +2,21 @@ import React, { ReactElement } from "react";
 
 import { IVectorProps } from "../../types/vectors";
 
+export type TPaymentCardVariant =
+  | "visa"
+  | "mastercard"
+  | "dinersClub"
+  | "americanExpress"
+  | "redcompra"
+  | "magna";
+
 export default function PaymentCardIcon({
   height = "24px",
   color = "currentColor",
   style,
   variant,
 }: IVectorProps & {
-  variant:
-    | "visa"
-    | "mastercard"
-    | "dinersClub"
-    | "americanExpress"
-    | "redcompra"
-    | "magna";
+  variant: TPaymentCardVariant;
 }) {
   let paths: ReactElement = <></>;
   let viewBox = "";
