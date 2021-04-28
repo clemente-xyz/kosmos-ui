@@ -20,6 +20,7 @@ import Loader from "./components/Loader";
 import MiniCard from "./components/MiniCard";
 import MultiImagePicker from "./components/MultiImagePicker";
 import SectionedDialog from "./components/SectionedDialog";
+import Select from "./components/Select";
 import SelectInput from "./components/SelectInput";
 import Slider from "./components/Slider";
 import SlideShow from "./components/SlideShow";
@@ -119,6 +120,7 @@ export {
   MiniCard,
   MultiImagePicker,
   SectionedDialog,
+  Select,
   SelectInput,
   Slider,
   SlideShow,
