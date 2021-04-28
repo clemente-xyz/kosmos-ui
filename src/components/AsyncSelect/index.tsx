@@ -1,7 +1,7 @@
 import React from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 
-import { selectInputStyles } from "components/Select/styles";
+import { selectInputStyles } from "../Select/styles";
 
 import { TAsyncSelectProps } from "./types";
 
