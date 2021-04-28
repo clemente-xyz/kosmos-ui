@@ -1,4 +1,5 @@
 // Components
+import AsyncSelect from "./components/AsyncSelect";
 import BoxedIcon from "./components/BoxedIcon";
 import Button from "./components/Button";
 import Card from "./components/Card";
@@ -97,6 +98,7 @@ import theme from "./theme";
 
 export {
   // Components
+  AsyncSelect,
   BoxedIcon,
   Button,
   Card,

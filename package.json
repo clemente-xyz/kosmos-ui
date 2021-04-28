@@ -1,6 +1,6 @@
 {
   "name": "kosmos-ui",
-  "version": "5.11.4",
+  "version": "5.12.0",
   "author": "Clemente Serrano",
   "license": "ISC",
   "description": "A cool React components UI library",
@@ -22,6 +22,7 @@
     "@types/react-color": "3.0.4",
     "@types/react-datepicker": "^3.1.2",
     "@types/react-dom": "^16.9.8",
+    "@types/react-select": "^4.0.15",
     "@types/styled-components": "^5.1.0",
     "copyfiles": "^2.4.1",
     "react": "^16.13.1",
@@ -47,6 +48,8 @@
     "react-datepicker": "^3.3.0",
     "react-dropzone": "^11.0.1",
     "react-popper": "^2.2.3",
+    "react-select": "^4.3.0",
+    "react-select-async-paginate": "^0.5.3",
     "react-use-gesture": "7.0.5",
     "styled-components": "^5.1.0"
   }
