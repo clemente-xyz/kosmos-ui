@@ -2,6 +2,10 @@ import theme from "../../theme";
 
 export const selectInputStyles = {
   //@ts-ignore
+  menuPortal(base) {
+    return { ...base, zIndex: 9999 };
+  },
+  //@ts-ignore
   control(base) {
     return {
       ...base,
