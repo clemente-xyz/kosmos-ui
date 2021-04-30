@@ -4,6 +4,6 @@ import BaseSelect from "react-select";
 import { TSelectProps } from "./types";
 import { selectInputStyles } from "./styles";
 
-export default function Select(props: TSelectProps) {
-  return <BaseSelect styles={selectInputStyles} {...props} />;
+export default function Select({ styles, ...props }: TSelectProps) {
+  return <BaseSelect styles={{ ...selectInputStyles, ...styles }} {...props} />;
 }
