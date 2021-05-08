@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { lighten } from "polished";
 
 import theme from "../../theme";
+import { TTextInputVariant } from "./types";
 
 function inputHighlighter(highlightColor: string) {
   return keyframes`
@@ -10,7 +11,11 @@ function inputHighlighter(highlightColor: string) {
 `;
 }
 
-const MainContainer = styled.div`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   position: relative;
   width: 100%;
 
@@ -19,7 +24,7 @@ const MainContainer = styled.div`
   }
 `;
 
-const Label = styled.label<{ baseColor: string }>`
+export const Label = styled.label<{ baseColor: string }>`
   font-size: ${theme.fontSizes.regular};
   color: ${({ baseColor }) => baseColor};
   position: absolute;
@@ -31,9 +36,12 @@ const Label = styled.label<{ baseColor: string }>`
   -webkit-transition: 0.2s ease all;
 `;
 
-const Bar = styled.span<{ highlightColor: string }>`
+export const Bar = styled.span<{
+  highlightColor: string;
+  variant: TTextInputVariant;
+}>`
+  display: ${({ variant }) => (variant === "filled" ? "none" : "block")};
   position: relative;
-  display: block;
   width: 100%;
 
   &::before,
@@ -58,7 +66,7 @@ const Bar = styled.span<{ highlightColor: string }>`
   }
 `;
 
-const Highlight = styled.span`
+export const Highlight = styled.span`
   position: absolute;
   height: 60%;
   width: 100%;
@@ -68,17 +76,32 @@ const Highlight = styled.span`
   opacity: 0.5;
 `;
 
-const Input = styled.input<{ baseColor: string; highlightColor: string }>`
+export const Input = styled.input<{
+  baseColor: string;
+  highlightColor: string;
+  variant: TTextInputVariant;
+}>`
   font-size: ${theme.fontSizes.regular};
-  padding: 12px 0;
+  padding: 12px ${({ variant }) => (variant === "filled" ? "12px" : "0")};
   display: block;
-  width: 100%;
   border: none;
-  border-bottom: 2px solid ${({ baseColor }) => lighten(0.2, baseColor)};
-  background-color: transparent;
+  border-bottom: ${({ variant, baseColor }) =>
+    variant === "filled" ? "unset" : `2px solid ${lighten(0.2, baseColor)}`};
+  background-color: ${({ variant, baseColor }) =>
+    variant === "filled" ? lighten(0.26, baseColor) : "transparent"};
   color: ${({ baseColor }) => baseColor};
   overflow: hidden;
   text-overflow: ellipsis;
+  border-radius: ${({ variant }) => (variant === "filled" ? "4px" : "0")};
+  transition: 0.2s ease all;
+
+  ::placeholder {
+    color: ${({ baseColor }) => lighten(0.17, baseColor)};
+  }
+
+  ${({ variant, baseColor }) =>
+    variant === "filled" &&
+    `&:hover{ background-color: ${lighten(0.24, baseColor)} }`}
 
   &:focus {
     outline: none;
@@ -108,13 +131,11 @@ const Input = styled.input<{ baseColor: string; highlightColor: string }>`
   }
 `;
 
-const ErrorParagraph = styled.p`
+export const ErrorParagraph = styled.p`
   font-size: ${theme.fontSizes.regular};
   margin: 0;
   color: ${theme.colorsPalette.red.default};
   margin-top: 16px;
 `;
-
-export { MainContainer, Input, Highlight, Bar, Label, ErrorParagraph };
 
 // https://codepen.io/chrisoncode/pen/IdGKH
