@@ -4,6 +4,7 @@ import theme from "../../theme";
 import { TTextInputProps } from "./types";
 import {
   Container,
+  InputContainer,
   Input,
   Highlight,
   Bar,
@@ -16,6 +17,7 @@ export default function TextInput({
   label,
   variant = "standard",
   type = "text",
+  adornments,
   style,
   colors,
   error,
@@ -23,23 +25,36 @@ export default function TextInput({
 }: TTextInputProps): JSX.Element {
   return (
     <Container style={style?.root}>
-      <Input
-        id={id}
-        style={style?.input}
+      <InputContainer
         baseColor={colors?.base || theme.colorsPalette.gray.light}
         highlightColor={colors?.highlight || theme.colorsPalette.gray.dark}
         variant={variant}
-        {...inputProps}
-      />
+      >
+        {adornments?.left}
 
+        <Input
+          id={id}
+          style={{
+            margin: `0 ${adornments?.right ? "8px" : "0"} 0 ${
+              adornments?.left ? "8px" : "0"
+            }`,
+            ...style?.input,
+          }}
+          baseColor={colors?.base || theme.colorsPalette.gray.light}
+          highlightColor={colors?.highlight || theme.colorsPalette.gray.dark}
+          variant={variant}
+          {...inputProps}
+        />
+
+        {adornments?.right}
+
+        <Bar
+          variant={variant}
+          style={style?.bar}
+          highlightColor={colors?.highlight || theme.colorsPalette.blue.default}
+        />
+      </InputContainer>
       <Highlight style={style?.hightlight} />
-
-      <Bar
-        variant={variant}
-        style={style?.bar}
-        highlightColor={colors?.highlight || theme.colorsPalette.blue.default}
-      />
-
       <Label
         style={style?.label}
         htmlFor={id}

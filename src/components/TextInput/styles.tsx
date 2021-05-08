@@ -41,7 +41,8 @@ export const Bar = styled.span<{
   variant: TTextInputVariant;
 }>`
   display: ${({ variant }) => (variant === "filled" ? "none" : "block")};
-  position: relative;
+  position: absolute;
+  bottom: -2px;
   width: 100%;
 
   &::before,
@@ -76,44 +77,52 @@ export const Highlight = styled.span`
   opacity: 0.5;
 `;
 
+export const InputContainer = styled.div<{
+  baseColor: string;
+  highlightColor: string;
+  variant: TTextInputVariant;
+}>`
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: ${theme.fontSizes.regular};
+  padding: 12px ${({ variant }) => (variant === "filled" ? "12px" : "0")};
+  border-bottom: ${({ variant, baseColor }) =>
+    variant === "filled" ? "unset" : `2px solid ${lighten(0.2, baseColor)}`};
+  background-color: ${({ variant, baseColor }) =>
+    variant === "filled" ? lighten(0.26, baseColor) : "transparent"};
+  color: ${({ baseColor }) => baseColor};
+  border-radius: ${({ variant }) => (variant === "filled" ? "4px" : "0")};
+  transition: 0.2s ease all;
+
+  ${({ variant, baseColor }) =>
+    variant === "filled" &&
+    `&:hover{ background-color: ${lighten(0.24, baseColor)} }`}
+`;
+
 export const Input = styled.input<{
   baseColor: string;
   highlightColor: string;
   variant: TTextInputVariant;
 }>`
   font-size: ${theme.fontSizes.regular};
-  padding: 12px ${({ variant }) => (variant === "filled" ? "12px" : "0")};
   display: block;
   border: none;
-  border-bottom: ${({ variant, baseColor }) =>
-    variant === "filled" ? "unset" : `2px solid ${lighten(0.2, baseColor)}`};
-  background-color: ${({ variant, baseColor }) =>
-    variant === "filled" ? lighten(0.26, baseColor) : "transparent"};
-  color: ${({ baseColor }) => baseColor};
+  background-color: transparent;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: ${({ variant }) => (variant === "filled" ? "4px" : "0")};
   transition: 0.2s ease all;
+  color: ${({ baseColor }) => baseColor};
 
   ::placeholder {
     color: ${({ baseColor }) => lighten(0.17, baseColor)};
   }
-
-  ${({ variant, baseColor }) =>
-    variant === "filled" &&
-    `&:hover{ background-color: ${lighten(0.24, baseColor)} }`}
 
   &:focus {
     outline: none;
   }
 
   &:focus ~ ${Label}, &:valid ~ ${Label} {
-    top: -16px;
-    color: ${({ highlightColor }) => highlightColor};
-    font-size: ${theme.fontSizes.small};
-  }
-
-  &:read-only ~ ${Label} {
     top: -16px;
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
@@ -128,6 +137,12 @@ export const Input = styled.input<{
       animation: ${({ highlightColor }) => inputHighlighter(highlightColor)}
         0.3s ease;
     }
+  }
+
+  &:read-only ~ ${Label} {
+    top: -16px;
+    color: ${({ highlightColor }) => highlightColor};
+    font-size: ${theme.fontSizes.small};
   }
 `;
 
