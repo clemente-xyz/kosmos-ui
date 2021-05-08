@@ -70,6 +70,7 @@ import ProductLabelsIcon from "./icons/ProductLabels";
 import ProfileIcon from "./icons/Profile";
 import ProfilesIcon from "./icons/Profiles";
 import RocketIcon from "./icons/Rocket";
+import SearchIcon from "./icons/Search";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import StoreIcon from "./icons/Store";
 import SuccessIcon from "./icons/Success";
@@ -168,6 +169,7 @@ export {
   ProfileIcon,
   ProfilesIcon,
   RocketIcon,
+  SearchIcon,
   ShoppingBagIcon,
   StoreIcon,
   SuccessIcon,
