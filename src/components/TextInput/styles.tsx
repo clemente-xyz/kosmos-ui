@@ -24,12 +24,18 @@ export const Container = styled.div`
   }
 `;
 
-export const Label = styled.label<{ baseColor: string }>`
+export const Label = styled.label<{
+  baseColor: string;
+  isLeftAdornment: boolean;
+  variant: TTextInputVariant;
+}>`
   font-size: ${theme.fontSizes.regular};
   color: ${({ baseColor }) => baseColor};
   position: absolute;
   pointer-events: none;
   top: 12px;
+  left: ${({ isLeftAdornment, variant }) =>
+    isLeftAdornment ? (variant === "standard" ? "24px" : "36px") : "0"};
   transition: 0.2s ease all;
 
   -moz-transition: 0.2s ease all;
@@ -122,8 +128,15 @@ export const Input = styled.input<{
     outline: none;
   }
 
+  &:read-only ~ ${Label} {
+    top: -16px;
+    color: ${({ highlightColor }) => highlightColor};
+    font-size: ${theme.fontSizes.small};
+  }
+
   &:focus ~ ${Label}, &:valid ~ ${Label} {
     top: -16px;
+    left: 0;
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
   }
@@ -137,12 +150,6 @@ export const Input = styled.input<{
       animation: ${({ highlightColor }) => inputHighlighter(highlightColor)}
         0.3s ease;
     }
-  }
-
-  &:read-only ~ ${Label} {
-    top: -16px;
-    color: ${({ highlightColor }) => highlightColor};
-    font-size: ${theme.fontSizes.small};
   }
 `;
 

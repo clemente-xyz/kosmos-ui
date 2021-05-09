@@ -18,11 +18,21 @@ export default function TextInput({
   variant = "standard",
   type = "text",
   adornments,
+  placeholder,
   style,
   colors,
   error,
   ...inputProps
 }: TTextInputProps): JSX.Element {
+  const inputStyles = {
+    margin: `0 ${adornments?.right ? "8px" : "0"} 0 ${
+      adornments?.left ? "8px" : "0"
+    }`,
+    ...style?.input,
+  };
+
+  const inputPlaceholder = !label ? placeholder : "";
+
   return (
     <Container style={style?.root}>
       <InputContainer
@@ -34,15 +44,12 @@ export default function TextInput({
 
         <Input
           id={id}
-          style={{
-            margin: `0 ${adornments?.right ? "8px" : "0"} 0 ${
-              adornments?.left ? "8px" : "0"
-            }`,
-            ...style?.input,
-          }}
+          style={inputStyles}
           baseColor={colors?.base || theme.colorsPalette.gray.light}
           highlightColor={colors?.highlight || theme.colorsPalette.gray.dark}
           variant={variant}
+          placeholder={inputPlaceholder}
+          required
           {...inputProps}
         />
 
@@ -53,15 +60,20 @@ export default function TextInput({
           style={style?.bar}
           highlightColor={colors?.highlight || theme.colorsPalette.blue.default}
         />
+
+        <Label
+          style={style?.label}
+          isLeftAdornment={!!adornments?.left}
+          variant={variant}
+          htmlFor={id}
+          baseColor={colors?.base || theme.colorsPalette.gray.default}
+        >
+          {label}
+        </Label>
       </InputContainer>
-      <Highlight style={style?.hightlight} />
-      <Label
-        style={style?.label}
-        htmlFor={id}
-        baseColor={colors?.base || theme.colorsPalette.gray.default}
-      >
-        {label}
-      </Label>
+
+      <Highlight style={style?.highlight} />
+
       {error && <ErrorParagraph style={style?.error}>{error}</ErrorParagraph>}
     </Container>
   );

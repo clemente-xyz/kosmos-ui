@@ -14,7 +14,7 @@ export type TTextInputStyle = {
   input?: CSSProperties;
   bar?: CSSProperties;
   label?: CSSProperties;
-  hightlight?: CSSProperties;
+  highlight?: CSSProperties;
   error?: CSSProperties;
 };
 
