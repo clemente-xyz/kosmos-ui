@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 function ShoppingBagIcon({
   height = "24px",
   color = "currentColor",
   style,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg height={height} style={style} viewBox="0 0 20 20">
       <g fill="none" fillRule="evenodd">

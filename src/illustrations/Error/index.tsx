@@ -2,14 +2,14 @@ import React from "react";
 import { lighten } from "polished";
 
 import theme from "../../theme";
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 function ErrorIllustration({
   height = "99px",
   style,
   className,
   color = theme.colorsPalette.blue.default,
-}: IVectorProps): JSX.Element {
+}: TVectorProps) {
   return (
     <svg
       height={height}

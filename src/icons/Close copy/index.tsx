@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 function CloseIcon({
   height = "52px",
   color = "currentColor",
   style,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg
       height={height}

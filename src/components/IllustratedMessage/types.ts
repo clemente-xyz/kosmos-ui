@@ -1,6 +1,6 @@
 import { ReactNode, CSSProperties } from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 export type TIllustratedMessageProps = {
   illustration?:
@@ -29,6 +29,6 @@ export type TIllustratedMessageProps = {
 };
 
 export type TIllustratedMessageConfigs = Pick<
-  IVectorProps,
+  TVectorProps,
   "height" | "style" | "className"
 >;

@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 export default function DragIcon({
   height = "52px",
   color = "currentColor",
   style,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg height={height} style={style} x="0px" y="0px" viewBox="0 0 500 500">
       <g>

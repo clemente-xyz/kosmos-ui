@@ -1,9 +1,9 @@
 import React from "react";
 
 import theme from "../../theme";
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
-function GrafitoIsotype({ height = "690px", style }: IVectorProps) {
+function GrafitoIsotype({ height = "690px", style }: TVectorProps) {
   return (
     <svg height={height} viewBox="0 0 690 690" style={style}>
       <defs>

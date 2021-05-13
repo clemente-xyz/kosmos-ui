@@ -1,9 +1,9 @@
 import React from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 import { TDirection } from "../../types/general";
 
-type TCarretIconProps = IVectorProps & {
+type TCarretIconProps = TVectorProps & {
   direction?: TDirection;
 };
 

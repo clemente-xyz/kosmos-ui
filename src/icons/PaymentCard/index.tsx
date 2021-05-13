@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 export type TPaymentCardVariant =
   | "visa"
@@ -15,7 +15,7 @@ export default function PaymentCardIcon({
   color = "currentColor",
   style,
   variant,
-}: IVectorProps & {
+}: TVectorProps & {
   variant: TPaymentCardVariant;
 }) {
   let paths: ReactElement = <></>;

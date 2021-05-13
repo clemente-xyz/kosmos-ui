@@ -1,12 +1,12 @@
 import React from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 function PenIcon({
   height = "45px",
   color = "currentColor",
   style,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg height={height} viewBox="0 0 512 512" fill={color} style={style}>
       <path d="m1.03125 492.398438c-1.5 5.203124 0 10.902343 3.796875 14.703124 2.800781 2.796876 6.703125 4.398438 10.601563 4.398438 1.398437 0 2.800781-.199219 4.101562-.601562l139.796875-39.898438-118.398437-118.398438zm0 0" />

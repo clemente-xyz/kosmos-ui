@@ -1,10 +1,11 @@
 import { CSSProperties } from "react";
 
-export interface IVectorProps {
+export type TVectorProps = {
   height?: string;
   color?: string;
-  primaryColor?: string;
-  secondaryColor?: string;
+  colors?: Partial<TVectorColors>;
   style?: CSSProperties;
   className?: string;
-}
+};
+
+export type TVectorColors = { dark: string; default: string; light: string };

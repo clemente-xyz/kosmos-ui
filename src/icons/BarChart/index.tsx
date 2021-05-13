@@ -1,14 +1,13 @@
 import React from "react";
 
-import { colorsPalette } from "../../theme/colors";
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
+import { DEFAULT_VECTOR_COLORS } from "../../utils/constants";
 
 function BarChartIcon({
   height = "422px",
-  primaryColor = colorsPalette.blue.light,
-  secondaryColor = colorsPalette.blue.default,
+  colors = DEFAULT_VECTOR_COLORS,
   style,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg height={height} viewBox="0 0 411 422" style={style}>
       <g
@@ -23,21 +22,21 @@ function BarChartIcon({
             <path
               d="M15.1484185,98 C10.1167883,98 0,102.085487 0,115 C0,127.914513 10.1167883,132 15.1484185,132 L53,132 L53,98 L15.1484185,98 Z"
               id="Path"
-              fill={primaryColor}
+              fill={colors.light}
             />
             <path
               d="M12.8323601,185 C7.47956204,185 0,192.65 0,202 C0,211.35 7.47956204,219 12.8323601,219 L53.1,219 L53.1,185 L12.8323601,185 Z"
               id="Path"
-              fill={primaryColor}
+              fill={colors.light}
             />
             <path
               d="M12.7323601,272 C7.37956204,272 0,279.65 0,289 C0,298.35 7.37956204,306 12.7323601,306 L53,306 L53,272 L12.7323601,272 Z"
               id="Path"
-              fill={primaryColor}
+              fill={colors.light}
             />
             <rect
               id="Rectangle"
-              fill={primaryColor}
+              fill={colors.light}
               x="218"
               y="168"
               width="61"
@@ -47,11 +46,11 @@ function BarChartIcon({
             <path
               d="M85.1,0 C67.4,0 53.1,14.3 53,32 L53,98.5792755 C69.652508,98.5792755 77.9787619,104.05285 77.9787619,115 C77.9787619,126.333333 69.6233944,132 52.9126592,132 L53,185 C69.652508,185 77.9787619,190.666667 77.9787619,202 C77.9787619,213.333333 69.6858413,219 53.1,219 C53.1,231.96923 53.0666667,243.265772 53,252.889625 C52.9762525,256.317764 52.9471389,262.687889 52.9126592,272 C69.6233944,272 77.9787619,277.666667 77.9787619,289 C77.9787619,300.333333 69.6233944,306 52.9126592,306 L53,390 C53.1,407.7 67.4,422 85.1,422 L378.1,422 C395.7,422 410.000521,407.7 410.000521,390.1 C410.000521,390.1 410.000521,390 410.000521,390 L410.000521,32 C410.1,14.4 395.8,0.1 378.1,0 L85.1,0 Z M279,276 C279,280.4 275.4,284 271,284 L226,284 C221.6,284 218,280.4 218,276 L218,179 C218,174.6 221.6,171 226,171 L271,171 C275.4,171 279,174.6 279,179 L279,276 Z M203,275 C203,279.4 199.4,283 195,283 L150,283 C145.6,283 142,279.4 142,275 L142,214 C142,209.6 145.6,206 150,206 L195,206 C199.4,206 203,209.6 203,214 L203,275 Z M356,275 C356,279.4 352.4,283 348,283 L303,283 C298.6,283 295,279.4 295,275 L295,127 C295,122.6 298.6,119 303,119 L348,119 C352.4,119 356,122.6 356,127 L356,275 Z"
               id="Shape"
-              fill={secondaryColor}
+              fill={colors.default}
             />
             <rect
               id="Rectangle"
-              fill={primaryColor}
+              fill={colors.light}
               x="142"
               y="206"
               width="61"
@@ -60,7 +59,7 @@ function BarChartIcon({
             />
             <rect
               id="Rectangle"
-              fill={primaryColor}
+              fill={colors.light}
               x="295"
               y="119"
               width="61"

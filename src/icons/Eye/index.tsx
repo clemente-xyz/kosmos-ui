@@ -1,13 +1,13 @@
 import React from "react";
 
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
 
 function EyeIcon({
   height = "20px",
   color = "currentColor",
   style,
   className,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg
       height={height}

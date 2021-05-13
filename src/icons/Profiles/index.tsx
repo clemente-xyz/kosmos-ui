@@ -1,14 +1,13 @@
 import React from "react";
 
-import { colorsPalette } from "../../theme/colors";
-import { IVectorProps } from "../../types/vectors";
+import { TVectorProps } from "../../types/vectors";
+import { DEFAULT_VECTOR_COLORS } from "../../utils/constants";
 
 function ProfilesIcon({
   height = "165",
-  primaryColor = colorsPalette.blue.light,
-  secondaryColor = colorsPalette.blue.default,
+  colors = DEFAULT_VECTOR_COLORS,
   style,
-}: IVectorProps) {
+}: TVectorProps) {
   return (
     <svg height={height} viewBox="0 0 188 165" style={style}>
       <g
@@ -23,17 +22,17 @@ function ProfilesIcon({
             <path
               d="M152.894,60.098 C162.83,54.668 169.572,44.122 169.572,32 C169.572,14.327 155.244,0 137.572,0 C125.827,0 115.566,6.331 110,15.763 C122.229,21.64 130.672,34.143 130.672,48.619 C130.672,59.925 125.522,70.027 117.44,76.71 C130.508,83.944 137.543,97.561 137.543,97.561 C137.543,97.561 153.979,126.268 145.242,147.93 C167.44,146.289 187.573,137.484 187.573,121.5 C187.572,92.774 173.011,68.445 152.894,60.098 Z"
               id="Path"
-              fill={primaryColor}
+              fill={colors.light}
             />
             <path
               d="M49.846,97.561 C49.846,97.561 56.92,83.866 70.06,76.648 C62.02,69.965 56.9,59.891 56.9,48.619 C56.9,34.143 65.343,21.64 77.572,15.763 C72.005,6.331 61.744,0 50,0 C32.326,0 18,14.327 18,32 C18,44.122 24.74,54.668 34.678,60.098 C14.561,68.446 0,92.774 0,121.5 C0,137.438 20.018,146.238 42.141,147.915 C33.418,126.255 49.846,97.561 49.846,97.561 Z"
               id="Path"
-              fill={primaryColor}
+              fill={colors.light}
             />
             <path
               d="M108.869,76.787 C118.806,71.357 125.547,60.811 125.547,48.689 C125.547,31.016 111.22,16.689 93.547,16.689 C75.874,16.689 61.547,31.016 61.547,48.689 C61.547,60.811 68.288,71.357 78.225,76.787 C58.108,85.135 43.547,109.463 43.547,138.189 C43.547,173.811 143.547,173.811 143.547,138.189 C143.547,109.463 128.986,85.134 108.869,76.787 Z"
               id="Path"
-              fill={secondaryColor}
+              fill={colors.default}
             />
           </g>
         </g>
