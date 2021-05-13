@@ -1,6 +1,6 @@
-import { IColors } from "./types";
+import { TColorPalette } from "../types/theme";
 
-const colorsPalette = {
+const colorsPalette: TColorPalette = {
   blue: {
     default: "hsl(209, 100%, 50%)",
     light: "hsl(209, 100%, 70%)",
@@ -73,6 +73,6 @@ const colorsPalette = {
     dark: "hsl(243, 100%, 58%)",
     darker: "hsl(243, 100%,35%)",
   },
-} as IColors;
+};
 
 export { colorsPalette };

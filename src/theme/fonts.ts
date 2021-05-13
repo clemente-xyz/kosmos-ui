@@ -1,6 +1,6 @@
-import { IFontSizes, IFontsWeights } from "./types";
+import { TFontSizes, TFontsWeights } from "../types/theme";
 
-const fontSizes: IFontSizes = {
+const fontSizes: TFontSizes = {
   huge: "64px",
   xxxlarge: "32px",
   xxlarge: "28px",
@@ -15,7 +15,7 @@ const fontSizes: IFontSizes = {
   tiny: "8px",
 };
 
-const fontWeights: IFontsWeights = {
+const fontWeights: TFontsWeights = {
   bolder: 800,
   bold: 600,
   regular: 400,
