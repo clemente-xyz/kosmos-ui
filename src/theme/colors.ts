@@ -2,31 +2,31 @@ import { TColorPalette } from "../types/theme";
 
 const colorsPalette: TColorPalette = {
   blue: {
-    default: "hsl(209, 100%, 50%)",
-    light: "hsl(209, 100%, 70%)",
-    lighter: "hsl(208, 100%, 97%)",
-    dark: "hsl(209, 100%, 35%)",
+    default: "hsl(209, 100%, 50%)", // #0084ff
+    light: "hsl(209, 100%, 70%)", // #66b5ff
+    lighter: "hsl(208, 100%, 97%)", // #f0f8ff
+    dark: "hsl(209, 100%, 35%)", // #005cb3
     darker: "hsl(209, 75%, 25%)",
     superDark: "hsl(223, 46%, 24%)",
   },
   cyan: {
-    default: "hsl(181, 83%, 65%)",
-    light: "hsl(181, 83%, 75%)",
-    lighter: "hsl(181, 83%, 90%)",
+    default: "hsl(180, 76%, 55%)", // #35e4e4
+    light: "hsl(181, 83%, 75%)", // #8af2f4
+    lighter: "hsl(181, 83%, 90%)", // #d0fafb
     dark: "hsl(181, 83%, 30%)",
     darker: "hsl(181, 83%, 20%)",
   },
   black: {
-    default: "hsl(210, 73%, 15%)",
-    light: "hsl(210, 73%, 18%)",
-    lighter: "hsl(210, 73%, 20%)",
-    dark: "hsl(210, 73%, 8%)",
-    darker: "hsl(210, 73%, 5%)",
+    default: "hsl(0, 0%, 7%)", // #111111
+    light: "hsl(220, 5%, 12%)", // #1c1d1f
+    lighter: "hsl(225, 5%, 16%)", // #26272a
+    dark: "hsl(0, 0%, 2%)",
+    darker: "hsl(0, 0%, 0%)",
   },
   gray: {
-    default: "hsl(221,22%, 66%)",
-    light: "hsl(221,22%, 71%)",
-    lighter: "hsl(221,22%, 90%)",
+    default: "hsl(221,22%, 66%)", // #95a1bb
+    light: "hsl(221,22%, 71%)", // #a5afc5
+    lighter: "hsl(221,22%, 90%)", // #e0e3eb
     superLight: "hsl(210,50%, 98%)",
     dark: "hsl(221,22%, 40%)",
     darker: "hsl(221,22%, 20%)",
@@ -39,32 +39,32 @@ const colorsPalette: TColorPalette = {
     darker: "hsl(0, 0%, 15%)",
   },
   red: {
-    default: "hsl(0, 100%, 70%)",
+    default: "hsl(0, 100%, 45%)", // #e60000
     light: "hsl(0, 100%, 77%)",
     lighter: "hsl(0, 100%, 90%)",
-    dark: "hsl(0, 100%, 45%)",
-    darker: "hsl(0, 100%, 30%)",
+    dark: "hsl(358, 61%, 45%)", // #b72c31
+    darker: "hsl(358, 61%, 30%)",
   },
   green: {
-    default: "hsl(153, 60%, 53%)",
-    light: "hsl(153, 60%, 73%)",
-    lighter: "hsl(153, 60%, 83%)",
+    default: "hsl(112, 80%, 41%)", // #15be53
+    light: "hsl(112, 80%, 75%)",
+    lighter: "hsl(132, 48%, 94%)",
     dark: "hsl(153, 60%, 33%)",
     darker: "hsl(153, 60%, 13%)",
   },
   yellow: {
-    default: "hsl(42, 93%, 58%)",
-    light: "hsl(42, 93%, 80%)",
-    lighter: "hsl(42, 93%, 90%)",
-    dark: "hsl(42, 93%, 40%)",
-    darker: "hsl(42, 93%, 25%)",
+    default: "hsl(47, 100%, 64%)", // #ffd847
+    light: "hsl(55, 100%, 67%)", // #FFF056
+    lighter: "hsl(40, 94%, 94%)", // #fef4e0
+    dark: "hsl(42, 96%, 50%)", // #fab006
+    darker: "hsl(42, 96%, 20%)",
   },
   orange: {
-    default: "hsl(39, 85%, 58%)",
-    light: "hsl(39, 85%, 78%)",
+    default: "hsl(15, 74%, 57%)", // #e36942
+    light: "hsl(15, 74%, 67%)",
     lighter: "hsl(39, 85%, 88%)",
-    dark: "hsl(39, 85%, 38%)",
-    darker: "hsl(39, 85%, 18%)",
+    dark: "hsl(15, 74%, 43%)", // #d48207
+    darker: "hsl(15, 74%, 30%)",
   },
   purple: {
     default: "hsl(243, 100%, 68%)",
@@ -72,6 +72,13 @@ const colorsPalette: TColorPalette = {
     lighter: "hsl(243, 100%, 93%)",
     dark: "hsl(243, 100%, 58%)",
     darker: "hsl(243, 100%,35%)",
+  },
+  pink: {
+    default: "hsl(332, 95%, 68%)", // #fb5ea7
+    light: "hsl(332, 95%, 82%)",
+    lighter: "hsl(332, 95%, 96%)",
+    dark: "hsl(332, 95%, 58%)",
+    darker: "hsl(332, 95%, 30%)",
   },
 };
 

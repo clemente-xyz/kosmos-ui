@@ -16,7 +16,8 @@ export type TColor =
   | "green"
   | "yellow"
   | "orange"
-  | "purple";
+  | "purple"
+  | "pink";
 
 export type TColorVariant = {
   default: string;
