@@ -5,8 +5,8 @@ import { getSelectInputStyles } from "../Select/styles";
 
 import { TAsyncSelectProps } from "./types";
 
-export default function AsyncSelect({ styles, ...props }: TAsyncSelectProps) {
+export default function AsyncSelect({ style, ...props }: TAsyncSelectProps) {
   return (
-    <AsyncPaginate styles={getSelectInputStyles(styles) as any} {...props} />
+    <AsyncPaginate styles={getSelectInputStyles(style) as any} {...props} />
   );
 }
