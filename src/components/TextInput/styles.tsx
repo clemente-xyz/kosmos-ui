@@ -119,6 +119,7 @@ export const Input = styled.input<{
   text-overflow: ellipsis;
   transition: 0.2s ease all;
   color: ${({ baseColor }) => baseColor};
+  width: 100%;
 
   ::placeholder {
     color: ${({ baseColor }) => lighten(0.17, baseColor)};
