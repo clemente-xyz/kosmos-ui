@@ -49,6 +49,7 @@ export default function TextInput({
           highlightColor={colors?.highlight || theme.colorsPalette.gray.dark}
           variant={variant}
           placeholder={inputPlaceholder}
+          type={type}
           required
           {...inputProps}
         />
