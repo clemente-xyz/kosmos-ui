@@ -1,7 +1,7 @@
 import BaseSelect from "react-select";
 import { CSSProperties } from "styled-components";
 
-export type TSelectProps = Omit<BaseSelect["props"], "styles"> & {
+export type TSelectProps = BaseSelect["props"] & {
   styles?: TSelectInputStyles;
 };
 
