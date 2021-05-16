@@ -2,7 +2,7 @@ import BaseSelect from "react-select";
 import { CSSProperties } from "styled-components";
 
 export type TSelectProps = BaseSelect["props"] & {
-  styles?: TSelectInputStyles;
+  style?: TSelectInputStyles;
 };
 
 export type TSelectInputStyles = {
