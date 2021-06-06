@@ -7,11 +7,11 @@ const TabsSliderContainer = styled.section`
   margin-bottom: 32px;
 `;
 
-const TabContainer = styled.button<{ isActive: boolean }>`
+const TabContainer = styled.button<{ active: boolean }>`
   padding: 16px 8px;
   border: none;
-  border-bottom: ${({ isActive }) =>
-    isActive ? `3px solid ${theme.colorsPalette.blue.default}` : "none"};
+  border-bottom: ${({ active }) =>
+    active ? `3px solid ${theme.colorsPalette.blue.default}` : "none"};
   background: none;
   color: inherit;
   font: inherit;
@@ -19,10 +19,8 @@ const TabContainer = styled.button<{ isActive: boolean }>`
   cursor: pointer;
   outline: inherit;
   margin-right: 24px;
-  color: ${({ isActive }) =>
-    isActive
-      ? theme.colorsPalette.blue.default
-      : theme.colorsPalette.gray.dark};
+  color: ${({ active }) =>
+    active ? theme.colorsPalette.blue.default : theme.colorsPalette.gray.dark};
 
   transition: color 0.3s;
 

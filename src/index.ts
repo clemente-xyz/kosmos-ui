@@ -28,7 +28,7 @@ import SlideShow from "./components/SlideShow";
 import SplitButton from "./components/SplitButton";
 import Stepper from "./components/Stepper";
 import Switch from "./components/Switch";
-import { Tabs, TabsSliderContainer, TabContainer } from "./components/Tabs";
+import Tabs from "./components/Tabs";
 import TextInput from "./components/TextInput";
 import ToggleButtons from "./components/ToggleButtons";
 
@@ -131,8 +131,6 @@ export {
   Stepper,
   Switch,
   Tabs,
-  TabsSliderContainer,
-  TabContainer,
   TextInput,
   ToggleButtons,
   // Hooks

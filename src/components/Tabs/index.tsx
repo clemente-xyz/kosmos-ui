@@ -1,79 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { createContext } from 'react';
 
-import { ITabsProps, ITabsItemsProps } from "./types";
-import { TabsSliderContainer, TabContainer } from "./styles";
+import { useTabs } from './hooks';
+import {
+  TTabsContext,
+  TTabs,
+  TTabsProps,
+  TTabProps,
+  TTabsPanelProps,
+} from './types';
+import { TabsSliderContainer, TabContainer } from './styles';
 
-/**
- * Renders a sliding underline menu, passing to parent the active
- * component to render.
- * @param content Array of tabs, in which it is specified the tab
- * label and component to render on active mode.
- */
-function Tabs({ content }: ITabsProps): JSX.Element | null {
-  const [tabs, setTabs] = useState<ITabsItemsProps[]>([]);
+export const TabsContext = createContext({} as TTabsContext);
 
-  useEffect(() => {
-    if (content.length > 0) {
-      content.map((item, index) => {
-        if (index === 0) {
-          return setTabs([
-            {
-              _id: `tab-${index}`,
-              component: item.component,
-              label: item.label,
-              isActive: true,
-            },
-          ]);
-        }
+export default function Tabs({ value, onClick, children }: TTabsProps) {
+  return (
+    <TabsContext.Provider value={{ value, onClick }}>
+      <TabsSliderContainer>{children}</TabsSliderContainer>
+    </TabsContext.Provider>
+  ) as unknown as TTabs;
+}
 
-        return setTabs((prevTabs) => [
-          ...prevTabs,
-          {
-            _id: `tab-${index}`,
-            component: item.component,
-            label: item.label,
-            isActive: false,
-          },
-        ]);
-      });
-    }
-  }, [content]);
+export function Tab({ value, children }: TTabProps) {
+  const { value: selectedValue, onClick } = useTabs();
 
-  function handleTabClick(tabId: string) {
-    setTabs((prevTabs) =>
-      prevTabs.map((tab) => {
-        if (tab._id === tabId) {
-          return { ...tab, isActive: true };
-        }
-
-        return { ...tab, isActive: false };
-      })
-    );
-  }
-
-  if (!tabs || content.length === 0) return null;
-
-  const activeComponent = tabs.filter((tab) => tab.isActive)[0];
+  const active = selectedValue === value;
 
   return (
-    <>
-      <TabsSliderContainer>
-        {tabs.map((tab, index) => {
-          return (
-            <TabContainer
-              key={`tab-${index}`}
-              isActive={tab.isActive}
-              onClick={() => handleTabClick(tab._id)}
-            >
-              {tab.label}
-            </TabContainer>
-          );
-        })}
-      </TabsSliderContainer>
-
-      {activeComponent && activeComponent.component}
-    </>
+    <TabContainer active={active} onClick={() => onClick(value)}>
+      {children}
+    </TabContainer>
   );
 }
 
-export { Tabs, TabsSliderContainer, TabContainer };
+export function TabsPanel({ value, index, children }: TTabsPanelProps) {
+  if (value !== index) return null;
+
+  return <>{children}</>;
+}
+
+Tabs.Tab = Tab;
+Tabs.Panel = TabsPanel;

@@ -27,7 +27,7 @@ const colorsPalette: TColorPalette = {
     default: "hsl(221,22%, 66%)", // #95a1bb
     light: "hsl(221,22%, 71%)", // #a5afc5
     lighter: "hsl(221,22%, 90%)", // #e0e3eb
-    superLight: "hsl(210,50%, 98%)",
+    superLight: "hsl(210,50%, 98%)", // #f7fafc
     dark: "hsl(221,22%, 40%)",
     darker: "hsl(221,22%, 20%)",
   },
@@ -48,9 +48,9 @@ const colorsPalette: TColorPalette = {
   green: {
     default: "hsl(112, 80%, 41%)", // #15be53
     light: "hsl(112, 80%, 75%)",
-    lighter: "hsl(132, 48%, 94%)",
-    dark: "hsl(153, 60%, 33%)",
-    darker: "hsl(153, 60%, 13%)",
+    lighter: "hsl(132, 48%, 94%)", // #e8f7eb
+    dark: "hsl(153, 60%, 33%)", // #228759
+    darker: "hsl(153, 60%, 13%)", // #0d3523
   },
   yellow: {
     default: "hsl(47, 100%, 64%)", // #ffd847
