@@ -7,7 +7,6 @@ import Carousel from "./components/Carousel";
 import Chip from "./components/Chip";
 import ColorPicker from "./components/ColorPicker";
 import ContentEditor from "./components/ContentEditor";
-import ContentViewer from "./components/ContentViewer";
 import CreatableSelect from "./components/CreatableSelect";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
@@ -117,7 +116,6 @@ export {
   Chip,
   ColorPicker,
   ContentEditor,
-  ContentViewer,
   CreatableSelect,
   DatePicker,
   Dialog,

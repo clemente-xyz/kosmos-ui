@@ -8,36 +8,31 @@ const richEditorHidePlaceholder = "RichEditor-hidePlaceholder";
 const richEditorBlockquote = "RichEditor-blockquote";
 const publicDraftStyleDefaultPre = "public-DraftStyleDefault-pre";
 
-const MainContainer = styled.section`
-  background: #fff;
-  border: 1px solid #ddd;
+export const Container = styled.aside`
+  background: ${theme.colorsPalette.white.default};
+  border: 1px solid ${theme.colorsPalette.gray.lighter};
+  border-radius: 6px;
   font-size: 14px;
   padding: 16px;
   z-index: 0;
   color: ${theme.colorsPalette.gray.darker};
 `;
 
-const RichEditorControlsContainer = styled.section`
-  font-size: 14px;
-  margin-bottom: 5px;
-  user-select: none;
-`;
-
-const RichEditorContainer = styled.div.attrs({
+export const EditorContainer = styled.div.attrs({
   publicDraftEditorPlaceholderRoot,
   publicDraftEditorContent,
   richEditorHidePlaceholder,
   richEditorBlockquote,
   publicDraftStyleDefaultPre,
 })`
-  border-top: 1px solid #ddd;
+  border-top: 1px solid ${theme.colorsPalette.gray.lighter};
   cursor: text;
   font-size: 16px;
   margin-top: 10px;
 
   .${publicDraftEditorPlaceholderRoot}, .${publicDraftEditorContent} {
-    margin: 0 -15px -15px;
-    padding: 15px;
+    margin: 0 -16px -16px;
+    padding: 16px;
   }
 
   .${publicDraftEditorContent} {
@@ -66,4 +61,33 @@ const RichEditorContainer = styled.div.attrs({
   } */
 `;
 
-export { MainContainer, RichEditorContainer, RichEditorControlsContainer };
+export const ControlsContainer = styled.section`
+  font-size: 14px;
+  margin-bottom: 5px;
+  user-select: none;
+`;
+
+export const ControlButtonContainer = styled.span<{ active: boolean }>`
+  color: ${({ active }) =>
+    active ? theme.colorsPalette.blue.default : theme.colorsPalette.gray.dark};
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 2px 0;
+  display: inline-block;
+`;
+
+export const HeaderContainer = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const UnstyledButton = styled.button`
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+`;

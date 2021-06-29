@@ -1,79 +1,77 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useCallback, createContext, useRef } from "react";
+import Editor from "@draft-js-plugins/editor";
 import {
   EditorState,
   convertToRaw,
   convertFromRaw,
   RichUtils,
   DefaultDraftBlockRenderMap,
+  DraftHandleValue,
+  ContentState,
   AtomicBlockUtils,
-  Entity
+  Entity,
 } from "draft-js";
-
-import { mdToDraftjs, draftjsToMd } from 'draftjs-md-converter';
-
-import Editor, { composeDecorators } from 'draft-js-plugins-editor';
-
-import createImagePlugin from 'draft-js-image-plugin';
-import createFocusPlugin from 'draft-js-focus-plugin';
-import createResizeablePlugin from 'draft-js-resizeable-plugin';
+import { mdToDraftjs, draftjsToMd } from "draftjs-md-converter";
 
 import "draft-js/dist/Draft.css";
-import 'draft-js-image-plugin/lib/plugin.css';
+import "@draft-js-plugins/image/lib/plugin.css";
+import "@draft-js-plugins/focus/lib/plugin.css";
+import "@draft-js-plugins/alignment/lib/plugin.css";
 
-import theme from "../../theme";
-import InlineStyleControls from "./components/InlineStyleControls";
-import BlockStyleControls from "./components/BlockStyleControls";
+import {
+  TContentEditor,
+  TContentEditorContext,
+  TContentEditorProps,
+} from "./types";
+import {
+  ContentEditorControlButton,
+  ContentEditorControls,
+  ContentEditorHeader,
+  ContentEditorSubmit,
+} from "./components";
+import plugins from "./plugins";
+import { Container, EditorContainer } from "./styles";
 
-import mediaBlockRenderer from "./components/MediaBlockRenderer";
+const customMdConfigs = {
+  inlineStyles: {
+    Delete: {
+      type: "STRIKETHROUGH",
+      symbol: "~~",
+    },
+  },
+};
 
-import { IContentEditorProps } from "./types";
-import { styleMap } from "./constants";
-import { MainContainer, RichEditorContainer } from "./styles";
+export const ContentEditorContext = createContext({} as TContentEditorContext);
 
-const focusPlugin = createFocusPlugin();
-const resizeablePlugin = createResizeablePlugin();
-
-const decorator = composeDecorators(
-  resizeablePlugin.decorator,
-  focusPlugin.decorator,
-);
-
-const imagePlugin = createImagePlugin({ decorator });
-
-const plugins = [
-  focusPlugin,
-  resizeablePlugin,
-  imagePlugin,
-];
-
-/**
- * Renders a rich content editor. Transform automatically all typed
- * content into a plain markdown string in order to be easy to save
- * on a db.
- * @param prevContent Previous content (if there is) in plain markdown
- * string format.
- * @param onChange Handler triggered on every content state change.
- * Allows you to manage externally the content you are editing.
- * @param error An error message to display if there is.
- * @param style Extra styles to add to the component main container.
- */
-function ContentEditor({
+export default function ContentEditor({
   prevContent,
-  onChange: externalOnChange,
-  error,
+  onChange,
+  onImagesChange,
+  placeholder,
+  readOnly,
   style,
-  onImagesChange
-}: IContentEditorProps): JSX.Element {
-  const contentEditorRef = useRef<Editor>(null);
-
-  const prevRawContent = mdToDraftjs(prevContent || "");
-  const prevContentState = convertFromRaw(prevRawContent);
+  className: baseClassName,
+  children,
+}: TContentEditorProps) {
+  const editorRef = useRef<Editor>(null);
 
   const [editorState, setEditorState] = useState<EditorState>(
     prevContent
-      ? EditorState.createWithContent(prevContentState)
+      ? EditorState.createWithContent(
+          convertFromRaw(mdToDraftjs(prevContent || "", customMdConfigs as any))
+        )
       : EditorState.createEmpty()
   );
+
+  const handleReset = useCallback(() => {
+    const newState = EditorState.push(
+      editorState,
+      ContentState.createFromText(""),
+      "insert-characters"
+    );
+
+    setEditorState(newState);
+  }, [editorState]);
 
   function getBlockStyle(block: any) {
     switch (block.getType()) {
@@ -81,60 +79,99 @@ function ContentEditor({
         return "RichEditor-blockquote";
 
       default:
-        return null;
+        return "";
     }
   }
 
-  function focusContentEditor() {
-    contentEditorRef &&
-      contentEditorRef.current &&
-      //@ts-ignore
-      contentEditorRef.current.focus();
+  function getMDFromState() {
+    const contentState = editorState.getCurrentContent();
+    const rawObject = convertToRaw(contentState);
+    const mdString = draftjsToMd(rawObject);
+
+    return mdString;
+  }
+
+  function focusEditor() {
+    editorRef?.current && editorRef.current.focus();
   }
 
   function toggleBlockType(blockType: any) {
-    setEditorState(RichUtils.toggleBlockType(editorState, blockType));
+    setEditorState((editorState) =>
+      RichUtils.toggleBlockType(editorState, blockType)
+    );
   }
 
   function toggleInlineStyle(inlineStyle: any) {
-    setEditorState(RichUtils.toggleInlineStyle(editorState, inlineStyle));
-  }
-  
-  function handlePastedFiles(files: Array<Blob>): any {
-      var reader  = new FileReader();
-
-      reader.onloadend = function () {
-        setEditorState(insertImage(reader.result));
-        
-        onImagesChange && onImagesChange({file: files[0], url: reader.result});
-      }
-    
-      if (files[0]) {
-        reader.readAsDataURL(files[0]);
-      }
+    setEditorState((editorState) =>
+      RichUtils.toggleInlineStyle(editorState, inlineStyle)
+    );
   }
 
-  const insertImage = (url: any) => {
-    const entityKey = Entity.create('IMAGE', 'IMMUTABLE', {src: url});
-    const newState = AtomicBlockUtils.insertAtomicBlock(editorState, entityKey, ' ');
+  function toggleLinkStyle() {
+    const link = window.prompt("Pega aquí tu link");
+    const selection = editorState.getSelection();
+    const editorContent = editorState.getCurrentContent();
+    const contentWithEntity = editorContent.createEntity("LINK", "MUTABLE", {
+      url: link,
+    });
+    const entityKey = contentWithEntity.getLastCreatedEntityKey();
 
-    return newState;
-  };
+    const newEditorState = EditorState.push(
+      editorState,
+      contentWithEntity,
+      "apply-entity"
+    );
 
-  const handleKeyCommand = (command: string): any => {
-		const newState = RichUtils.handleKeyCommand(editorState, command);
-		if (newState) {
+    setEditorState(RichUtils.toggleLink(newEditorState, selection, entityKey));
+
+    const newMDString = getMDFromState();
+
+    onChange && onChange(newMDString);
+
+    setTimeout(() => focusEditor(), 0);
+
+    return "handled";
+  }
+
+  function handleKeyCommand(command: string): DraftHandleValue {
+    const newState = RichUtils.handleKeyCommand(editorState, command);
+
+    if (newState) {
       setEditorState(newState);
-			return true;
-		}
-		return false;
+
+      return "handled";
+    }
+
+    return "not-handled";
   }
+
+  function handlePastedFiles(files: Array<Blob>): DraftHandleValue {
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      const url = reader.result;
+
+      const entityKey = Entity.create("IMAGE", "IMMUTABLE", { src: url });
+      const newState = AtomicBlockUtils.insertAtomicBlock(
+        editorState,
+        entityKey,
+        " "
+      );
+
+      setEditorState(newState);
+
+      onImagesChange && onImagesChange({ file: files[0], url });
+    };
+
+    if (files[0]) reader.readAsDataURL(files[0]);
+
+    return "handled";
+  }
+
+  let className = baseClassName?.editor || "";
 
   const contentState = editorState.getCurrentContent();
-  const rawObject = convertToRaw(contentState);
-  const markdownString = draftjsToMd(rawObject);
-
-  let className = "";
+  const mdString = getMDFromState();
 
   if (!contentState.hasText()) {
     if (contentState.getBlockMap().first().getType() !== "unstyled") {
@@ -143,48 +180,46 @@ function ContentEditor({
   }
 
   return (
-    <>
-      <MainContainer style={style}>
-        <BlockStyleControls
-          editorState={editorState}
-          onToggle={toggleBlockType}
-        />
+    <ContentEditorContext.Provider
+      value={{
+        editorState,
+        onToggleInlineStyle: toggleInlineStyle,
+        onToggleBlockType: toggleBlockType,
+        onToggleLinkStyle: toggleLinkStyle,
+        handleReset,
+      }}
+    >
+      <Container className={baseClassName?.root} style={style?.root}>
+        {children}
 
-        <InlineStyleControls
-          editorState={editorState}
-          onToggle={toggleInlineStyle}
-        />
-
-        <RichEditorContainer className={className} onClick={focusContentEditor}>  
+        <EditorContainer
+          className={className}
+          style={style?.editor}
+          onClick={focusEditor}
+        >
           <Editor
-            ref={contentEditorRef}
+            ref={editorRef}
             editorState={editorState}
-            plugins={plugins}
             onChange={(editorState) => {
               setEditorState(editorState);
-              
-              externalOnChange && externalOnChange(markdownString);
-            }}
-            //@ts-ignore
-            blockStyleFn={getBlockStyle}
-            customStyleMap={styleMap}
-            handlePastedFiles={handlePastedFiles}
-            handleKeyCommand={handleKeyCommand}
-            // TODO: Solve display:none styles issue before re-enabling this prop
-            blockRenderMap={DefaultDraftBlockRenderMap}
-            blockRendererFn={mediaBlockRenderer}
-            onImagesChange={handlePastedFiles}
-          />
-        </RichEditorContainer>
-      </MainContainer>
 
-      {error && (
-        <p style={{ color: theme.colorsPalette.red.default, marginTop: 10 }}>
-          {error}
-        </p>
-      )}
-    </>
-  );
+              onChange && onChange(mdString, handleReset);
+            }}
+            blockStyleFn={getBlockStyle}
+            handleKeyCommand={handleKeyCommand}
+            handlePastedFiles={handlePastedFiles}
+            blockRenderMap={DefaultDraftBlockRenderMap}
+            placeholder={placeholder}
+            readOnly={readOnly}
+            plugins={plugins}
+          />
+        </EditorContainer>
+      </Container>
+    </ContentEditorContext.Provider>
+  ) as unknown as TContentEditor;
 }
 
-export default ContentEditor;
+ContentEditor.ControlButton = ContentEditorControlButton;
+ContentEditor.Controls = ContentEditorControls;
+ContentEditor.Submit = ContentEditorSubmit;
+ContentEditor.Header = ContentEditorHeader;
