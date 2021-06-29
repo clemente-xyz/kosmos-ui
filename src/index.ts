@@ -44,6 +44,7 @@ import { toCSS } from "./utils/helpers";
 
 // Icons
 import BarChartIcon from "./icons/BarChart";
+import BoldIcon from "./icons/Bold";
 import CalendarIcon from "./icons/Calendar";
 import CardIcon from "./icons/Card";
 import CarretIcon from "./icons/Carret";
@@ -60,9 +61,12 @@ import GrafitoIsotype from "./icons/GrafitoIsotype";
 import HamburgerIcon from "./icons/Hamburger";
 import HomeIcon from "./icons/Home";
 import InstagramIcon from "./icons/Instagram";
+import ItalicIcon from "./icons/Italic";
 import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
+import LinkIcon from "./icons/Link";
 import ListIcon from "./icons/List";
+import OListIcon from "./icons/OList";
 import PaymentCardIcon from "./icons/PaymentCard";
 import PenIcon from "./icons/Pen";
 import PhotosIcon from "./icons/Photos";
@@ -73,9 +77,13 @@ import RocketIcon from "./icons/Rocket";
 import SearchIcon from "./icons/Search";
 import ShoppingBagIcon from "./icons/ShoppingBag";
 import StoreIcon from "./icons/Store";
+import StrikethroughIcon from "./icons/Strikethrough";
 import SuccessIcon from "./icons/Success";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
+import TitlesIcon from "./icons/Titles";
 import TrashIcon from "./icons/Trash";
+import UListIcon from "./icons/UList";
+import UnderlineIcon from "./icons/Underline";
 
 // Illustrations
 import CreditCardIllustration from "./illustrations/CreditCart";
@@ -141,6 +149,7 @@ export {
   toCSS,
   // Icons
   BarChartIcon,
+  BoldIcon,
   CalendarIcon,
   CardIcon,
   CarretIcon,
@@ -157,9 +166,12 @@ export {
   HamburgerIcon,
   HomeIcon,
   InstagramIcon,
+  ItalicIcon,
   LayersIcon,
   LineChartIcon,
+  LinkIcon,
   ListIcon,
+  OListIcon,
   PaymentCardIcon,
   PenIcon,
   PhotosIcon,
@@ -170,9 +182,13 @@ export {
   SearchIcon,
   ShoppingBagIcon,
   StoreIcon,
+  StrikethroughIcon,
   SuccessIcon,
   ThemeAndContentIcon,
+  TitlesIcon,
   TrashIcon,
+  UListIcon,
+  UnderlineIcon,
   // Illustrations
   CreditCardIllustration,
   Documentsllustration,
