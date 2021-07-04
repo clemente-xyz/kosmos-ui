@@ -1,13 +1,13 @@
 {
   "name": "kosmos-ui",
-  "version": "5.23.0",
+  "version": "5.23.1",
   "author": "Clemente Serrano",
   "license": "ISC",
   "description": "A cool React components UI library",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
-    "copy-files": "copyfiles -u 1 src/**/*.scss lib/",
+    "copy-files": "copyfiles -u 1 src/**/*.css src/**/*.scss lib/",
     "build": "rm -rf ./lib && yarn tsc && yarn copy-files"
   },
   "peerDependencies": {
