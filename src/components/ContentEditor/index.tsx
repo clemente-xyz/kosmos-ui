@@ -9,14 +9,14 @@ import {
   DraftHandleValue,
   ContentState,
   AtomicBlockUtils,
-  Entity,
+  ContentBlock,
 } from "draft-js";
 import { mdToDraftjs, draftjsToMd } from "draftjs-md-converter";
 
 import "draft-js/dist/Draft.css";
 import "@draft-js-plugins/image/lib/plugin.css";
 import "@draft-js-plugins/focus/lib/plugin.css";
-import "@draft-js-plugins/alignment/lib/plugin.css";
+import "./styles.css";
 
 import {
   TContentEditor,
@@ -73,10 +73,15 @@ export default function ContentEditor({
     setEditorState(newState);
   }, [editorState]);
 
-  function getBlockStyle(block: any) {
-    switch (block.getType()) {
+  function getBlockStyle(block: ContentBlock) {
+    const blockType = block.getType();
+
+    switch (blockType) {
       case "blockquote":
         return "RichEditor-blockquote";
+
+      case "atomic":
+        return "RichEditor-image";
 
       default:
         return "";
@@ -151,7 +156,18 @@ export default function ContentEditor({
     reader.onloadend = function () {
       const url = reader.result;
 
-      const entityKey = Entity.create("IMAGE", "IMMUTABLE", { src: url });
+      const editorContent = editorState.getCurrentContent();
+
+      const contentWithEntity = editorContent.createEntity(
+        "IMAGE",
+        "IMMUTABLE",
+        {
+          src: url,
+        }
+      );
+
+      const entityKey = contentWithEntity.getLastCreatedEntityKey();
+
       const newState = AtomicBlockUtils.insertAtomicBlock(
         editorState,
         entityKey,

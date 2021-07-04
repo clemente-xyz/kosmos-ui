@@ -3,7 +3,6 @@ import { KeyBindingUtil } from "draft-js";
 import { composeDecorators } from "@draft-js-plugins/editor";
 import createImagePlugin from "@draft-js-plugins/image";
 import createFocusPlugin from "@draft-js-plugins/focus";
-import createResizeablePlugin from "@draft-js-plugins/resizeable";
 
 import { ContentEditorLink } from "./components";
 
@@ -40,15 +39,10 @@ const linkPlugin = {
 
 const focusPlugin = createFocusPlugin();
 
-const resizeablePlugin = createResizeablePlugin();
-
-const decorator = composeDecorators(
-  resizeablePlugin.decorator,
-  focusPlugin.decorator
-);
+const decorator = composeDecorators(focusPlugin.decorator);
 
 const imagePlugin = createImagePlugin({ decorator });
 
-const plugins = [linkPlugin, focusPlugin, resizeablePlugin, imagePlugin];
+const plugins = [linkPlugin, focusPlugin, imagePlugin];
 
 export default plugins;
