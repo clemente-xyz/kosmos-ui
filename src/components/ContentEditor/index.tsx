@@ -1,4 +1,10 @@
-import React, { useState, useCallback, createContext, useRef } from "react";
+import React, {
+  createContext,
+  useState,
+  useCallback,
+  useRef,
+  useMemo,
+} from "react";
 import Editor from "@draft-js-plugins/editor";
 import {
   EditorState,
@@ -29,17 +35,9 @@ import {
   ContentEditorHeader,
   ContentEditorSubmit,
 } from "./components";
-import plugins from "./plugins";
+import getContentEditorPlugins from "./plugins";
 import { Container, EditorContainer } from "./styles";
-
-const customMdConfigs = {
-  inlineStyles: {
-    Delete: {
-      type: "STRIKETHROUGH",
-      symbol: "~~",
-    },
-  },
-};
+import { CONTENT_EDITOR_CUSTOM_CONFIGS } from "./constants";
 
 export const ContentEditorContext = createContext({} as TContentEditorContext);
 
@@ -58,7 +56,12 @@ export default function ContentEditor({
   const [editorState, setEditorState] = useState<EditorState>(
     prevContent
       ? EditorState.createWithContent(
-          convertFromRaw(mdToDraftjs(prevContent || "", customMdConfigs as any))
+          convertFromRaw(
+            mdToDraftjs(
+              prevContent || "",
+              CONTENT_EDITOR_CUSTOM_CONFIGS.mdToDraftJs as any
+            )
+          )
         )
       : EditorState.createEmpty()
   );
@@ -72,6 +75,8 @@ export default function ContentEditor({
 
     setEditorState(newState);
   }, [editorState]);
+
+  const plugins = useMemo(() => getContentEditorPlugins(readOnly), [readOnly]);
 
   function getBlockStyle(block: ContentBlock) {
     const blockType = block.getType();
@@ -91,9 +96,12 @@ export default function ContentEditor({
   function getMDFromState() {
     const contentState = editorState.getCurrentContent();
     const rawObject = convertToRaw(contentState);
-    const mdString = draftjsToMd(rawObject);
+    const md = draftjsToMd(
+      rawObject,
+      CONTENT_EDITOR_CUSTOM_CONFIGS.draftJsToMd
+    );
 
-    return mdString;
+    return md;
   }
 
   function focusEditor() {
@@ -187,7 +195,7 @@ export default function ContentEditor({
   let className = baseClassName?.editor || "";
 
   const contentState = editorState.getCurrentContent();
-  const mdString = getMDFromState();
+  const md = getMDFromState();
 
   if (!contentState.hasText()) {
     if (contentState.getBlockMap().first().getType() !== "unstyled") {
@@ -219,12 +227,13 @@ export default function ContentEditor({
             onChange={(editorState) => {
               setEditorState(editorState);
 
-              onChange && onChange(mdString, handleReset);
+              onChange && onChange(md, handleReset);
             }}
             blockStyleFn={getBlockStyle}
             handleKeyCommand={handleKeyCommand}
             handlePastedFiles={handlePastedFiles}
             blockRenderMap={DefaultDraftBlockRenderMap}
+            customStyleMap={CONTENT_EDITOR_CUSTOM_CONFIGS.styleMap}
             placeholder={placeholder}
             readOnly={readOnly}
             plugins={plugins}

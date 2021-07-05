@@ -1,3 +1,7 @@
 .RichEditor-image {
   text-align: center;
 }
+
+.RichEditor-image img {
+  width: 100%;
+}

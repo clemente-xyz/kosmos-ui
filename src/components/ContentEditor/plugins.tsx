@@ -1,12 +1,16 @@
 import { KeyBindingUtil } from "draft-js";
 
-import { composeDecorators } from "@draft-js-plugins/editor";
+import { composeDecorators, EditorPlugin } from "@draft-js-plugins/editor";
 import createImagePlugin from "@draft-js-plugins/image";
 import createFocusPlugin from "@draft-js-plugins/focus";
 
 import { ContentEditorLink } from "./components";
 
-function linkStrategy(contentBlock: any, callback: any, contentState: any) {
+function linkPluginStrategy(
+  contentBlock: any,
+  callback: any,
+  contentState: any
+) {
   contentBlock.findEntityRanges((character: any) => {
     const entityKey = character.getEntity();
     return (
@@ -16,33 +20,43 @@ function linkStrategy(contentBlock: any, callback: any, contentState: any) {
   }, callback);
 }
 
-const linkPlugin = {
-  keyBindingFn(event: any, { getEditorState }: any) {
-    const editorState = getEditorState();
-    const selection = editorState.getSelection();
+export default function getContentEditorPlugins(readOnly?: boolean) {
+  const linkPlugin = {
+    keyBindingFn(event: any, { getEditorState }: any) {
+      const editorState = getEditorState();
+      const selection = editorState.getSelection();
 
-    if (selection.isCollapsed()) {
-      return;
-    }
-    if (KeyBindingUtil.hasCommandModifier(event) && event.which === 75) {
-      return "add-link";
-    }
-  },
-
-  decorators: [
-    {
-      strategy: linkStrategy,
-      component: ContentEditorLink,
+      if (selection.isCollapsed()) {
+        return;
+      }
+      if (KeyBindingUtil.hasCommandModifier(event) && event.which === 75) {
+        return "add-link";
+      }
     },
-  ],
-};
 
-const focusPlugin = createFocusPlugin();
+    decorators: [
+      {
+        strategy: linkPluginStrategy,
+        component: ContentEditorLink,
+      },
+    ],
+  };
 
-const decorator = composeDecorators(focusPlugin.decorator);
+  let plugins: EditorPlugin[] = [linkPlugin];
 
-const imagePlugin = createImagePlugin({ decorator });
+  if (readOnly) {
+    const imagePlugin = createImagePlugin();
 
-const plugins = [linkPlugin, focusPlugin, imagePlugin];
+    plugins = [...plugins, imagePlugin];
+  } else {
+    const focusPlugin = createFocusPlugin();
 
-export default plugins;
+    const decorator = composeDecorators(focusPlugin.decorator);
+
+    const imagePlugin = createImagePlugin({ decorator });
+
+    plugins = [...plugins, focusPlugin, imagePlugin];
+  }
+
+  return plugins;
+}
