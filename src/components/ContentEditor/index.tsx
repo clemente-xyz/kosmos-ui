@@ -49,6 +49,7 @@ export default function ContentEditor({
 
   const { editorState, setEditorState } = useContentEditorState({
     value,
+    readOnly,
   });
 
   const handleReset = useCallback(() => {
