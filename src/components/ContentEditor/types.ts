@@ -1,12 +1,12 @@
-import { ReactNode, CSSProperties } from 'react';
-import { EditorState } from 'draft-js';
+import { ReactNode, CSSProperties } from "react";
+import { EditorState } from "draft-js";
 
 import {
   ContentEditorControlButton,
   ContentEditorControls,
   ContentEditorHeader,
   ContentEditorSubmit,
-} from './components';
+} from "./components";
 
 export type WithStyle<T = {}> = T & {
   style?: CSSProperties;
@@ -21,7 +21,7 @@ export type TContentEditor = JSX.Element & {
 };
 
 export type TContentEditorProps = {
-  prevContent?: string;
+  value?: string;
   onChange?: (currentValue: string, options?: any) => void;
   onImagesChange?: (content: any) => void;
   placeholder?: string;

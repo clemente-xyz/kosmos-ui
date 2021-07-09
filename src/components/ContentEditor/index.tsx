@@ -36,7 +36,7 @@ import { CONTENT_EDITOR_CUSTOM_CONFIGS } from "./constants";
 export const ContentEditorContext = createContext({} as TContentEditorContext);
 
 export default function ContentEditor({
-  prevContent,
+  value,
   onChange,
   onImagesChange,
   placeholder,
@@ -48,7 +48,7 @@ export default function ContentEditor({
   const editorRef = useRef<Editor>(null);
 
   const { editorState, setEditorState } = useContentEditorState({
-    prevContent,
+    value,
   });
 
   const handleReset = useCallback(() => {

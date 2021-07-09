@@ -11,14 +11,15 @@ export function useContentEditor() {
 }
 
 export function useContentEditorState({
-  prevContent,
-}: Pick<TContentEditorProps, "prevContent">) {
+  value,
+  readOnly,
+}: Pick<TContentEditorProps, "value" | "readOnly">) {
   const [editorState, setEditorState] = useState<EditorState>(
-    prevContent
+    value
       ? EditorState.createWithContent(
           convertFromRaw(
             mdToDraftjs(
-              prevContent || "",
+              value || "",
               CONTENT_EDITOR_CUSTOM_CONFIGS.mdToDraftJs as any
             )
           )
@@ -27,17 +28,19 @@ export function useContentEditorState({
   );
 
   useEffect(() => {
-    const newContent = EditorState.createWithContent(
-      convertFromRaw(
-        mdToDraftjs(
-          prevContent || "",
-          CONTENT_EDITOR_CUSTOM_CONFIGS.mdToDraftJs as any
+    if (readOnly) {
+      const newContent = EditorState.createWithContent(
+        convertFromRaw(
+          mdToDraftjs(
+            value || "",
+            CONTENT_EDITOR_CUSTOM_CONFIGS.mdToDraftJs as any
+          )
         )
-      )
-    );
+      );
 
-    setEditorState(newContent);
-  }, [prevContent, setEditorState]);
+      setEditorState(newContent);
+    }
+  }, [value, readOnly, setEditorState]);
 
   return { editorState, setEditorState };
 }
