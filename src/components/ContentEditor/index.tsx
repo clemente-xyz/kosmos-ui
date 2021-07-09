@@ -1,15 +1,8 @@
-import React, {
-  createContext,
-  useState,
-  useCallback,
-  useRef,
-  useMemo,
-} from "react";
+import React, { createContext, useCallback, useRef, useMemo } from "react";
 import Editor from "@draft-js-plugins/editor";
 import {
   EditorState,
   convertToRaw,
-  convertFromRaw,
   RichUtils,
   DefaultDraftBlockRenderMap,
   DraftHandleValue,
@@ -17,7 +10,7 @@ import {
   AtomicBlockUtils,
   ContentBlock,
 } from "draft-js";
-import { mdToDraftjs, draftjsToMd } from "draftjs-md-converter";
+import { draftjsToMd } from "draftjs-md-converter";
 
 import "draft-js/dist/Draft.css";
 import "@draft-js-plugins/image/lib/plugin.css";
@@ -35,6 +28,7 @@ import {
   ContentEditorHeader,
   ContentEditorSubmit,
 } from "./components";
+import { useContentEditorState } from "./hooks";
 import getContentEditorPlugins from "./plugins";
 import { Container, EditorContainer } from "./styles";
 import { CONTENT_EDITOR_CUSTOM_CONFIGS } from "./constants";
@@ -53,18 +47,9 @@ export default function ContentEditor({
 }: TContentEditorProps) {
   const editorRef = useRef<Editor>(null);
 
-  const [editorState, setEditorState] = useState<EditorState>(
-    prevContent
-      ? EditorState.createWithContent(
-          convertFromRaw(
-            mdToDraftjs(
-              prevContent || "",
-              CONTENT_EDITOR_CUSTOM_CONFIGS.mdToDraftJs as any
-            )
-          )
-        )
-      : EditorState.createEmpty()
-  );
+  const { editorState, setEditorState } = useContentEditorState({
+    prevContent,
+  });
 
   const handleReset = useCallback(() => {
     const newState = EditorState.push(
@@ -74,7 +59,7 @@ export default function ContentEditor({
     );
 
     setEditorState(newState);
-  }, [editorState]);
+  }, [editorState, setEditorState]);
 
   const plugins = useMemo(() => getContentEditorPlugins(readOnly), [readOnly]);
 
