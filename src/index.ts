@@ -51,6 +51,7 @@ import CloseIcon from "./icons/Close";
 import CouponIcon from "./icons/Coupon";
 import DeliveryIcon from "./icons/Delivery";
 import DiscountTicketIcon from "./icons/DiscountTicket";
+import DownloadIcon from "./icons/Download";
 import DragIcon from "./icons/Drag";
 import EditIcon from "./icons/Edit";
 import ErrorIcon from "./icons/Error";
@@ -155,6 +156,7 @@ export {
   CouponIcon,
   DeliveryIcon,
   DiscountTicketIcon,
+  DownloadIcon,
   DragIcon,
   EditIcon,
   ErrorIcon,
