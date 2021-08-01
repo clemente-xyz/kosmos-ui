@@ -22,6 +22,7 @@ import MultiImagePicker from "./components/MultiImagePicker";
 import SectionedDialog from "./components/SectionedDialog";
 import Select from "./components/Select";
 import SelectInput from "./components/SelectInput";
+import Skeleton from "./components/Skeleton";
 import Slider from "./components/Slider";
 import SlideShow from "./components/SlideShow";
 import SplitButton from "./components/SplitButton";
@@ -132,6 +133,7 @@ export {
   SectionedDialog,
   Select,
   SelectInput,
+  Skeleton,
   Slider,
   SlideShow,
   SplitButton,
