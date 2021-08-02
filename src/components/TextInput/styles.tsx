@@ -19,10 +19,6 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
   min-height: 88px;
-
-  &:not(:first-child) {
-    margin-left: 16px;
-  }
 `;
 
 export const Label = styled.label<{
