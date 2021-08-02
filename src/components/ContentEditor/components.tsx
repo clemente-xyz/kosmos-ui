@@ -11,7 +11,7 @@ import ItalicIcon from "../../icons/Italic";
 import StrikethroughIcon from "../../icons/Strikethrough";
 import UListIcon from "../../icons/UList";
 import OListIcon from "../../icons/OList";
-import { WithStyle } from "types/general";
+import { WithStyle } from "../../types/general";
 
 import { useContentEditor } from "./hooks";
 import { TContentEditorContext } from "./types";

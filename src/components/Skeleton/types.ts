@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { WithStyle } from "types/general";
+import { WithStyle } from "../../types/general";
 
 export type TSkeletonContainerProps = {
   variant: "square" | "circle";

@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import { WithStyle } from "types/general";
+import { WithStyle } from "../../types/general";
 
 import {
   DialogHeader,
