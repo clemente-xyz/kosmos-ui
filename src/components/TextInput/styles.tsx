@@ -18,6 +18,7 @@ export const Container = styled.div`
 
   position: relative;
   width: 100%;
+  min-height: 88px;
 
   &:not(:first-child) {
     margin-left: 16px;
@@ -130,13 +131,13 @@ export const Input = styled.input<{
   }
 
   &:read-only ~ ${Label} {
-    top: -16px;
+    top: ${({ variant }) => (variant === "filled" ? "-24px" : "-16px")};
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
   }
 
   &:focus ~ ${Label}, &:valid ~ ${Label} {
-    top: -16px;
+    top: ${({ variant }) => (variant === "filled" ? "-24px" : "-16px")};
     left: 0;
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
