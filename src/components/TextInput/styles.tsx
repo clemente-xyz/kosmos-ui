@@ -18,7 +18,7 @@ export const Container = styled.div`
 
   position: relative;
   width: 100%;
-  min-height: 88px;
+  /* min-height: 88px; */
 `;
 
 export const Label = styled.label<{
@@ -88,6 +88,7 @@ export const InputContainer = styled.div<{
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: ${({ variant }) => (variant === "filled" ? "20px" : "16px")};
   font-size: ${theme.fontSizes.regular};
   padding: 12px ${({ variant }) => (variant === "filled" ? "12px" : "0")};
   border-bottom: ${({ variant, baseColor }) =>
@@ -127,13 +128,13 @@ export const Input = styled.input<{
   }
 
   &:read-only ~ ${Label} {
-    top: ${({ variant }) => (variant === "filled" ? "-24px" : "-16px")};
+    top: ${({ variant }) => (variant === "filled" ? "-20px" : "-16px")};
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
   }
 
   &:focus ~ ${Label}, &:valid ~ ${Label} {
-    top: ${({ variant }) => (variant === "filled" ? "-24px" : "-16px")};
+    top: ${({ variant }) => (variant === "filled" ? "-20px" : "-16px")};
     left: 0;
     color: ${({ highlightColor }) => highlightColor};
     font-size: ${theme.fontSizes.small};
