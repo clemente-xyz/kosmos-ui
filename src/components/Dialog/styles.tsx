@@ -3,7 +3,7 @@ import { animated } from "react-spring";
 
 import theme from "../../theme";
 
-const Backdrop = styled(animated.div)`
+export const Backdrop = styled(animated.div)`
   position: fixed;
   left: 0;
   top: 0;
@@ -17,8 +17,9 @@ const Backdrop = styled(animated.div)`
   overflow: hidden;
 `;
 
-const Card = styled(animated.article)`
-  position: relative;
+export const Container = styled(animated.article)`
+  position: fixed;
+  padding: 16px;
   animation-duration: 0.75s;
   display: flex;
   flex-direction: column;
@@ -27,54 +28,40 @@ const Card = styled(animated.article)`
   width: 25vw;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  padding: 30px 50px;
   background-color: ${theme.colorsPalette.white.default};
   max-height: 75vh;
 `;
 
-const Header = styled.h1`
-  color: ${theme.colorsPalette.gray.dark};
-  font-size: ${theme.fontSizes.regularLarge};
-  font-weight: ${theme.fontWeights.bolder};
-`;
-
-const Paragraph = styled.p`
-  font-size: ${theme.fontSizes.regular};
-  margin: 0;
-  color: ${theme.colorsPalette.gray.default};
-`;
-
-const ButtonsContainer = styled.div`
+export const Header = styled.header<{ childrenCount: number }>`
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: ${({ childrenCount }) =>
+    childrenCount > 1 ? "space-between" : "flex-end"};
   width: 100%;
+  margin-bottom: 16px;
 `;
 
-const ContentContainer = styled.div`
-  width: 100%;
-  overflow-y: scroll;
-`;
+export const CloseButton = styled.button`
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  outline: inherit;
 
-const CloseIconContainer = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-
-  padding: 10px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   transition: 0.3s all;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: ${theme.colorsPalette.gray.superLight};
 
   &:hover {
-    background-color: ${theme.colorsPalette.gray.superLight};
-    top: 23px;
+    /* TODO: Add this color to theme. */
+    background-color: #dfe3e6;
     transform: scale(0.98);
   }
 
@@ -82,13 +69,3 @@ const CloseIconContainer = styled.div`
     transform: scale(0.98);
   }
 `;
-
-export {
-  Backdrop,
-  Card,
-  Header,
-  Paragraph,
-  ContentContainer,
-  ButtonsContainer,
-  CloseIconContainer,
-};

@@ -1,31 +1,24 @@
-import React from "react";
-import { createPortal } from "react-dom";
-import { useTransition } from "react-spring";
+import React from 'react';
+import { createPortal } from 'react-dom';
+import { useTransition } from 'react-spring';
 
-import Button from "../../components/Button";
-import CloseIcon from "../../icons/Close";
-import theme from "../../theme";
-
-import { IDialogProps } from "./types";
+import { TDialog, TDialogProps } from './types';
+import { Backdrop, Container } from './styles';
 import {
-  Backdrop,
-  Card,
-  Header,
-  Paragraph,
-  ContentContainer,
-  CloseIconContainer,
-  ButtonsContainer,
-} from "./styles";
+  DialogHeader,
+  DialogClose,
+  DialogBody,
+  DialogFooter,
+  DialogTitle,
+} from './components';
 
-function Dialog({
-  isOpen,
-  header,
-  content,
-  confirmAction,
-  declineAction,
-  cardStyle,
-}: IDialogProps) {
-  const spring = useTransition(isOpen, null, {
+export default function Dialog({
+  show,
+  children,
+  className,
+  style,
+}: TDialogProps) {
+  const spring = useTransition(show, null, {
     delay: 2,
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -37,74 +30,23 @@ function Dialog({
       {spring.map(({ item, key, props }) => {
         return item ? (
           <Backdrop key={key} style={props} aria-modal="true" role="dialog">
-            <Card key={key} style={{ ...props, ...cardStyle }}>
-              <CloseIconContainer
-                onClick={
-                  //@ts-ignore
-                  !React.isValidElement(declineAction) && declineAction.callback
-                }
-              >
-                <CloseIcon
-                  color={theme.colorsPalette.gray.light}
-                  height="15px"
-                />
-              </CloseIconContainer>
-
-              {typeof header === "string" ? <Header>{header}</Header> : header}
-
-              {typeof content === "string" ? (
-                <ContentContainer>
-                  <Paragraph>{content}</Paragraph>
-                </ContentContainer>
-              ) : (
-                content
-              )}
-
-              {declineAction &&
-                //@ts-ignore
-                declineAction.message && (
-                  <ButtonsContainer>
-                    {React.isValidElement(declineAction) ? (
-                      declineAction
-                    ) : (
-                      <Button
-                        //@ts-ignore
-                        onClick={declineAction.callback}
-                        variant={confirmAction ? "secondary" : "primary"}
-                        format={confirmAction ? "outline" : "fill"}
-                        style={{ marginRight: confirmAction ? "16px" : "none" }}
-                      >
-                        {
-                          //@ts-ignore
-                          declineAction.message
-                        }
-                      </Button>
-                    )}
-
-                    {confirmAction &&
-                      (React.isValidElement(confirmAction) ? (
-                        confirmAction
-                      ) : (
-                        <Button
-                          //@ts-ignore
-                          onClick={confirmAction.callback}
-                          variant="primary"
-                        >
-                          {
-                            //@ts-ignore
-                            confirmAction.message
-                          }
-                        </Button>
-                      ))}
-                  </ButtonsContainer>
-                )}
-            </Card>
+            <Container
+              key={key}
+              className={className}
+              style={{ ...props, ...style }}
+            >
+              {children}
+            </Container>
           </Backdrop>
         ) : null;
       })}
     </>,
     document.body
-  );
+  ) as unknown as TDialog;
 }
 
-export default Dialog;
+Dialog.Header = DialogHeader;
+Dialog.Close = DialogClose;
+Dialog.Title = DialogTitle;
+Dialog.Body = DialogBody;
+Dialog.Footer = DialogFooter;

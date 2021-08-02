@@ -8,11 +8,6 @@ import {
   ContentEditorSubmit,
 } from "./components";
 
-export type WithStyle<T = {}> = T & {
-  style?: CSSProperties;
-  className?: string;
-};
-
 export type TContentEditor = JSX.Element & {
   ControlButton: typeof ContentEditorControlButton;
   Controls: typeof ContentEditorControls;

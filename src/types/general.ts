@@ -1,4 +1,11 @@
+import { CSSProperties } from "styled-components";
+
 export type WithId<T = {}> = T & { _id: string };
+
+export type WithStyle<T = {}> = T & {
+  style?: CSSProperties;
+  className?: string;
+};
 
 export type Distinct<T> = WithId<T> & { createdAt: Date; updatedAt: Date };
 
