@@ -19,7 +19,7 @@ export const Backdrop = styled(animated.div)`
 
 export const Container = styled(animated.article)`
   position: fixed;
-  padding: 16px;
+  padding: 24px;
   animation-duration: 0.75s;
   display: flex;
   flex-direction: column;
