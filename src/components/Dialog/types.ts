@@ -1,4 +1,4 @@
-import { ReactNode, DetailedHTMLProps, ButtonHTMLAttributes } from "react";
+import React, { ReactNode } from "react";
 
 import { WithStyle } from "types/general";
 
@@ -27,8 +27,8 @@ export type TDialogHeaderProps = WithStyle<{ children: ReactNode }>;
 
 export type TDialogCloseProps = WithStyle<
   Omit<
-    DetailedHTMLProps<
-      ButtonHTMLAttributes<HTMLButtonElement>,
+    React.DetailedHTMLProps<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
     "ref"
