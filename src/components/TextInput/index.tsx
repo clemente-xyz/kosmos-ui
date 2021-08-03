@@ -1,6 +1,7 @@
 import React from "react";
 
 import theme from "../../theme";
+
 import { TTextInputProps } from "./types";
 import {
   Container,
@@ -9,7 +10,6 @@ import {
   Highlight,
   Bar,
   Label,
-  ErrorParagraph,
 } from "./styles";
 
 export default function TextInput({
@@ -39,6 +39,8 @@ export default function TextInput({
         baseColor={colors?.base || theme.colorsPalette.gray.light}
         highlightColor={colors?.highlight || theme.colorsPalette.gray.dark}
         variant={variant}
+        error={error}
+        isLabel={!!label}
       >
         {adornments?.left}
 
@@ -50,6 +52,7 @@ export default function TextInput({
           variant={variant}
           placeholder={inputPlaceholder}
           type={type}
+          error={error}
           required
           {...inputProps}
         />
@@ -60,6 +63,7 @@ export default function TextInput({
           variant={variant}
           style={style?.bar}
           highlightColor={colors?.highlight || theme.colorsPalette.blue.default}
+          error={error}
         />
 
         <Label
@@ -68,14 +72,13 @@ export default function TextInput({
           variant={variant}
           htmlFor={id}
           baseColor={colors?.base || theme.colorsPalette.gray.default}
+          error={error}
         >
           {label}
         </Label>
       </InputContainer>
 
       <Highlight style={style?.highlight} />
-
-      {error && <ErrorParagraph style={style?.error}>{error}</ErrorParagraph>}
     </Container>
   );
 }

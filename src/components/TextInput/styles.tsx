@@ -25,9 +25,11 @@ export const Label = styled.label<{
   baseColor: string;
   isLeftAdornment: boolean;
   variant: TTextInputVariant;
+  error?: boolean;
 }>`
   font-size: ${theme.fontSizes.regular};
-  color: ${({ baseColor }) => baseColor};
+  color: ${({ baseColor, error }) =>
+    error ? theme.colorsPalette.red.default : baseColor};
   position: absolute;
   pointer-events: none;
   top: 12px;
@@ -42,6 +44,7 @@ export const Label = styled.label<{
 export const Bar = styled.span<{
   highlightColor: string;
   variant: TTextInputVariant;
+  error?: boolean;
 }>`
   display: ${({ variant }) => (variant === "filled" ? "none" : "block")};
   position: absolute;
@@ -55,7 +58,8 @@ export const Bar = styled.span<{
     width: 0;
     bottom: 0;
     position: absolute;
-    background: ${({ highlightColor }) => highlightColor};
+    background: ${({ highlightColor, error }) =>
+      error ? theme.colorsPalette.red.default : highlightColor};
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -84,18 +88,33 @@ export const InputContainer = styled.div<{
   baseColor: string;
   highlightColor: string;
   variant: TTextInputVariant;
+  error?: boolean;
+  isLabel: boolean;
 }>`
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: ${({ variant }) => (variant === "filled" ? "20px" : "16px")};
+  margin-top: ${({ variant, isLabel }) =>
+    !isLabel ? 0 : variant === "filled" ? "20px" : "16px"};
   font-size: ${theme.fontSizes.regular};
   padding: 12px ${({ variant }) => (variant === "filled" ? "12px" : "0")};
-  border-bottom: ${({ variant, baseColor }) =>
-    variant === "filled" ? "unset" : `2px solid ${lighten(0.2, baseColor)}`};
+  border: ${({ variant, baseColor, error }) =>
+    variant === "filled"
+      ? `1px solid ${lighten(
+          0.26,
+          error ? theme.colorsPalette.red.default : baseColor
+        )}`
+      : "unset"};
+  border-bottom: ${({ variant, baseColor, error }) =>
+    variant === "filled" && !error
+      ? "unset"
+      : `${variant === "filled" ? "1px" : "2px"} solid ${
+          error ? theme.colorsPalette.red.default : lighten(0.2, baseColor)
+        }`};
   background-color: ${({ variant, baseColor }) =>
     variant === "filled" ? lighten(0.26, baseColor) : "transparent"};
-  color: ${({ baseColor }) => baseColor};
+  color: ${({ baseColor, error }) =>
+    error ? theme.colorsPalette.red.default : baseColor};
   border-radius: ${({ variant }) => (variant === "filled" ? "4px" : "0")};
   transition: 0.2s ease all;
 
@@ -108,6 +127,7 @@ export const Input = styled.input<{
   baseColor: string;
   highlightColor: string;
   variant: TTextInputVariant;
+  error?: boolean;
 }>`
   font-size: ${theme.fontSizes.regular};
   display: block;
@@ -116,11 +136,13 @@ export const Input = styled.input<{
   overflow: hidden;
   text-overflow: ellipsis;
   transition: 0.2s ease all;
-  color: ${({ baseColor }) => baseColor};
+  color: ${({ baseColor, error }) =>
+    error ? theme.colorsPalette.red.default : baseColor};
   width: 100%;
 
   ::placeholder {
-    color: ${({ baseColor }) => lighten(0.17, baseColor)};
+    color: ${({ baseColor, error }) =>
+      lighten(0.17, error ? theme.colorsPalette.red.default : baseColor)};
   }
 
   &:focus {
@@ -136,7 +158,8 @@ export const Input = styled.input<{
   &:focus ~ ${Label}, &:valid ~ ${Label} {
     top: ${({ variant }) => (variant === "filled" ? "-20px" : "-16px")};
     left: 0;
-    color: ${({ highlightColor }) => highlightColor};
+    color: ${({ highlightColor, error }) =>
+      error ? theme.colorsPalette.red.default : highlightColor};
     font-size: ${theme.fontSizes.small};
   }
 
@@ -146,17 +169,13 @@ export const Input = styled.input<{
     &:focus ~ ${Highlight} {
       -webkit-animation: inputHighlighter 0.3s ease;
       -moz-animation: inputHighlighter 0.3s ease;
-      animation: ${({ highlightColor }) => inputHighlighter(highlightColor)}
+      animation: ${({ highlightColor, error }) =>
+          inputHighlighter(
+            error ? theme.colorsPalette.red.default : highlightColor
+          )}
         0.3s ease;
     }
   }
-`;
-
-export const ErrorParagraph = styled.p`
-  font-size: ${theme.fontSizes.regular};
-  margin: 0;
-  color: ${theme.colorsPalette.red.default};
-  margin-top: 16px;
 `;
 
 // https://codepen.io/chrisoncode/pen/IdGKH

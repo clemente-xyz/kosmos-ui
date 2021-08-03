@@ -5,7 +5,7 @@ export type TTextInputProps = InputHTMLAttributes<HTMLInputElement> & {
   variant?: TTextInputVariant;
   colors?: { base?: string; highlight?: string };
   adornments?: { left?: ReactNode; right?: ReactNode };
-  error?: string;
+  error?: boolean;
   style?: TTextInputStyle;
 };
 
@@ -15,7 +15,6 @@ export type TTextInputStyle = {
   bar?: CSSProperties;
   label?: CSSProperties;
   highlight?: CSSProperties;
-  error?: CSSProperties;
 };
 
 export type TTextInputVariant = "standard" | "filled";
