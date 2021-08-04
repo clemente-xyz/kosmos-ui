@@ -31,6 +31,6 @@ export type TDialogCloseProps = WithStyle<
       React.ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
-    "ref"
+    "ref" | "style" | "className"
   >
 >;

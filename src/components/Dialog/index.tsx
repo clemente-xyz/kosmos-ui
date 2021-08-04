@@ -1,16 +1,16 @@
-import React from 'react';
-import { createPortal } from 'react-dom';
-import { useTransition } from 'react-spring';
+import React from "react";
+import { createPortal } from "react-dom";
+import { useTransition } from "react-spring";
 
-import { TDialog, TDialogProps } from './types';
-import { Backdrop, Container } from './styles';
+import { TDialog, TDialogProps } from "./types";
+import { Backdrop, Container } from "./styles";
 import {
   DialogHeader,
   DialogClose,
   DialogBody,
   DialogFooter,
   DialogTitle,
-} from './components';
+} from "./components";
 
 export default function Dialog({
   show,
