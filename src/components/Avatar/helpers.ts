@@ -18,12 +18,10 @@ export function getAvatarChildrenProps({
 
   if (!src && withInitials && !!childrenText) {
     const backgroundColor = getColorFormString(childrenText);
-    const color = darken(0.2, backgroundColor);
 
     return {
       style: {
         backgroundColor,
-        color,
         height,
         width: height,
         ...style,
