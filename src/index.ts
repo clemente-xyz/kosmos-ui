@@ -44,6 +44,7 @@ import {
 import { toCSS } from "./utils/helpers";
 
 // Icons
+import AccountShieldIcon from "./icons/AccountShield";
 import BarChartIcon from "./icons/BarChart";
 import BoldIcon from "./icons/Bold";
 import CalendarIcon from "./icons/Calendar";
@@ -64,10 +65,12 @@ import HamburgerIcon from "./icons/Hamburger";
 import HomeIcon from "./icons/Home";
 import InstagramIcon from "./icons/Instagram";
 import ItalicIcon from "./icons/Italic";
+import KeyIcon from "./icons/Key";
 import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
 import LinkIcon from "./icons/Link";
 import ListIcon from "./icons/List";
+import MailIcon from "./icons/Mail";
 import OListIcon from "./icons/OList";
 import PaymentCardIcon from "./icons/PaymentCard";
 import PenIcon from "./icons/Pen";
@@ -78,6 +81,7 @@ import ProfilesIcon from "./icons/Profiles";
 import RocketIcon from "./icons/Rocket";
 import SearchIcon from "./icons/Search";
 import ShoppingBagIcon from "./icons/ShoppingBag";
+import SignOutIcon from "./icons/SignOut";
 import StoreIcon from "./icons/Store";
 import StrikethroughIcon from "./icons/Strikethrough";
 import SuccessIcon from "./icons/Success";
@@ -151,6 +155,7 @@ export {
   // Helpers
   toCSS,
   // Icons
+  AccountShieldIcon,
   BarChartIcon,
   BoldIcon,
   CalendarIcon,
@@ -171,10 +176,12 @@ export {
   HomeIcon,
   InstagramIcon,
   ItalicIcon,
+  KeyIcon,
   LayersIcon,
   LineChartIcon,
   LinkIcon,
   ListIcon,
+  MailIcon,
   OListIcon,
   PaymentCardIcon,
   PenIcon,
@@ -185,6 +192,7 @@ export {
   RocketIcon,
   SearchIcon,
   ShoppingBagIcon,
+  SignOutIcon,
   StoreIcon,
   StrikethroughIcon,
   SuccessIcon,
