@@ -12,6 +12,7 @@ export type TTextInputProps = InputHTMLAttributes<HTMLInputElement> & {
 export type TTextInputStyle = {
   root?: CSSProperties;
   input?: CSSProperties;
+  inputContainer?: CSSProperties;
   bar?: CSSProperties;
   label?: CSSProperties;
   highlight?: CSSProperties;

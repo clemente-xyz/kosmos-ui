@@ -41,6 +41,7 @@ export default function TextInput({
         variant={variant}
         error={error}
         isLabel={!!label}
+        style={style?.inputContainer}
       >
         {adornments?.left}
 
