@@ -34,7 +34,7 @@ export const DialogTitle = styled.h1`
   margin: 0;
   color: ${theme.colorsPalette.gray.darker};
   font-size: ${theme.fontSizes.regularLarge};
-  font-weight: ${theme.fontWeights.bold};
+  font-weight: 700;
 `;
 
 export const DialogBody = styled.div`
