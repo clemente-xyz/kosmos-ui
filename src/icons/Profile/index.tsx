@@ -11,7 +11,7 @@ export default function ProfileIcon({
   return (
     <svg
       height={height}
-      viewBox="0 0 100 100"
+      viewBox="0 0 32 32"
       className={className}
       style={style}
     >
