@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ICardProps } from "./types";
-import { MainContainer, Header } from "./styles";
+import { Container, Header } from "./styles";
 
 /**
  * Surface that display content and actions on a single topic.
@@ -12,12 +12,12 @@ import { MainContainer, Header } from "./styles";
  */
 function Card({ children, style, header, className }: ICardProps): JSX.Element {
   return (
-    <MainContainer style={style} className={className}>
+    <Container style={style} className={className}>
       {header &&
         (typeof header === "string" ? <Header>{header}</Header> : header)}
 
       {children}
-    </MainContainer>
+    </Container>
   );
 }
 
