@@ -16,7 +16,7 @@ const fontSizes: TFontSizes = {
 };
 
 const fontWeights: TFontsWeights = {
-  bolder: 800,
+  bolder: 700,
   bold: 600,
   regular: 400,
   light: 200,
