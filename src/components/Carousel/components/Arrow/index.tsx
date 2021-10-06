@@ -1,7 +1,7 @@
 import React from "react";
 
 import { TCarouselArrowProps } from "./types";
-import { Icon } from "./styles";
+import { CarouselArrowIcon, CarouselArrowContainer } from "./styles";
 
 export default function CarouselArrow({
   onClick,
@@ -13,8 +13,12 @@ export default function CarouselArrow({
   if (BaseArrow) return <BaseArrow direction={direction} onClick={onClick} />;
 
   return (
-    <a onClick={onClick}>
-      <Icon className={className} style={style} direction={direction} />
-    </a>
+    <CarouselArrowContainer onClick={onClick} direction={direction}>
+      <CarouselArrowIcon
+        className={className}
+        style={style}
+        direction={direction}
+      />
+    </CarouselArrowContainer>
   );
 }
