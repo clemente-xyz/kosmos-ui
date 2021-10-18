@@ -13,7 +13,9 @@ export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   style?: React.CSSProperties;
   className?: string;
   loading?: boolean;
-  as?: "button" | "div";
+  as?: "button" | "div" | "a";
+  href?: string;
+  target?: string;
 };
 
 export type TButtonVariantStyle = Pick<

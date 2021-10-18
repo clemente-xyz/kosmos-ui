@@ -18,6 +18,7 @@ export const ButtonContainer = styled.button.attrs(
   color: ${({ variantStyle }) => variantStyle.color};
   border-radius: 5px;
   transition: all 0.3s;
+  text-decoration: none;
 
   &:hover {
     background-color: ${({ variantStyle }) =>
