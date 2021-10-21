@@ -32,6 +32,7 @@ import Switch from "./components/Switch";
 import Tabs from "./components/Tabs";
 import TextInput from "./components/TextInput";
 import ToggleButtons from "./components/ToggleButtons";
+import Typography from "./components/Typography";
 
 // Hooks
 import {
@@ -148,6 +149,7 @@ export {
   Tabs,
   TextInput,
   ToggleButtons,
+  Typography,
   // Hooks
   useClickOutsideContainer,
   useTabs,
