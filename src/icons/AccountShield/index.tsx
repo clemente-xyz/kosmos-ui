@@ -2,7 +2,7 @@ import React from "react";
 
 import { TVectorProps } from "../../types/vectors";
 
-export default function ShoppingBagIcon({
+export default function AccountShieldIcon({
   height = "24px",
   color = "currentColor",
   style,

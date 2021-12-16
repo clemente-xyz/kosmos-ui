@@ -46,6 +46,7 @@ import { toCSS } from "./utils/helpers";
 
 // Icons
 import AccountShieldIcon from "./icons/AccountShield";
+import AppsIcon from "./icons/Apps";
 import BarChartIcon from "./icons/BarChart";
 import BoldIcon from "./icons/Bold";
 import CalendarIcon from "./icons/Calendar";
@@ -158,6 +159,7 @@ export {
   toCSS,
   // Icons
   AccountShieldIcon,
+  AppsIcon,
   BarChartIcon,
   BoldIcon,
   CalendarIcon,
