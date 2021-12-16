@@ -2,7 +2,7 @@ import React from "react";
 
 import { TVectorProps } from "../../types/vectors";
 
-function LayersIcon({
+export default function LayersIcon({
   height = "80px",
   color,
   style,
@@ -22,5 +22,3 @@ function LayersIcon({
     </svg>
   );
 }
-
-export default LayersIcon;
