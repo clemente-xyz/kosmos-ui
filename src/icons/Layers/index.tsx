@@ -11,7 +11,7 @@ function LayersIcon({
   return (
     <svg
       height={height}
-      viewBox="0 0 64 80"
+      viewBox="0 0 64 64"
       style={style}
       className={className}
     >
