@@ -62,6 +62,7 @@ import EditIcon from "./icons/Edit";
 import ErrorIcon from "./icons/Error";
 import EyeIcon from "./icons/Eye";
 import FacebookIcon from "./icons/Facebook";
+import GAIcon from "./icons/GA";
 import GrafitoIsotype from "./icons/GrafitoIsotype";
 import HamburgerIcon from "./icons/Hamburger";
 import HomeIcon from "./icons/Home";
@@ -175,6 +176,7 @@ export {
   ErrorIcon,
   EyeIcon,
   FacebookIcon,
+  GAIcon,
   GrafitoIsotype,
   HamburgerIcon,
   HomeIcon,
