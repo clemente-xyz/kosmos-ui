@@ -10,7 +10,7 @@ export type TSelectInputStyles = {
   control?: CSSProperties;
   container?: CSSProperties;
   valueContainer?: CSSProperties;
-  indicatorContainer?: CSSProperties;
+  dropdownIndicator?: CSSProperties;
   indicatorSeparator?: CSSProperties;
   singleValue?: CSSProperties;
   placeholder?: CSSProperties;

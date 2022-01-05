@@ -51,8 +51,8 @@ export function getSelectInputStyles(styles?: TSelectInputStyles) {
     indicatorSeparator() {
       return { display: "none", ...styles?.indicatorSeparator };
     },
-    indicatorContainer() {
-      return styles?.indicatorContainer;
+    dropdownIndicator() {
+      return styles?.dropdownIndicator;
     },
     //@ts-ignore
     singleValue(base) {
