@@ -5,6 +5,7 @@ import BoxedIcon from "./components/BoxedIcon";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import Carousel from "./components/Carousel";
+import Checkbox from "./components/Checkbox";
 import Chip from "./components/Chip";
 import ColorPicker from "./components/ColorPicker";
 import ContentEditor from "./components/ContentEditor";
@@ -125,6 +126,7 @@ export {
   Button,
   Card,
   Carousel,
+  Checkbox,
   Chip,
   ColorPicker,
   ContentEditor,

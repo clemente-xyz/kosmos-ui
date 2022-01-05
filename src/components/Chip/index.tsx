@@ -5,7 +5,12 @@ import { getStyledComponentMainStyles } from "../../utils/helpers";
 import { IChipProps } from "./types";
 import { MainContainer } from "./styles";
 
-function Chip({ children, style, className, type = "primary" }: IChipProps) {
+export default function Chip({
+  children,
+  style,
+  className,
+  type = "primary",
+}: IChipProps) {
   const mainStyles = getStyledComponentMainStyles(type);
 
   return (
@@ -14,5 +19,3 @@ function Chip({ children, style, className, type = "primary" }: IChipProps) {
     </MainContainer>
   );
 }
-
-export default Chip;
