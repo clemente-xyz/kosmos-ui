@@ -52,7 +52,7 @@ export function getSelectInputStyles(styles?: TSelectInputStyles) {
       return { display: "none", ...styles?.indicatorSeparator };
     },
     indicatorContainer() {
-      return styles?.indicatorSeparator;
+      return styles?.indicatorContainer;
     },
     //@ts-ignore
     singleValue(base) {
