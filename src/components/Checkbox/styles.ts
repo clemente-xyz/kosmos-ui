@@ -6,14 +6,23 @@ import theme from "../../theme";
 import { TStyledCheckboxProps } from "./types";
 
 export const CheckboxContainer = styled.label`
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
 `;
 
 export const CheckboxIcon = styled.svg`
   fill: none;
   stroke: white;
   stroke-width: 3px;
+`;
+
+export const CheckboxLabel = styled.span`
+  margin-left: 8px;
+  font-size: ${theme.fontSizes.regular};
+  font-weight: ${theme.fontWeights.regular};
+  color: ${theme.colorsPalette.black.default};
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
 `;
 
 // Hide checkbox visually but remain accessible to screen readers.
@@ -43,7 +52,7 @@ export const StyledCheckbox = styled.div<TStyledCheckboxProps>`
         ? lighten(0.05, theme.colorsPalette.gray.lighter)
         : checked
         ? color
-        : theme.colorsPalette.gray.lighter};
+        : theme.colorsPalette.gray.light};
   border-radius: 4px;
   transition: all 150ms;
 

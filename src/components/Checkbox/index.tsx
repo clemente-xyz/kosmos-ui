@@ -8,10 +8,12 @@ import {
   HiddenCheckbox,
   StyledCheckbox,
   CheckboxIcon,
+  CheckboxLabel,
 } from "./styles";
 
 export default function Checkbox({
   checked,
+  label,
   color = theme.colorsPalette.blue.default,
   className,
   style,
@@ -31,6 +33,13 @@ export default function Checkbox({
           <polyline points="20 6 9 17 4 12" />
         </CheckboxIcon>
       </StyledCheckbox>
+
+      {label &&
+        (typeof label === "string" ? (
+          <CheckboxLabel>{label}</CheckboxLabel>
+        ) : (
+          label
+        ))}
     </CheckboxContainer>
   );
 }
