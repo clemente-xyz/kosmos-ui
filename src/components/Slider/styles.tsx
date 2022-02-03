@@ -15,6 +15,7 @@ export const SliderInputsContainer = styled.div`
 `;
 
 export const SliderRail = styled.span<TSliderRailProps>`
+  z-index: 1;
   width: 100%;
   height: ${({ railStyle }) => railStyle?.height}px;
   position: absolute;
