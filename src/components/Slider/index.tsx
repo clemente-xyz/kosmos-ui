@@ -1,81 +1,99 @@
-import React, { memo, useCallback, useState, useEffect, useMemo } from "react";
+import React, { memo, useCallback, useState, useMemo, Fragment } from "react";
 
-import { TSliderProps, TSliderControllerProps } from "./types";
-import { Input } from "./styles";
 import theme from "../../theme";
 
+import { TSliderProps, TSliderControllerProps } from "./types";
+import { SliderInputsContainer, SliderInput, SliderRail } from "./styles";
+
 const SliderController = memo<TSliderControllerProps>(
-  ({ onChange, value, showLabels, ...inputProps }) => {
-    const [sliderVal, setSliderVal] = useState<any>(0);
-    const [mouseState, setMouseState] = useState<any>(null);
-
-    useEffect(() => {
-      setSliderVal(value);
-    }, [value]);
-
-    useEffect(() => {
-      if (mouseState === "up") {
-        onChange(sliderVal);
-      }
-    }, [mouseState]);
-
+  ({ values, handleValuesChange, showLabels, ...inputProps }) => {
     return (
-      <Input
-        id="sliderInput"
-        type="range"
-        percent={`${sliderVal}%`}
-        value={sliderVal}
-        {...inputProps}
-        onChange={(event) => setSliderVal(event.target.value)}
-        onMouseDown={() => setMouseState("down")}
-        onMouseUp={() => setMouseState("up")}
-      />
+      <SliderInputsContainer>
+        <SliderRail
+          min={values[0] < values[1] ? values[0] : values[1]}
+          max={values[1] > values[0] ? values[1] : values[0]}
+          railStyle={inputProps.style.rail}
+          trackStyle={inputProps.style.track}
+        />
+
+        {values.map((value, index) => (
+          <Fragment key={`slider-${index}`}>
+            <SliderInput
+              id={`slider-${index}`}
+              index={index}
+              type="range"
+              percent={`${values[index]}%`}
+              value={value}
+              {...inputProps}
+              onChange={(event) => handleValuesChange(event, index)}
+            />
+          </Fragment>
+        ))}
+      </SliderInputsContainer>
     );
   }
 );
 
-export default function Slider(props: TSliderProps) {
-  const [parentVal, setParentVal] = useState(props.value);
+export default function Slider({
+  value: baseValue,
+  setValue: setBaseValue,
+  min,
+  max,
+  style,
+  showLabels,
+}: TSliderProps) {
+  const [values, setValues] = useState<number[]>(
+    typeof baseValue === "number" ? [baseValue] : baseValue
+  );
 
-  const sliderValueChanged = useCallback((value) => {
-    setParentVal(value);
+  const handleValuesChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+      const newValue = parseInt(event.target.value);
 
-    props.setValue(value);
-  }, []);
+      setValues((prevValues) =>
+        prevValues.map((prevValue, prevIndex) =>
+          prevIndex === index ? newValue : prevValue
+        )
+      );
+
+      setBaseValue(
+        typeof baseValue === "number"
+          ? newValue
+          : values.map((prevValue, prevIndex) =>
+              prevIndex === index ? newValue : prevValue
+            )
+      );
+    },
+    [values, baseValue, setBaseValue]
+  );
 
   const controllerProps: TSliderControllerProps = useMemo(
     () => ({
-      min: props.min || 0,
-      max: props.max || 100,
-      value: parentVal,
-      step: 2,
-      onChange(event: React.ChangeEvent<HTMLInputElement>) {
-        sliderValueChanged(event);
-      },
+      min: min || 0,
+      max: max || 100,
+      values,
+      handleValuesChange,
       style: {
-        root: props.style?.root || {},
+        root: style?.root || {},
         track: {
           backgroundColor:
-            props.style?.track?.backgroundColor ||
-            theme.colorsPalette.blue.default,
-          height: props.style?.track?.height || "3px",
+            style?.track?.backgroundColor || theme.colorsPalette.blue.default,
+          height: style?.track?.height || 3,
         },
         thumb: {
           backgroundColor:
-            props.style?.thumb?.backgroundColor ||
-            theme.colorsPalette.blue.default,
-          height: props.style?.track?.height || "14px",
+            style?.thumb?.backgroundColor || theme.colorsPalette.blue.default,
+          height: style?.track?.height || "14px",
         },
         rail: {
           backgroundColor:
-            props.style?.track?.backgroundColor ||
-            theme.colorsPalette.gray.lighter,
-          height: props.style?.track?.height || "3px",
+            style?.rail?.backgroundColor || theme.colorsPalette.gray.lighter,
+          height: style?.rail?.height || 3,
         },
       },
-      showLabels: !!props.showLabels,
+      showLabels: !!showLabels,
     }),
-    [parentVal]
+    [values, handleValuesChange, min, max, style, showLabels]
   );
 
   return <SliderController {...controllerProps} />;

@@ -1,6 +1,8 @@
 import React from "react";
 import { CSSProperties } from "styled-components";
 
+export type ValueOf<T> = T[keyof T];
+
 export type Distinct<T> = WithId<T> & { createdAt: Date; updatedAt: Date };
 
 export type WithId<T = {}> = T & { _id: string };
