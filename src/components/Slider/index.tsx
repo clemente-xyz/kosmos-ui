@@ -6,12 +6,21 @@ import { TSliderProps, TSliderControllerProps } from "./types";
 import { SliderInputsContainer, SliderInput, SliderRail } from "./styles";
 
 const SliderController = memo<TSliderControllerProps>(
-  ({ values, handleValuesChange, showLabels, ...inputProps }) => {
+  ({ values, handleValuesChange, showLabels, min, max, ...inputProps }) => {
+    const x0 = values[1] ? (values[0] < values[1] ? values[0] : values[1]) : 0;
+    const x1 = values[1]
+      ? values[1] > values[0]
+        ? values[1]
+        : values[0]
+      : values[0];
+
     return (
       <SliderInputsContainer>
         <SliderRail
-          min={values[0] < values[1] ? values[0] : values[1]}
-          max={values[1] > values[0] ? values[1] : values[0]}
+          x0={x0}
+          x1={x1}
+          min={min}
+          max={max}
           railStyle={inputProps.style.rail}
           trackStyle={inputProps.style.track}
         />
@@ -24,6 +33,8 @@ const SliderController = memo<TSliderControllerProps>(
               type="range"
               percent={`${values[index]}%`}
               value={value}
+              min={min}
+              max={max}
               {...inputProps}
               onChange={(event) => handleValuesChange(event, index)}
             />

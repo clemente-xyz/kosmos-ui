@@ -24,6 +24,8 @@ export type TSliderInputProps = Pick<TSliderControllerProps, "style"> & {
 };
 
 export type TSliderRailProps = {
+  x0: number;
+  x1: number;
   min: number;
   max: number;
   railStyle?: ValueOf<Pick<TSliderInputStyleProps, "rail">>;
