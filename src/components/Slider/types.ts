@@ -8,6 +8,7 @@ export type TSliderProps = {
   style?: TSliderInputStyleProps;
   min?: number;
   max?: number;
+  step?: number;
   showLabels?: boolean;
 };
 

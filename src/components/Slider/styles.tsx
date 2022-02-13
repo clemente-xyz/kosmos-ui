@@ -29,9 +29,9 @@ export const SliderRail = styled.span<TSliderRailProps>`
   &:before {
     content: "";
     position: absolute;
-    left: ${({ x0, max }) => (!x0 ? 0 : `calc(${(x0 / max) * 100}% - 18px)`)};
-    width: ${({ x0, x1, max }) =>
-      `calc(${((x1 - x0) / max) * 100}% - ${!x0 ? 18 : 0}px)`};
+    left: ${({ x0, min, max }) =>
+      !x0 ? 0 : `${((x0 - min) / (max - min)) * 100}%`};
+    width: ${({ x0, x1, min, max }) => ((x1 - x0) / (max - min)) * 100}%;
     height: ${({ trackStyle }) => trackStyle?.height}px;
     background: ${({ trackStyle }) =>
       trackStyle?.backgroundColor || theme.colorsPalette.blue.default};

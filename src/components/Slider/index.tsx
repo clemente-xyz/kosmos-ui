@@ -1,4 +1,11 @@
-import React, { memo, useCallback, useState, useMemo, Fragment } from "react";
+import React, {
+  memo,
+  useEffect,
+  useCallback,
+  useState,
+  useMemo,
+  Fragment,
+} from "react";
 
 import theme from "../../theme";
 
@@ -50,6 +57,7 @@ export default function Slider({
   setValue: setBaseValue,
   min,
   max,
+  step,
   style,
   showLabels,
 }: TSliderProps) {
@@ -78,10 +86,24 @@ export default function Slider({
     [values, baseValue, setBaseValue]
   );
 
+  useEffect(() => {
+    const nullBaseValue =
+      baseValue.toString() === `${min}` ||
+      baseValue.toString() === `${min},${min}`;
+
+    const nullValues =
+      values.toString() === `${min}` || values.toString() === `${min},${min}`;
+
+    if (nullBaseValue && !nullValues) {
+      setValues(typeof baseValue === "number" ? [baseValue] : baseValue);
+    }
+  }, [baseValue, values, setValues, min]);
+
   const controllerProps: TSliderControllerProps = useMemo(
     () => ({
       min: min || 0,
       max: max || 100,
+      step: step || 1,
       values,
       handleValuesChange,
       style: {
@@ -104,7 +126,7 @@ export default function Slider({
       },
       showLabels: !!showLabels,
     }),
-    [values, handleValuesChange, min, max, style, showLabels]
+    [values, handleValuesChange, min, max, step, style, showLabels]
   );
 
   return <SliderController {...controllerProps} />;
