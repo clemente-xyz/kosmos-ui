@@ -48,6 +48,9 @@ export function getSelectInputStyles(styles?: TSelectInputStyles) {
         ...styles?.valueContainer,
       };
     },
+    indicatorContainer() {
+      return styles?.indicatorContainer;
+    },
     indicatorSeparator() {
       return { display: "none", ...styles?.indicatorSeparator };
     },
