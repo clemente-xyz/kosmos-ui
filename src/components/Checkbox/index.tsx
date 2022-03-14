@@ -36,7 +36,7 @@ export default function Checkbox({
 
       {label &&
         (typeof label === "string" ? (
-          <CheckboxLabel>{label}</CheckboxLabel>
+          <CheckboxLabel style={style?.label}>{label}</CheckboxLabel>
         ) : (
           label
         ))}
