@@ -75,6 +75,7 @@ import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
 import LinkIcon from "./icons/Link";
 import ListIcon from "./icons/List";
+import LocaleFlagIcon from "./icons/LocaleFlag";
 import MailIcon from "./icons/Mail";
 import OListIcon from "./icons/OList";
 import PaymentCardIcon from "./icons/PaymentCard";
@@ -191,6 +192,7 @@ export {
   LineChartIcon,
   LinkIcon,
   ListIcon,
+  LocaleFlagIcon,
   MailIcon,
   OListIcon,
   PaymentCardIcon,
