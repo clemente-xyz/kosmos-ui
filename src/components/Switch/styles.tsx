@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
-const MainContainer = styled.div`
+export const SwitchContainer = styled.div`
   position: relative;
+  width: 42px;
+  height: 24px;
 `;
 
-const Label = styled.label`
+export const SwitchLabel = styled.label`
   position: absolute;
   top: 0;
   left: 0;
@@ -30,12 +32,14 @@ const Label = styled.label`
   }
 `;
 
-const Input = styled.input.attrs({ type: "checkbox" })<{ baseColor?: string }>`
+export const SwitchInput = styled.input.attrs({ type: "checkbox" })<{
+  baseColor?: string;
+}>`
   opacity: 0;
   z-index: 1;
   border-radius: 15px;
 
-  &:checked + ${Label} {
+  &:checked + ${SwitchLabel} {
     background: ${({ baseColor }) =>
       baseColor || theme.colorsPalette.blue.default};
 
@@ -51,11 +55,9 @@ const Input = styled.input.attrs({ type: "checkbox" })<{ baseColor?: string }>`
   }
 `;
 
-const ErrorParagraph = styled.p`
+export const SwitchErrorParagraph = styled.p`
   font-size: ${theme.fontSizes.regular};
   margin: 0;
   color: ${theme.colorsPalette.red.default};
   margin-top: 15px;
 `;
-
-export { MainContainer, Input, Label, ErrorParagraph };

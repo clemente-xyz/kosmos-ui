@@ -1,63 +1,43 @@
-import React, { CSSProperties, FocusEvent } from "react";
+import React from "react";
 
-import { MainContainer, Input, Label, ErrorParagraph } from "./styles";
+import { TSwitchProps } from "./types";
+import {
+  SwitchContainer,
+  SwitchInput,
+  SwitchLabel,
+  SwitchErrorParagraph,
+} from "./styles";
 
-type ISwitchProps = {
-  checked?: boolean;
-  onChange?: (event: any) => void;
-  id?: string;
-  name?: string;
-  mainContainerStyle?: CSSProperties;
-  inputStyle?: CSSProperties;
-  baseColor?: string;
-  onCopy?: () => boolean;
-  onCut?: () => boolean;
-  onDrag?: () => boolean;
-  onDrop?: () => boolean;
-  autoComplete?: string;
-  onBlur?: (event: FocusEvent<any>) => void;
-  error?: string;
-};
-
-function Switch({
-  checked,
-  onChange,
+export default function Switch({
   id,
-  name,
-  mainContainerStyle,
-  inputStyle,
   baseColor,
-  onBlur,
-  onCopy,
-  onCut,
-  onDrag,
-  onDrop,
-  autoComplete,
   error,
-}: ISwitchProps): JSX.Element {
+  style,
+  className,
+  ...props
+}: TSwitchProps) {
   return (
-    <MainContainer style={mainContainerStyle}>
-      <Input
+    <SwitchContainer style={style?.root} className={className?.root}>
+      <SwitchInput
         id={id}
-        name={name}
-        checked={checked}
-        onChange={onChange}
-        style={inputStyle}
         type="checkbox"
         baseColor={baseColor}
-        onCopy={onCopy}
-        onCut={onCut}
-        onDrag={onDrag}
-        onDrop={onDrop}
-        autoComplete={autoComplete}
-        onBlur={onBlur}
+        style={style?.input}
+        className={className?.input}
+        {...props}
       />
 
-      <Label htmlFor={id} />
+      <SwitchLabel
+        htmlFor={id}
+        style={style?.label}
+        className={className?.label}
+      />
 
-      {error && <ErrorParagraph>{error}</ErrorParagraph>}
-    </MainContainer>
+      {error && (
+        <SwitchErrorParagraph style={style?.error} className={className?.error}>
+          {error}
+        </SwitchErrorParagraph>
+      )}
+    </SwitchContainer>
   );
 }
-
-export default Switch;
