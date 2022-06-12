@@ -1,10 +1,10 @@
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties } from "react";
 
 export type TCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   type?: "checkbox";
   style?: TCheckboxStyle;
   color?: string;
-  label?: ReactNode | string;
+  custom?: boolean;
 };
 
 export type TCheckboxStyle = {
