@@ -120,7 +120,13 @@ export const InputContainer = styled.div<{
 
   ${({ variant, baseColor }) =>
     variant === "filled" &&
-    `&:hover{ background-color: ${lighten(0.24, baseColor)} }`}
+    `&:hover{ background-color: ${lighten(0.24, baseColor)} }`};
+
+  @media (max-width: 600px) {
+    padding: 8px ${({ variant }) => (variant === "filled" ? "8px" : "0")};
+    margin-top: ${({ variant, isLabel }) =>
+      !isLabel ? 0 : variant === "filled" ? "12px" : "10px"};
+  }
 `;
 
 export const Input = styled.input<{
