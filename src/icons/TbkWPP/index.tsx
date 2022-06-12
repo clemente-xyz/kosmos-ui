@@ -2,7 +2,7 @@ import React from "react";
 
 import { TVectorProps } from "../../types/vectors";
 
-export default function TbkOneClickIcon({
+export default function TbkWPPIcon({
   height = "20px",
   style,
   className,

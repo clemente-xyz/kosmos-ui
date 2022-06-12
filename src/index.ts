@@ -91,6 +91,8 @@ import SignOutIcon from "./icons/SignOut";
 import StoreIcon from "./icons/Store";
 import StrikethroughIcon from "./icons/Strikethrough";
 import SuccessIcon from "./icons/Success";
+import TbkOneClickIcon from "./icons/TbkOneClick";
+import TbkWPPIcon from "./icons/TbkWPP";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TitlesIcon from "./icons/Titles";
 import TrashIcon from "./icons/Trash";
@@ -208,6 +210,8 @@ export {
   StoreIcon,
   StrikethroughIcon,
   SuccessIcon,
+  TbkOneClickIcon,
+  TbkWPPIcon,
   ThemeAndContentIcon,
   TitlesIcon,
   TrashIcon,
