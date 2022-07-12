@@ -1,6 +1,6 @@
 {
   "name": "kosmos-ui",
-  "version": "6.3.3",
+  "version": "6.3.4",
   "author": "Clemente Sutil",
   "license": "ISC",
   "description": "React components UI library written in Typescript.",
