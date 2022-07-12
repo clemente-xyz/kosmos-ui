@@ -13,15 +13,18 @@
   "peerDependencies": {
     "react": ">=16.0.0"
   },
+  "resolutions": {
+    "@types/react": "^18.0.15"
+  },
   "devDependencies": {
     "@types/draft-js": "^0.10.40",
     "@types/markdown-draft-js": "^2.2.1",
-    "@types/node": "^14.14.27",
-    "@types/react": "^16.9.35",
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
     "@types/react-beautiful-dnd": "^13.0.0",
     "@types/react-color": "3.0.4",
     "@types/react-datepicker": "^3.1.2",
-    "@types/react-dom": "^16.9.8",
+    "@types/react-dom": "^18.0.6",
     "@types/react-select": "^4.0.15",
     "@types/styled-components": "^5.1.0",
     "copyfiles": "^2.4.1",
@@ -39,7 +42,6 @@
     "@popperjs/core": "^2.4.4",
     "draft-js": "^0.11.5",
     "draftjs-md-converter": "^1.5.1",
-    "node-sass": "7.0.0",
     "polished": "^3.6.3",
     "react-beautiful-dnd": "^13.1.0",
     "react-color": "^2.18.1",
@@ -49,6 +51,7 @@
     "react-select": "^4.3.0",
     "react-select-async-paginate": "^0.5.3",
     "react-use-gesture": "7.0.5",
+    "sass": "^1.53.0",
     "styled-components": "^5.3.5"
   }
 }

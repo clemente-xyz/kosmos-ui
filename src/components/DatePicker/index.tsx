@@ -1,14 +1,12 @@
-import React from 'react';
+import React from "react";
 import BaseDatePicker, {
   ReactDatePickerProps as IBaseDatePickerProps,
-} from 'react-datepicker';
+} from "react-datepicker";
 
-import DatePickerInput from './components/DatePickerInput';
+import DatePickerInput from "./components/DatePickerInput";
 
-import './styles.scss';
+import "./styles.scss";
 
-function DatePicker(props: IBaseDatePickerProps) {
+export default function DatePicker(props: IBaseDatePickerProps) {
   return <BaseDatePicker customInput={<DatePickerInput />} {...props} />;
 }
-
-export default DatePicker;
