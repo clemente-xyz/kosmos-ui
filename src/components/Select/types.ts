@@ -1,5 +1,5 @@
+import { CSSProperties } from "react";
 import BaseSelect from "react-select";
-import { CSSProperties } from "styled-components";
 
 export type TSelectProps = BaseSelect["props"] & {
   style?: TSelectInputStyles;

@@ -27,7 +27,7 @@ function ImagePicker({
   >(undefined);
 
   const onDrop = useCallback(
-    ([file]) => {
+    ([file]: File[]) => {
       if (file) {
         setUploadImage(file);
 
