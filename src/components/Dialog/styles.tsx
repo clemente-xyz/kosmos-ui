@@ -3,7 +3,7 @@ import { animated } from "react-spring";
 
 import theme from "../../theme";
 
-export const Backdrop = styled(animated.div)`
+export const DialogBackdrop = styled(animated.div)`
   position: fixed;
   left: 0;
   top: 0;
@@ -17,7 +17,7 @@ export const Backdrop = styled(animated.div)`
   overflow: hidden;
 `;
 
-export const Container = styled(animated.article)`
+export const DialogContainer = styled(animated.article)`
   position: fixed;
   padding: 24px;
   animation-duration: 0.75s;
@@ -36,7 +36,7 @@ export const Container = styled(animated.article)`
   max-height: 75vh;
 `;
 
-export const Header = styled.header<{ childrenCount: number }>`
+export const DialogBaseHeader = styled.header<{ childrenCount: number }>`
   display: flex;
   align-items: center;
   justify-content: ${({ childrenCount }) =>
@@ -45,7 +45,7 @@ export const Header = styled.header<{ childrenCount: number }>`
   margin-bottom: 16px;
 `;
 
-export const CloseButton = styled.button`
+export const DialogBaseCloseButton = styled.button`
   background: none;
   color: inherit;
   border: none;

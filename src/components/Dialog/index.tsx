@@ -1,9 +1,9 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { useTransition } from "react-spring/web";
+import { useTransition } from "react-spring";
 
 import { TDialog, TDialogProps } from "./types";
-import { Backdrop, Container } from "./styles";
+import { DialogBackdrop, DialogContainer } from "./styles";
 import {
   DialogHeader,
   DialogClose,
@@ -18,7 +18,7 @@ export default function Dialog({
   className,
   style,
 }: TDialogProps) {
-  const spring = useTransition(show, null, {
+  const transitions = useTransition(show, {
     delay: 2,
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -27,19 +27,23 @@ export default function Dialog({
 
   return createPortal(
     <>
-      {spring.map(({ item, key, props }) => {
-        return item ? (
-          <Backdrop key={key} style={props} aria-modal="true" role="dialog">
-            <Container
-              key={key}
-              className={className}
-              style={{ ...props, ...style }}
+      {transitions(
+        (transitionStyle, item) =>
+          item && (
+            <DialogBackdrop
+              style={transitionStyle}
+              aria-modal="true"
+              role="dialog"
             >
-              {children}
-            </Container>
-          </Backdrop>
-        ) : null;
-      })}
+              <DialogContainer
+                className={className}
+                style={{ ...transitionStyle, ...style }}
+              >
+                {children}
+              </DialogContainer>
+            </DialogBackdrop>
+          )
+      )}
     </>,
     document.body
   ) as unknown as TDialog;

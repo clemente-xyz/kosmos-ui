@@ -5,8 +5,7 @@ import theme from "../../theme";
 import CloseIcon from "../../icons/Close";
 
 import { TDialogCloseProps, TDialogHeaderProps } from "./types";
-
-import { Header, CloseButton } from "./styles";
+import { DialogBaseHeader, DialogBaseCloseButton } from "./styles";
 
 export function DialogHeader({
   children,
@@ -16,17 +15,21 @@ export function DialogHeader({
   const childrenCount = Children.count(children);
 
   return (
-    <Header childrenCount={childrenCount} className={className} style={style}>
+    <DialogBaseHeader
+      childrenCount={childrenCount}
+      className={className}
+      style={style}
+    >
       {children}
-    </Header>
+    </DialogBaseHeader>
   );
 }
 
 export function DialogClose({ className, style, ...props }: TDialogCloseProps) {
   return (
-    <CloseButton {...props} className={className} style={style}>
+    <DialogBaseCloseButton {...props} className={className} style={style}>
       <CloseIcon color={theme.colorsPalette.gray.light} height="12px" />
-    </CloseButton>
+    </DialogBaseCloseButton>
   );
 }
 
