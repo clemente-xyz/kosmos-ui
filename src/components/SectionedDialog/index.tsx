@@ -24,7 +24,7 @@ function SectionedDialog({
 }: ISectionedDialogProps): JSX.Element {
   const [activeSection, setActiveSection] = useState(0);
 
-  const spring = useTransition(show, null, {
+  const transitions = useTransition(show, {
     delay: 2,
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -33,10 +33,10 @@ function SectionedDialog({
 
   return createPortal(
     <>
-      {spring.map(({ item, key, props }) => {
+      {transitions((transitionStyle, item) => {
         return item ? (
-          <Backdrop key={key} style={props} aria-modal="true" role="dialog">
-            <Card key={key} style={{ ...props, ...cardStyle }}>
+          <Backdrop style={transitionStyle} aria-modal="true" role="dialog">
+            <Card style={{ ...transitionStyle, ...cardStyle }}>
               <CloseIconContainer onClick={setShow}>
                 <CloseIcon
                   color={theme.colorsPalette.gray.light}

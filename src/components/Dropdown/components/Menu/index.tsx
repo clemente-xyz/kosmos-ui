@@ -38,7 +38,7 @@ function Menu({
     placement,
   });
 
-  const spring = useTransition(isMenuOpen, null, {
+  const transitions = useTransition(isMenuOpen, {
     delay: 1,
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -53,13 +53,14 @@ function Menu({
       style={{ ...styles.popper, ...style }}
       {...attributes.popper}
     >
-      {spring.map(({ item, key, props }) => {
-        return item ? (
-          <MainContainer key={key} style={props} ref={menuContainerRef}>
-            {children}
-          </MainContainer>
-        ) : null;
-      })}
+      {transitions(
+        (transitionStyle, item) =>
+          item && (
+            <MainContainer style={transitionStyle} ref={menuContainerRef}>
+              {children}
+            </MainContainer>
+          )
+      )}
     </article>,
     document.body
   );

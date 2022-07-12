@@ -34,7 +34,7 @@ function ColorPicker(
 ) {
   const [showPicker, setShowPicker] = useState<boolean>(false);
 
-  const spring = useTransition(showPicker, null, {
+  const transitions = useTransition(showPicker, {
     delay: 2,
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -65,37 +65,37 @@ function ColorPicker(
         </PickerButton>
       </PickerButtonContainer>
 
-      {spring.map(({ item, key, props: _props }) => {
-        return item ? (
-          <PickerDialogBackdrop
-            key={key}
-            style={_props}
-            aria-modal="true"
-            role="dialog"
-          >
-            <PickerDialog ref={pickerDialogRef}>
-              <CloseIconContainer onClick={() => setShowPicker(false)}>
-                <CloseIcon
-                  color={theme.colorsPalette.gray.light}
-                  height="13px"
-                />
-              </CloseIconContainer>
+      {transitions(
+        (transitionStyle, item) =>
+          item && (
+            <PickerDialogBackdrop
+              style={transitionStyle}
+              aria-modal="true"
+              role="dialog"
+            >
+              <PickerDialog ref={pickerDialogRef}>
+                <CloseIconContainer onClick={() => setShowPicker(false)}>
+                  <CloseIcon
+                    color={theme.colorsPalette.gray.light}
+                    height="13px"
+                  />
+                </CloseIconContainer>
 
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <PickerDialogTitle>Selecciona un color</PickerDialogTitle>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <PickerDialogTitle>Selecciona un color</PickerDialogTitle>
 
-                <PickerSaturationContainer>
-                  <Saturation {...props} />
-                </PickerSaturationContainer>
+                  <PickerSaturationContainer>
+                    <Saturation {...props} />
+                  </PickerSaturationContainer>
 
-                <PickerHueContainer>
-                  <Hue {...props} direction="horizontal" />
-                </PickerHueContainer>
-              </div>
-            </PickerDialog>
-          </PickerDialogBackdrop>
-        ) : null;
-      })}
+                  <PickerHueContainer>
+                    <Hue {...props} direction="horizontal" />
+                  </PickerHueContainer>
+                </div>
+              </PickerDialog>
+            </PickerDialogBackdrop>
+          )
+      )}
     </MainContainer>
   );
 }
