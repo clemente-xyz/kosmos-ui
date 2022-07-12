@@ -19,6 +19,19 @@ export default function LocaleFlagIcon({
 
   switch (languageCode) {
     case "en":
+    case "en-AU":
+    case "en-BZ":
+    case "en-CA":
+    case "en-CB":
+    case "en-GB":
+    case "en-IE":
+    case "en-JM":
+    case "en-NZ":
+    case "en-PH":
+    case "en-TT":
+    case "en-US":
+    case "en-ZA":
+    case "en-ZW":
       flag = (
         <>
           <path
@@ -63,6 +76,25 @@ export default function LocaleFlagIcon({
       break;
 
     case "es":
+    case "es-AR":
+    case "es-BO":
+    case "es-CL":
+    case "es-CO":
+    case "es-CR":
+    case "es-DO":
+    case "es-EC":
+    case "es-ES":
+    case "es-GT":
+    case "es-HN":
+    case "es-MX":
+    case "es-NI":
+    case "es-PA":
+    case "es-PE":
+    case "es-PR":
+    case "es-PY":
+    case "es-SV":
+    case "es-UY":
+    case "es-VE":
       flag = (
         <>
           <g>
@@ -301,6 +333,11 @@ export default function LocaleFlagIcon({
       break;
 
     case "de":
+    case "de-AT":
+    case "de-CH":
+    case "de-DE":
+    case "de-LI":
+    case "de-LU":
       flag = (
         <>
           <path
@@ -319,6 +356,12 @@ export default function LocaleFlagIcon({
       break;
 
     case "fr":
+    case "fr-BE":
+    case "fr-CA":
+    case "fr-CH":
+    case "fr-FR":
+    case "fr-LU":
+    case "fr-MC":
       flag = (
         <>
           <path
@@ -343,6 +386,8 @@ export default function LocaleFlagIcon({
       break;
 
     case "it":
+    case "it-CH":
+    case "it-IT":
       flag = (
         <>
           <path
@@ -367,6 +412,7 @@ export default function LocaleFlagIcon({
       break;
 
     case "ru":
+    case "ru-RU":
       flag = (
         <>
           <path
@@ -385,6 +431,7 @@ export default function LocaleFlagIcon({
       break;
 
     case "ko":
+    case "ko-KR":
       flag = (
         <>
           <path
@@ -513,7 +560,7 @@ export default function LocaleFlagIcon({
               d="M397.554,340.969l16.035-24.085c1.353-2.031,4.098-2.58,6.127-1.223l4.072,2.722
 		c2.025,1.354,2.57,4.093,1.218,6.119l-16.049,24.053c-1.349,2.024-4.083,2.573-6.11,1.229l-4.06-2.69
 		C396.754,345.745,396.201,343,397.554,340.969z"
-            />{" "}
+            />
           </g>
         </>
       );
