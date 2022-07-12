@@ -1,6 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { useTransition } from "react-spring";
+import { useTransition } from "react-spring/web";
 
 import { TDialog, TDialogProps } from "./types";
 import { Backdrop, Container } from "./styles";
