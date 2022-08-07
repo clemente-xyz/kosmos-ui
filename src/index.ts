@@ -55,6 +55,7 @@ import CardIcon from "./icons/Card";
 import CarretIcon from "./icons/Carret";
 import CloseIcon from "./icons/Close";
 import CouponIcon from "./icons/Coupon";
+import CubeIcon from "./icons/Cube";
 import DeliveryIcon from "./icons/Delivery";
 import DiscountTicketIcon from "./icons/DiscountTicket";
 import DownloadIcon from "./icons/Download";
@@ -65,6 +66,7 @@ import EyeIcon from "./icons/Eye";
 import FacebookIcon from "./icons/Facebook";
 import FiltersIcon from "./icons/Filters";
 import GAIcon from "./icons/GA";
+import GithubIcon from "./icons/Github";
 import GrafitoIsotype from "./icons/GrafitoIsotype";
 import HamburgerIcon from "./icons/Hamburger";
 import HomeIcon from "./icons/Home";
@@ -74,9 +76,11 @@ import KeyIcon from "./icons/Key";
 import LayersIcon from "./icons/Layers";
 import LineChartIcon from "./icons/LineChart";
 import LinkIcon from "./icons/Link";
+import LinkedInIcon from "./icons/LinkedIn";
 import ListIcon from "./icons/List";
 import LocaleFlagIcon from "./icons/LocaleFlag";
 import MailIcon from "./icons/Mail";
+import OctahedronIcon from "./icons/Octahedron";
 import OListIcon from "./icons/OList";
 import PaymentCardIcon from "./icons/PaymentCard";
 import PenIcon from "./icons/Pen";
@@ -93,11 +97,13 @@ import StrikethroughIcon from "./icons/Strikethrough";
 import SuccessIcon from "./icons/Success";
 import TbkOneClickIcon from "./icons/TbkOneClick";
 import TbkWPPIcon from "./icons/TbkWPP";
+import TetrahedronIcon from "./icons/Tetrahedron";
 import ThemeAndContentIcon from "./icons/ThemeAndContent";
 import TitlesIcon from "./icons/Titles";
 import TrashIcon from "./icons/Trash";
 import UListIcon from "./icons/UList";
 import UnderlineIcon from "./icons/Underline";
+import YoutubeIcon from "./icons/Youtube";
 
 // Illustrations
 import CreditCardIllustration from "./illustrations/CreditCart";
@@ -174,6 +180,7 @@ export {
   CarretIcon,
   CloseIcon,
   CouponIcon,
+  CubeIcon,
   DeliveryIcon,
   DiscountTicketIcon,
   DownloadIcon,
@@ -184,6 +191,7 @@ export {
   FacebookIcon,
   FiltersIcon,
   GAIcon,
+  GithubIcon,
   GrafitoIsotype,
   HamburgerIcon,
   HomeIcon,
@@ -193,9 +201,11 @@ export {
   LayersIcon,
   LineChartIcon,
   LinkIcon,
+  LinkedInIcon,
   ListIcon,
   LocaleFlagIcon,
   MailIcon,
+  OctahedronIcon,
   OListIcon,
   PaymentCardIcon,
   PenIcon,
@@ -212,11 +222,13 @@ export {
   SuccessIcon,
   TbkOneClickIcon,
   TbkWPPIcon,
+  TetrahedronIcon,
   ThemeAndContentIcon,
   TitlesIcon,
   TrashIcon,
   UListIcon,
   UnderlineIcon,
+  YoutubeIcon,
   // Illustrations
   CreditCardIllustration,
   Documentsllustration,
