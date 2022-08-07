@@ -53,6 +53,7 @@ import BoldIcon from "./icons/Bold";
 import CalendarIcon from "./icons/Calendar";
 import CardIcon from "./icons/Card";
 import CarretIcon from "./icons/Carret";
+import CheckIcon from "./icons/Check";
 import CloseIcon from "./icons/Close";
 import CouponIcon from "./icons/Coupon";
 import CubeIcon from "./icons/Cube";
@@ -178,6 +179,7 @@ export {
   CalendarIcon,
   CardIcon,
   CarretIcon,
+  CheckIcon,
   CloseIcon,
   CouponIcon,
   CubeIcon,
