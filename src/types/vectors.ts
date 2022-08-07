@@ -4,6 +4,7 @@ export type TVectorProps = {
   height?: string;
   color?: string;
   colors?: Partial<TVectorColors>;
+  gradient?: { from: string; to: string };
   style?: CSSProperties;
   className?: string;
 };
