@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MainContainer = styled.div`
+export const BoxedIconContainer = styled.aside`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,5 +9,3 @@ const MainContainer = styled.div`
   width: fit-content;
   height: fit-content;
 `;
-
-export { MainContainer };

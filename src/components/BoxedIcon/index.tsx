@@ -1,18 +1,24 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
-import { TComponentType } from "../../types/components";
 import { getStyledComponentMainStyles } from "../../utils/helpers";
 
-import { MainContainer } from "./styles";
+import { BoxedIconContainer } from "./styles";
+import { TBoxedIconProps } from "./types";
 
 export default function BoxedIcon({
-  type,
+  type = "primary",
   icon,
-}: {
-  type: TComponentType;
-  icon: ReactNode;
-}): JSX.Element {
+  style,
+  className,
+}: TBoxedIconProps) {
   const mainStyles = getStyledComponentMainStyles(type);
 
-  return <MainContainer style={mainStyles}>{icon}</MainContainer>;
+  return (
+    <BoxedIconContainer
+      style={{ ...mainStyles, ...style }}
+      className={className}
+    >
+      {icon}
+    </BoxedIconContainer>
+  );
 }
