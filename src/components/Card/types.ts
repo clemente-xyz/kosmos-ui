@@ -1,8 +1,8 @@
-import { CSSProperties, ReactNode } from "react";
+import { ReactNode } from "react";
+import { WithChildren, WithStyle } from "types/general";
 
-export interface ICardProps {
-  children: ReactNode;
-  style?: CSSProperties;
-  header?: string | ReactNode;
-  className?: string;
-}
+export type TCardProps = WithChildren &
+  WithStyle & {
+    header?: string | ReactNode;
+    as?: React.ElementType;
+  };

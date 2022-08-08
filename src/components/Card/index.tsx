@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ICardProps } from "./types";
-import { Container, Header } from "./styles";
+import { TCardProps } from "./types";
+import { CardContainer, CardHeader } from "./styles";
 
 /**
  * Surface that display content and actions on a single topic.
@@ -9,16 +9,20 @@ import { Container, Header } from "./styles";
  * @param style - Card custom styles (optional).
  * @param header - Card header (optional).
  * @param className - Styles classname (optional).
+ * @param as - React element type with the card want to by defined as (optional).
+ * Default: aside.
  */
-function Card({ children, style, header, className }: ICardProps): JSX.Element {
+export default function Card({ children, header, ...props }: TCardProps) {
   return (
-    <Container style={style} className={className}>
+    <CardContainer {...props}>
       {header &&
-        (typeof header === "string" ? <Header>{header}</Header> : header)}
+        (typeof header === "string" ? (
+          <CardHeader>{header}</CardHeader>
+        ) : (
+          header
+        ))}
 
       {children}
-    </Container>
+    </CardContainer>
   );
 }
-
-export default Card;

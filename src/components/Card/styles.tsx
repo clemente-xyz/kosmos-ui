@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
-export const Container = styled.article`
+export const CardContainer = styled.article`
   display: flex;
   flex-direction: column;
   background-color: ${theme.colorsPalette.white.default};
@@ -13,7 +13,7 @@ export const Container = styled.article`
   transition: transform 0.3s;
 `;
 
-export const Header = styled.h1`
+export const CardHeader = styled.h1`
   color: ${theme.colorsPalette.gray.darker};
   font-size: ${theme.fontSizes.regularLarge};
   font-weight: ${theme.fontWeights.bolder};
