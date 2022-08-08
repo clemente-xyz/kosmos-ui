@@ -41,6 +41,16 @@ export const StyledTypography = styled.div<Pick<TTypographyProps, "variant">>`
           letter-spacing: 0em;
         `;
 
+      case "title4":
+        return `
+          font-size: 18px;
+          font-weight: ${theme.fontWeights.bold};
+          margin: 0 0 8px 0;
+          max-width: 380px;
+          line-height: 1.1;
+          letter-spacing: 0em;
+        `;
+
       case "subtitle1":
         return `
           color: ${theme.colorsPalette.gray.light};

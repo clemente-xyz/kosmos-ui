@@ -10,6 +10,7 @@ export type TTypographyVariant =
   | "title1"
   | "title2"
   | "title3"
+  | "title4"
   | "subtitle1"
   | "subtitle2"
   | "paragraph1"
