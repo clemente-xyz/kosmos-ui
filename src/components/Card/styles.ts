@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 import theme from "../../theme";
 
-export const CardContainer = styled.article`
+import { TCardProps } from "./types";
+
+export const CardContainer = styled.article<Pick<TCardProps, "onClick">>`
   display: flex;
   flex-direction: column;
   background-color: ${theme.colorsPalette.white.default};
@@ -10,7 +12,17 @@ export const CardContainer = styled.article`
   padding: 24px;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0),
     0 3px 5px 0px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background-color 0.1s;
+
+  ${({ onClick }) =>
+    onClick &&
+    `
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${theme.colorsPalette.gray.superLight};
+      }
+    `}
 `;
 
 export const CardHeader = styled.h1`
