@@ -10,6 +10,7 @@ import Chip from "./components/Chip";
 import ColorPicker from "./components/ColorPicker";
 import ContentEditor from "./components/ContentEditor";
 import CreatableSelect from "./components/CreatableSelect";
+import DataRenderer from "./components/DataRenderer";
 import DatePicker from "./components/DatePicker";
 import Dialog from "./components/Dialog";
 import DraggableList from "./components/DraggableList";
@@ -141,6 +142,7 @@ export {
   ColorPicker,
   ContentEditor,
   CreatableSelect,
+  DataRenderer,
   DatePicker,
   Dialog,
   DraggableList,
