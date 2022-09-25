@@ -4,7 +4,7 @@ import Card from "../Card";
 
 import { TDataGridCol } from "./types";
 
-export const DataGridContainer = styled.aside`
+export const DataGridContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
