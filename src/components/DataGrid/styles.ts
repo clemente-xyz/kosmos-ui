@@ -27,6 +27,7 @@ export const DataGridCol = styled.div<Pick<TDataGridCol, "width">>`
 export const DataGridRow = styled(Card)`
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   &:not(:last-child) {
     margin-bottom: 8px;
