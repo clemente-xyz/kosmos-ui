@@ -47,7 +47,7 @@ function ImagePicker({
       onDropRejected && onDropRejected(event);
     },
     ...options,
-    accept: "image/*",
+    accept: ["image/jpeg", "image/png"],
     multiple: false,
   });
 
